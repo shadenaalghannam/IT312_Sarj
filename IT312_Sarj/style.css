@@ -503,4 +503,904 @@ th {
     .section-title {
         font-size: 22px;
     }
+} /*end of style codes */
+
+/* =========================================================
+   SARJ - OFFERINGS & OFFERING DETAILS PAGES
+   Page-Specific Styles
+   ========================================================= */
+
+
+/* =========================================================
+   1. OFFERINGS PAGE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   PAGE INTRODUCTION
+   --------------------------------------------------------- */
+
+.offerings-page .page-intro {
+    position: relative;
+    min-height: 300px;
+    padding: 45px 5%;
+    background-color: #E8DCCB;
+    text-align: right;
 }
+
+.offerings-page .page-intro .breadcrumbs {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.offerings-page .page-intro .page-title {
+    position: relative;
+    font-size: 40px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.offerings-page .page-intro .page-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 65px;
+    height: 3px;
+    background-color: #A47C5B;
+    border-radius: 3px;
+}
+
+.offerings-page .page-intro > p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+
+/* ---------------------------------------------------------
+   OFFERINGS SECTION
+   --------------------------------------------------------- */
+
+.offerings-page .offerings-section {
+    width: 100%;
+    max-width: none;
+    padding: 35px 5%;
+}
+
+
+/* ---------------------------------------------------------
+   SORTING TOOLBAR
+   --------------------------------------------------------- */
+
+.offerings-page .offerings-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 0 0 25px;
+}
+
+.offerings-page .sorting-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.offerings-page .sorting-control label {
+    margin: 0;
+    font-size: 17px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.offerings-page .sorting-control select {
+    width: 145px;
+    min-width: 145px;
+    padding: 8px 10px;
+    margin: 0;
+    font-size: 16px;
+    background-color: #FFFFFF;
+    color: #302923;
+    border: 1px solid #A47C5B;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.offerings-page .sorting-control select:focus {
+    outline: 2px solid #6B422E;
+    outline-offset: 2px;
+}
+
+.offerings-page .offerings-count {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.offerings-page .offerings-count strong {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   OFFERINGS GRID
+   --------------------------------------------------------- */
+
+.offerings-page .offering-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   OFFERING CARDS
+   --------------------------------------------------------- */
+
+.offerings-page .offering-card {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+
+    background-color: #FFFFFF;
+    border: 1px solid #E8DCCB;
+    border-radius: 10px;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.offerings-page .offering-card:hover {
+    border-color: #A47C5B;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(48, 41, 35, 0.10);
+}
+
+
+/* ---------------------------------------------------------
+   OFFERING IMAGES
+   --------------------------------------------------------- */
+
+.offerings-page .offering-image-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #E8DCCB;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.offerings-page .offering-card .offering-image-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+
+    transition: transform 0.4s ease;
+}
+
+.offerings-page .offering-card:hover
+.offering-image-placeholder img {
+    transform: scale(1.04);
+}
+
+
+/* ---------------------------------------------------------
+   OFFERING TITLES
+   --------------------------------------------------------- */
+
+.offerings-page .offering-card h3 {
+    font-size: 22px;
+    color: #6B422E;
+    text-align: right;
+    margin: 15px 15px 10px;
+}
+
+
+/* ---------------------------------------------------------
+   OFFERING DESCRIPTIONS
+   --------------------------------------------------------- */
+
+.offerings-page .offering-card p:not(.offering-price) {
+    font-size: 16px;
+    line-height: 1.7;
+    text-align: center;
+    margin: 0 15px 15px;
+}
+
+
+/* ---------------------------------------------------------
+   OFFERING DIVIDER
+   --------------------------------------------------------- */
+
+.offerings-page .offerings-divider {
+    width: calc(100% - 30px);
+    border: none;
+    border-top: 1px solid #E8DCCB;
+    margin: auto 15px 0;
+}
+
+
+/* ---------------------------------------------------------
+   OFFERING PRICE
+   --------------------------------------------------------- */
+
+.offerings-page .offering-card .offering-price {
+    color: #6B422E;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    margin: 15px;
+}
+
+
+/* ---------------------------------------------------------
+   OFFERING BUTTON
+   --------------------------------------------------------- */
+
+.offerings-page .offering-card .main-button {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin: 0;
+
+    background-color: #152705;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+
+    transition:
+        background-color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+.offerings-page .offering-card .main-button:hover {
+    background-color: #2E4018;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+}
+
+.offerings-page .offering-card .main-button:focus-visible {
+    outline: 2px solid #6B422E;
+    outline-offset: -3px;
+}
+
+
+/* ---------------------------------------------------------
+   SARJ QUOTE SECTION
+   --------------------------------------------------------- */
+
+.offerings-page .sarj-quote {
+    background-color: rgba(107, 66, 46, 0.08);
+    text-align: center;
+    padding: 25px 20px;
+
+    width: 90%;
+    max-width: none;
+    margin: 35px auto;
+
+    border-radius: 10px;
+}
+
+.offerings-page .sarj-quote .quote-mark {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 65px;
+    line-height: 0.9;
+    color: #A47C5B;
+    margin-bottom: 8px;
+}
+
+.offerings-page .sarj-quote blockquote {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.offerings-page .sarj-quote blockquote p {
+    font-family: "Thmanyah", serif;
+    font-size: 27px;
+    line-height: 1.6;
+    color: #6B422E;
+}
+
+.offerings-page .sarj-quote .quote-divider {
+    display: block;
+    width: 45px;
+    height: 1px;
+    background-color: #A47C5B;
+    margin: 15px auto 10px;
+}
+
+.offerings-page .sarj-quote .quote-author {
+    font-size: 17px;
+    color: #6B422E;
+}
+
+
+/* =========================================================
+   2. OFFERING DETAILS PAGE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   PAGE INTRODUCTION
+   --------------------------------------------------------- */
+
+.offering-details-page .details-intro {
+    background-color: #E8DCCB;
+    padding: 45px 5%;
+    min-height: 260px;
+    text-align: right;
+}
+
+.offering-details-page .details-intro .breadcrumbs {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.offering-details-page .details-intro .page-title {
+    position: relative;
+    font-size: 40px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.offering-details-page .details-intro .page-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 65px;
+    height: 3px;
+
+    background-color: #A47C5B;
+    border-radius: 3px;
+}
+
+.offering-details-page .details-intro > p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN DETAILS SECTION
+   --------------------------------------------------------- */
+
+.offering-details-page .details-section {
+    padding: 45px 5% 60px;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN DETAILS LAYOUT
+   --------------------------------------------------------- */
+
+.offering-details-page .details-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+
+/* ---------------------------------------------------------
+   OFFERING INFORMATION
+   --------------------------------------------------------- */
+
+.offering-details-page .details-information {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.offering-details-page .details-description {
+    font-size: 19px;
+    line-height: 2;
+    color: #302923;
+    text-align: right;
+}
+
+
+/* ---------------------------------------------------------
+   PRICE, DURATION AND LEVEL
+   --------------------------------------------------------- */
+
+.offering-details-page .details-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+}
+
+.offering-details-page .fact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 12px;
+    text-align: center;
+}
+
+.offering-details-page .fact-item:not(:last-child) {
+    border-left: 1px solid #D7C6B5;
+}
+
+.offering-details-page .fact-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 48px;
+    height: 48px;
+
+    background-color: #E8DCCB;
+    color: #6B422E;
+
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+.offering-details-page .fact-label {
+    color: #6B422E;
+    font-size: 16px;
+}
+
+.offering-details-page .fact-item strong {
+    color: #302923;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN OFFERING IMAGE
+   --------------------------------------------------------- */
+
+.offering-details-page .details-image {
+    height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+
+    background-color: #E8DCCB;
+    box-shadow: 0 10px 25px rgba(48, 41, 35, 0.08);
+}
+
+.offering-details-page .details-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.offering-details-page .details-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ---------------------------------------------------------
+   EXPERIENCE FEATURES
+   --------------------------------------------------------- */
+
+.offering-details-page .details-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    background-color: #E8DCCB;
+    border-radius: 12px;
+
+    padding: 30px 20px;
+    margin-bottom: 55px;
+}
+
+.offering-details-page .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+    text-align: center;
+    padding: 10px 20px;
+
+    transition: transform 0.3s ease;
+}
+
+.offering-details-page .feature-item:not(:last-child) {
+    border-left: 1px solid #C9B7A3;
+}
+
+.offering-details-page .feature-item:hover {
+    transform: translateY(-4px);
+}
+
+.offering-details-page .feature-icon {
+    font-size: 30px;
+    color: #6B422E;
+}
+
+.offering-details-page .feature-item h3 {
+    font-size: 20px;
+    color: #6B422E;
+}
+
+.offering-details-page .feature-item p {
+    font-size: 15px;
+    color: #6B422E;
+}
+
+
+/* ---------------------------------------------------------
+   LEARNING OUTCOMES
+   --------------------------------------------------------- */
+
+.offering-details-page .details-learning {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+}
+
+.offering-details-page .details-learning .learning-content {
+    order: 2;
+}
+
+.offering-details-page .details-learning .learning-quote {
+    order: 1;
+}
+
+.offering-details-page .learning-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.offering-details-page .learning-list {
+    list-style: none;
+
+    background-color: #E8DCCB;
+    border-radius: 12px;
+
+    padding: 30px;
+}
+
+.offering-details-page .learning-list li {
+    position: relative;
+    padding-right: 22px;
+    margin-bottom: 16px;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.offering-details-page .learning-list li:last-child {
+    margin-bottom: 0;
+}
+
+.offering-details-page .learning-list li::before {
+    content: "";
+    position: absolute;
+
+    right: 0;
+    top: 12px;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: #152705;
+    border-radius: 50%;
+}
+
+
+/* ---------------------------------------------------------
+   INSPIRATIONAL QUOTE WITH BACKGROUND IMAGE
+   --------------------------------------------------------- */
+
+.offering-details-page .learning-quote {
+    width: 100%;
+    min-height: 300px;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 20px;
+
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+
+    background-color: #E8DCCB;
+
+    background-image:
+        linear-gradient(
+            to left,
+            rgba(21, 39, 5, 0.75) 0%,
+            rgba(21, 39, 5, 0.35) 45%,
+            rgba(21, 39, 5, 0) 75%
+        ),
+        url("images/horse-quote.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* ---------------------------------------------------------
+   QUOTE TEXT
+   --------------------------------------------------------- */
+
+.offering-details-page .learning-quote .quote-text {
+    flex: 1;
+    width: 45%;
+
+    text-align: right;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.offering-details-page .learning-quote .quote-mark {
+    display: block;
+
+    font-family: "Thmanyah", Arial, sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+
+    color: #FFFFFF;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.offering-details-page .learning-quote .quote-text p {
+    font-family: "Thmanyah", Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+
+    line-height: 1.7;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+
+/* =========================================================
+   3. RESPONSIVE DESIGN - TABLETS
+   ========================================================= */
+
+@media screen and (max-width: 992px) {
+
+    /* Offering Details Page */
+
+    .offering-details-page .details-overview {
+        gap: 25px;
+    }
+
+    .offering-details-page .details-description {
+        font-size: 17px;
+    }
+
+    .offering-details-page .details-image {
+        height: 300px;
+    }
+
+    .offering-details-page .details-learning {
+        gap: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   4. RESPONSIVE DESIGN - MOBILE & TABLETS
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* -----------------------------------------------------
+       OFFERINGS PAGE
+       ----------------------------------------------------- */
+
+    .offerings-page .page-intro {
+        min-height: 230px;
+        padding: 35px 5%;
+    }
+
+    .offerings-page .page-intro .page-title {
+        font-size: 30px;
+    }
+
+    .offerings-page .page-intro > p {
+        font-size: 16px;
+    }
+
+    .offerings-page .offerings-section {
+        padding: 25px 5%;
+    }
+
+    .offerings-page .offering-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .offerings-page .offering-card {
+        width: 100%;
+    }
+
+    .offerings-page .offering-image-placeholder {
+        height: 160px;
+    }
+
+    .offerings-page .offering-card h3 {
+        font-size: 19px;
+    }
+
+    .offerings-page .offerings-toolbar {
+        gap: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       OFFERING DETAILS PAGE
+       ----------------------------------------------------- */
+
+    .offering-details-page .details-intro {
+        min-height: auto;
+        padding: 35px 5%;
+    }
+
+    .offering-details-page .details-intro .page-title {
+        font-size: 30px;
+    }
+
+    .offering-details-page .details-intro > p {
+        font-size: 16px;
+    }
+
+    .offering-details-page .details-section {
+        padding: 30px 5%;
+    }
+
+    .offering-details-page .details-overview {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .offering-details-page .details-image {
+        height: 260px;
+    }
+
+    .offering-details-page .details-facts {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .offering-details-page .fact-item {
+        padding: 8px;
+    }
+
+    .offering-details-page .fact-item strong {
+        font-size: 15px;
+    }
+
+    .offering-details-page .details-features {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .offering-details-page .feature-item {
+        padding: 20px 10px;
+    }
+
+    .offering-details-page .feature-item:not(:last-child) {
+        border-left: none;
+        border-bottom: 1px solid #C9B7A3;
+    }
+
+    .offering-details-page .details-learning {
+        grid-template-columns: 1fr;
+    }
+
+    .offering-details-page .learning-quote {
+        min-height: 230px;
+    }
+
+}
+
+
+/* =========================================================
+   5. RESPONSIVE DESIGN - SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* Offering Details Quote */
+
+    .offering-details-page .learning-quote {
+        min-height: 250px;
+        padding: 25px;
+        background-position: 40% center;
+    }
+
+    .offering-details-page .learning-quote .quote-text {
+        width: 70%;
+    }
+
+    .offering-details-page .learning-quote .quote-text p {
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   6. RESPONSIVE DESIGN - EXTRA SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    /* Offerings Page */
+
+    .offerings-page .page-intro .page-title {
+        font-size: 26px;
+    }
+
+    .offerings-page .offerings-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .offerings-page .sorting-control {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .offerings-page .sorting-control select {
+        width: 155px;
+        min-width: 155px;
+    }
+
+    .offerings-page .offering-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .offerings-page .offering-image-placeholder {
+        height: 200px;
+    }
+
+}
+
+
+/* =========================================================
+   END OF SARJ OFFERINGS & DETAILS STYLES
+   ========================================================= */
