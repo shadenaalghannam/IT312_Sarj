@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عروض سَرْج</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+</head>
+
+<body class="offerings-page">
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="site-nav">
+
+            <img src="images/sarj-logo.png"
+                 alt="Sarj Logo"
+                 class="site-logo">
+
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن سَرْج</a></li>
+                <li><a href="manager-dashboard.html">لوحة مدير سَرْج</a></li>
+                <li><a href="member-dashboard.html">لوحة عضو سَرْج</a></li>
+                <li><a href="offerings.html" aria-current="page">عروض سَرْج</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Page Introduction -->
+        <section class="page-intro">
+
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="index.html">الرئيسية</a>
+                <span> &gt; عروض سَرْج</span>
+            </nav>
+
+            <h1 class="page-title">عروض سَرْج</h1>
+
+            <p>
+                اكتشف الأنشطة والتجارب التي يقدمها نادي سَرْج للفروسية
+            </p>
+
+        </section>
+
+
+        <!-- Available Offerings -->
+<section class="offerings-section">
+
+            <!-- Sorting and Offering Count -->
+            <div class="offerings-toolbar">
+
+                <!-- Sorting Control -->
+                <div class="sorting-control">
+
+                    <label for="sort-offerings">ترتيب حسب:</label>
+
+                    <select id="sort-offerings" name="sort-offerings">
+
+                        <option value="default" selected>الأحدث</option>
+
+                        <optgroup label="السعر">
+                            <option value="price-low">من الأقل إلى الأعلى</option>
+                            <option value="price-high">من الأعلى إلى الأقل</option>
+                        </optgroup>
+
+                        <optgroup label="الاسم">
+                            <option value="name-az">أ - ي</option>
+                            <option value="name-za">ي - أ</option>
+                        </optgroup>
+
+                    </select>
+
+                </div>
+
+                <!-- Total Number of Offerings -->
+               <p class="offerings-count">
+    عدد العروض: <strong>6</strong>
+</p>
+
+            </div>
+
+
+            <!-- Offerings List -->
+            <div class="offering-list">
+
+                <!-- Offering 1: Beginner Riding -->
+                <article class="offering-card">
+
+                    <div class="offering-image-placeholder">
+    <img src="images/Beginner.jpg" alt="جلسة ركوب للمبتدئين">
+
+                    </div>
+
+                    <h3>جلسة ركوب للمبتدئين</h3>
+
+                    <p>
+                        تعلم أساسيات ركوب الخيل
+                    </p>
+
+                    <hr class="offerings-divider"> 
+
+                    <p class="offering-price">
+                        السعر: 150 ريال
+                    </p>
+
+                    <a href="offerings-details.html" class="main-button">
+    عرض التفاصيل
+</a>
+
+                </article>
+
+
+                <!-- Offering 2: Advanced Riding -->
+                <article class="offering-card">
+
+                    <div class="offering-image-placeholder">
+                        <img src="images/advanced.jpg" alt="جلسة ركوب متقدمة">
+                    </div>
+
+                    <h3>جلسة ركوب متقدمة</h3>
+
+                    <p>
+                        طور مهاراتك في ركوب الخيل
+                    </p>
+ <hr class="offerings-divider"> 
+                    <p class="offering-price">
+                        السعر: 300 ريال
+                    </p>
+
+                    <a href="offering-details.html"
+                       class="main-button">
+                        عرض التفاصيل
+                    </a>
+
+                </article>
+
+
+                <!-- Offering 3: Show Jumping -->
+                <article class="offering-card">
+
+                    <div class="offering-image-placeholder">
+                       <img src="images/show-jumping.jpg" alt="تدريب قفز الحواجز">
+                    </div>
+
+                    <h3>تدريب قفز الحواجز</h3>
+
+                    <p>
+                        تعلم أساسيات قفز الحواجز مع مدربين محترفين
+                    </p>
+<hr class="offerings-divider"> 
+                    <p class="offering-price">
+                        السعر: 200 ريال
+                    </p>
+
+                    <a href="offering-details.html"
+                       class="main-button">
+                        عرض التفاصيل
+                    </a>
+
+                </article>
+
+
+                <!-- Offering 4: Equestrian Show -->
+                <article class="offering-card">
+
+                    <div class="offering-image-placeholder">
+                        <img src="images/horse-show.jpg" alt="حجز عرض الفروسية">
+                    </div>
+
+                    <h3>حجز عرض الفروسية</h3>
+
+                    <p>
+                        تجربة عرض فروسية احترافية للفرسان والزوار
+                    </p>
+<hr class="offerings-divider"> 
+                    <p class="offering-price">
+                        السعر: 0 ريال
+                    </p>
+
+                    <a href="offering-details.html"
+                       class="main-button">
+                        عرض التفاصيل
+                    </a>
+
+                </article>
+
+
+                <!-- Offering 5: Horse Care Workshop -->
+                <article class="offering-card">
+
+                    <div class="offering-image-placeholder">
+                        <img src="images/care-workshop.jpg" alt="ورشة العناية بالخيل">
+                    </div>
+
+                    <h3>ورشة العناية بالخيل</h3>
+
+                    <p>
+                        تعلم أساسيات العناية بالخيل والتعامل معها
+                    </p>
+<hr class="offerings-divider"> 
+                    <p class="offering-price">
+                        السعر: 100 ريال
+                    </p>
+
+                    <a href="offering-details.html"
+                       class="main-button">
+                        عرض التفاصيل
+                    </a>
+
+                </article>
+
+
+                <!-- Offering 6: Nature Riding -->
+                <article class="offering-card">
+
+                    <div class="offering-image-placeholder">
+                        <img src="images/trail-riding.jpg" alt="تجربة ركوب في الطبيعة">
+                    </div>
+
+                    <h3>تجربة ركوب في الطبيعة</h3>
+
+                    <p>
+                        تجربة مميزة وسط أجواء طبيعية ساحرة
+                    </p>
+<hr class="offerings-divider"> 
+                    <p class="offering-price">
+                        السعر: 100 ريال
+                    </p>
+
+                    <a href="offering-details.html"
+                       class="main-button">
+                        عرض التفاصيل
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Promotional Quote Banner -->
+<section class="sarj-quote">
+    <span class="quote-mark" aria-hidden="true">“</span>
+
+    <blockquote>
+        <p>لكل فارس بداية</p>
+        <p>ولكل رحلة سَرْج</p>
+    </blockquote>
+
+    <span class="quote-divider"></span>
+    <p class="quote-author">نادي سَرْج</p>
+</section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img src="images/sarj-logo1.png" alt="Sarj Logo">
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-contact">
+
+                <h3>تواصل معنا</h3>
+
+                <p>
+                    <img src="images/email.png" alt="Email Icon">
+                    <span>sarj@gmail.com</span>
+                </p>
+
+                <p>
+                    <img src="images/phone.png" alt="Phone Icon">
+                    <span>+966555234569</span>
+                </p>
+
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-social">
+
+                <h3>تابعنا على</h3>
+
+                <div class="social-images">
+
+                    <a href="#" aria-label="Instagram">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <img src="images/youtube.png" alt="YouTube">
+                    </a>
+
+                    <a href="#" aria-label="X">
+                        <img src="images/x.png" alt="X">
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <p class="copyright">
+            © 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة
+        </p>
+
+    </footer>
+
+</body>
+</html>
