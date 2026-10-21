@@ -1404,3 +1404,339 @@ th {
 /* =========================================================
    END OF SARJ OFFERINGS & DETAILS STYLES
    ========================================================= */
+
+
+/* =====================================================
+   MEMBER PAGES - Added styles (existing team CSS above)
+   Basic CSS, box model, flexbox, tables and forms.
+   ===================================================== */
+.member-page .page-intro {
+    min-height: 260px;
+    padding: 45px 5%;
+    background-color: #e8dccb;
+    text-align: right;
+}
+.member-page .page-title {
+    font-size: 38px;
+    margin: 12px 0;
+}
+.member-page .breadcrumbs { color: #302923; }
+.member-page .breadcrumbs a { color: #6b422e; }
+.member-page .member-content {
+    max-width: 1050px;
+    margin: 40px auto 65px;
+    padding: 0 20px;
+}
+.member-page .member-panel {
+    background-color: white;
+    border: 1px solid #e7dac9;
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 6px 20px #ddd2c4;
+}
+
+/* Member dashboard cards */
+.member-page .dashboard-links {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 40px;
+}
+.member-page .dashboard-links a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    border: 1px solid #e2d3bf;
+    border-radius: 14px;
+    background-color: white;
+    box-shadow: 0 5px 16px #e3d8ca;
+}
+.member-page .dashboard-links a:hover { background-color: #f7efe3; }
+.member-page .link-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.member-page .icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    background-color: #eee3d2;
+}
+.member-page .icon-box img { width: 34px; height: 34px; }
+.member-page .arrow { font-size: 32px; }
+.member-page .member-section-title { margin-bottom: 20px; font-size: 27px; }
+
+/* Requests table */
+.member-page .table-scroll { overflow-x: auto; }
+.member-page table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+}
+.member-page th, .member-page td {
+    padding: 16px;
+    border-bottom: 1px solid #eee5d9;
+}
+.member-page th { background-color: #eee3d2; color: #6b422e; }
+.member-page tbody tr:hover { background-color: #faf6ef; }
+.member-page .status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+.member-page .status-complete { background-color: #e3efdd; color: #356332; }
+.member-page .status-declined { background-color: #f9e3df; color: #9a443c; }
+.member-page .status-pending { background-color: #fff0d6; color: #936620; }
+
+/* Join and evaluation forms */
+.member-page .member-form { max-width: 780px; margin: auto; }
+.member-page .form-heading { text-align: center; margin-bottom: 26px; }
+.member-page .form-heading h2 { font-size: 28px; }
+.member-page .form-heading p { color: #786c60; }
+.member-page .member-form > label {
+    display: block;
+    margin: 18px 0 7px;
+    font-weight: bold;
+}
+.member-page .member-form select,
+.member-page .member-form input[type="text"],
+.member-page .member-form input[type="date"],
+.member-page .member-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d9c9b4;
+    border-radius: 8px;
+    background-color: #fcfaf7;
+    font: inherit;
+}
+.member-page .member-form select:focus,
+.member-page .member-form input:focus,
+.member-page .member-form textarea:focus {
+    border-color: #916b48;
+    outline: 1px solid #916b48;
+}
+.member-page .member-form textarea { height: 185px; }
+.member-page .check-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+}
+.member-page .form-actions { text-align: center; margin-top: 26px; }
+.member-page .form-actions .main-button { min-width: 180px; }
+
+/* Rating choices: regular radio inputs, no advanced selectors */
+.member-page .rating-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0 25px;
+}
+.member-page .rating-row label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1px solid #e4d5bf;
+    border-radius: 9px;
+    background-color: #fcf8f2;
+    cursor: pointer;
+}
+.member-page .rating-row label:hover { background-color: #f3e6d4; }
+.member-page .rating-row input { accent-color: #80572f; }
+.member-page .rating-star { font-size: 24px; color: #b38a43; }
+
+@media (max-width: 650px) {
+    .member-page .dashboard-links { flex-direction: column; }
+    .member-page .member-panel { padding: 22px; }
+}
+
+/* MEMBER PAGES - Final visual improvements (team styles kept above) */
+.member-page .page-intro {
+    border-bottom: 3px solid #c6a783;
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+.member-page .page-intro .page-title {
+    font-size: 42px;
+    margin: 16px 0 12px;
+}
+.member-page .page-intro p { color: #5d4a3a; font-size: 18px; }
+.member-page .breadcrumbs a:hover { text-decoration: underline; }
+.member-page .member-content { max-width: 1100px; margin-top: 48px; }
+.member-page .member-panel {
+    border: 1px solid #e1cfb8;
+    border-top: 4px solid #9c7955;
+    box-shadow: 0 8px 24px #e5dbce;
+}
+.member-page .dashboard-links a {
+    min-height: 125px;
+    border-top: 4px solid #9c7955;
+    color: #563821;
+}
+.member-page .dashboard-links a:hover {
+    background-color: #f5ebdc;
+    border-color: #9c7955;
+}
+.member-page .dashboard-links strong { font-size: 19px; }
+.member-page .icon-box { background-color: #e9d8be; }
+.member-page .member-section-title {
+    border-right: 4px solid #a47c5b;
+    padding-right: 14px;
+    margin-bottom: 22px;
+}
+.member-page th { background-color: #e9dbc8; font-size: 16px; }
+.member-page td { background-color: #fffdf9; }
+.member-page tbody tr:hover td { background-color: #f7f0e6; }
+.member-page .status { display: inline-block; font-weight: bold; }
+.member-page .member-form .form-heading {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ddce;
+}
+.member-page .member-form .form-heading h2 { color: #62412c; }
+.member-page .member-form select,
+.member-page .member-form input[type="text"],
+.member-page .member-form input[type="date"],
+.member-page .member-form textarea { background-color: #fffefa; }
+.member-page .member-form .main-button {
+    padding: 13px 30px;
+    border-radius: 9px;
+}
+.member-page .rating-row label { min-width: 75px; justify-content: center; }
+.member-page .rating-row label:hover { border-color: #a47c5b; }
+@media (max-width: 650px) {
+    .member-page .page-intro .page-title { font-size: 31px; }
+    .member-page .dashboard-links a { min-height: 95px; }
+    .member-page th, .member-page td { padding: 12px; }
+}
+
+/* ===== Sarj member pages: gentle interactive touches ===== */
+/* All additions are limited to the three member pages. */
+.member-page .dashboard-links a {
+    transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s;
+}
+.member-page .dashboard-links a:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px #d9c8b2;
+    background-color: #f8f0e4;
+}
+.member-page .dashboard-links a:hover .icon-box {
+    background-color: #d9bf9c;
+}
+.member-page .dashboard-links a:hover .arrow {
+    color: #986b3d;
+}
+.member-page .member-panel {
+    transition: box-shadow 0.25s;
+}
+.member-page .member-panel:hover {
+    box-shadow: 0 12px 30px #ded0bd;
+}
+.member-page tbody tr td {
+    transition: background-color 0.2s;
+}
+.member-page tbody tr:hover td {
+    background-color: #f1e6d7;
+}
+.member-page .member-form select,
+.member-page .member-form input[type="text"],
+.member-page .member-form input[type="date"],
+.member-page .member-form textarea {
+    transition: border-color 0.2s, background-color 0.2s;
+}
+.member-page .member-form select:hover,
+.member-page .member-form input[type="text"]:hover,
+.member-page .member-form input[type="date"]:hover,
+.member-page .member-form textarea:hover {
+    border-color: #ad8b65;
+    background-color: #fffaf2;
+}
+.member-page .member-form .main-button {
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.25s;
+}
+.member-page .member-form .main-button:hover {
+    transform: translateY(-3px);
+    background-color: #795337;
+}
+.member-page .rating-row label {
+    transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
+}
+.member-page .rating-row label:hover {
+    transform: translateY(-4px);
+    background-color: #f2dfc4;
+    border-color: #a47c5b;
+}
+.member-page .rating-row input:checked + .rating-star {
+    color: #9d6b28;
+    font-weight: bold;
+}
+
+
+/* Member pages only: match the heading used on the offerings page. */
+.member-page .page-intro {
+    position: relative;
+    min-height: 300px;
+    padding: 45px 5%;
+    border-bottom: none;
+}
+.member-page .page-intro .breadcrumbs {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+.member-page .page-intro .page-title {
+    position: relative;
+    font-size: 40px;
+    margin: 0 0 15px;
+    padding-bottom: 15px;
+}
+.member-page .page-intro .page-title::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 65px;
+    height: 3px;
+    background-color: #A47C5B;
+    border-radius: 3px;
+}
+.member-page .page-intro > p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* Join form only: turn the notification checkbox into a tidy option card. */
+.member-page .member-form .check-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 20px;
+    margin-top: 25px;
+    border: 1px solid #ddc9ad;
+    border-radius: 10px;
+    background-color: #f8f1e7;
+    color: #563821;
+    cursor: pointer;
+}
+.member-page .member-form .check-row:hover {
+    background-color: #f1e3d1;
+    border-color: #a47c5b;
+}
+.member-page .member-form .check-row input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    accent-color: #795337;
+    cursor: pointer;
+}
+@media (max-width: 650px) {
+    .member-page .page-intro { min-height: 230px; padding: 35px 5%; }
+    .member-page .page-intro .page-title { font-size: 30px; }
+    .member-page .page-intro > p { font-size: 16px; }
+}
+
