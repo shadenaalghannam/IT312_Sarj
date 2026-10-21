@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة نشاط جديد | سَرْج</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* تنسيقات خاصة بخانة رفع الصورة وزر الإضافة فقط */
+        .image-upload {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            padding: 16px;
+            border: 2px dashed #b9b9b9;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            background: #fff;
+            color: #6f6f6f;
+            margin-bottom: 20px;
+        }
+
+        .image-upload input[type="file"] {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .image-upload-text {
+            pointer-events: none;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        .form-actions button {
+            display: block;
+            margin: 0 auto;
+            min-width: 180px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="member-page">
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="site-nav">
+            <img
+                src="images/sarj-logo.png"
+                alt="شعار سَرْج"
+                class="site-logo"
+            >
+
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن سَرْج</a></li>
+                <li><a href="manager-dashboard.html">لوحة مدير سَرْج</a></li>
+                <li><a href="member-dashboard.html">لوحة عضو سَرْج</a></li>
+                <li><a href="offerings.html">عروض سَرْج</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Page Introduction -->
+        <section class="page-intro">
+            <nav class="breadcrumbs">
+                <a href="index.html">الرئيسية</a>
+                &gt;
+                <a href="manager-dashboard.html">لوحة مدير سَرْج</a>
+                &gt;
+                <span>إضافة نشاط جديد</span>
+            </nav>
+
+            <h1 class="page-title">إضافة نشاط جديد</h1>
+            <p>أضف نشاطًا أو ورشة أو تجربة جديدة إلى نادي سَرْج للفروسية.</p>
+        </section>
+
+        <!-- Add Offering Form -->
+        <div class="member-content">
+            <section class="member-panel">
+
+                <form
+                    class="member-form"
+                    action="#"
+                    method="post"
+                    enctype="multipart/form-data"
+                >
+
+                    <div class="form-heading">
+                        <h2>بيانات النشاط</h2>
+                        <p>أدخل تفاصيل النشاط الجديد في الحقول التالية.</p>
+                    </div>
+
+                    <label for="offering-name">اسم النشاط</label>
+                    <input
+                        type="text"
+                        id="offering-name"
+                        name="offering-name"
+                        placeholder="أدخل اسم النشاط"
+                        required
+                    >
+
+                    <label for="offering-image">الصورة</label>
+                    <label class="image-upload" for="offering-image">
+                        <span class="image-upload-text" id="image-upload-text">
+                            اضغط لرفع الصورة
+                        </span>
+                        <input
+                            type="file"
+                            id="offering-image"
+                            name="offering-image"
+                            accept="image/*"
+                            required
+                        >
+                    </label>
+
+                    <label for="offering-price">السعر أو رسوم التسجيل (بالريال)</label>
+                    <input
+                        type="number"
+                        id="offering-price"
+                        name="offering-price"
+                        placeholder="أدخل السعر بالريال"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                    <label for="offering-description">الوصف</label>
+                    <textarea
+                        id="offering-description"
+                        name="offering-description"
+                        placeholder="أدخل وصف العرض هنا..."
+                        required
+                    ></textarea>
+
+                    <div class="form-actions">
+                        <button type="submit" class="main-button">
+                            إضافة النشاط
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <img src="images/sarj-logo1.png" alt="شعار سَرْج">
+            </div>
+
+            <div class="footer-contact">
+                <h3>تواصل معنا</h3>
+                <p>
+                    <img src="images/email.png" alt="">
+                    <span>sarj@gmail.com</span>
+                </p>
+                <p>
+                    <img src="images/phone.png" alt="">
+                    <span>+966555234569</span>
+                </p>
+            </div>
+
+            <div class="footer-social">
+                <h3>تابعنا على</h3>
+                <div class="social-images">
+                    <a href="#" aria-label="Instagram">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <img src="images/youtube.png" alt="YouTube">
+                    </a>
+                    <a href="#" aria-label="X">
+                        <img src="images/x.png" alt="X">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة
+        </p>
+    </footer>
+
+    <script>
+        const imageInput = document.getElementById("offering-image");
+        const imageText = document.getElementById("image-upload-text");
+
+        imageInput.addEventListener("change", function () {
+            if (this.files && this.files.length > 0) {
+                imageText.textContent = this.files[0].name;
+            } else {
+                imageText.textContent = "اضغط لرفع الصورة";
+            }
+        });
+    </script>
+
+</body>
+</html>
