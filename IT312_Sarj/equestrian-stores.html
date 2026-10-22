@@ -1,0 +1,424 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>متاجر الفروسية المقترحة | سَرْج</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Recommended Equestrian Stores */
+
+        .stores-page .page-intro {
+            min-height: 180px;
+            padding: 35px 5%;
+            background-color: #E8E8E8;
+            text-align: right;
+        }
+
+        .stores-page .breadcrumbs {
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .stores-page .breadcrumbs a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .stores-page .page-title {
+            font-size: 38px;
+            margin: 0 0 10px;
+        }
+
+        .stores-page .page-intro > p {
+            font-size: 17px;
+            margin: 0;
+        }
+
+        .stores-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 25px 80px;
+        }
+
+        .stores-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .store-card {
+            background-color: #FFFFFF;
+            border: 1px solid #D0D0D0;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .store-card:hover {
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+        }
+
+        .store-image {
+            width: 100%;
+            height: 160px;
+            background-color: #E8E8E8;
+            overflow: hidden;
+        }
+
+        .store-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .store-info {
+            padding: 12px 15px 16px;
+            text-align: right;
+        }
+
+        .store-info h2 {
+            font-size: 21px;
+            margin: 0 0 6px;
+        }
+
+        .store-rating {
+            color: #A47C5B;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .store-info p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0 0 12px;
+        }
+
+        .store-button {
+            display: inline-block;
+            background-color: #152705;
+            color: #FFFFFF;
+            padding: 7px 15px;
+            border-radius: 3px;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .store-button:hover {
+            background-color: #354A21;
+            color: #FFFFFF;
+        }
+
+        /* Responsive design */
+
+        @media screen and (max-width: 650px) {
+
+            .stores-page .page-title {
+                font-size: 28px;
+            }
+
+            .stores-section {
+                padding: 25px 15px 50px;
+            }
+
+            .stores-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .store-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body class="stores-page">
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <nav class="site-nav">
+
+            <a href="index.html">
+                <img
+                    src="images/sarj-logo.png"
+                    alt="شعار سَرْج"
+                    class="site-logo">
+            </a>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">الرئيسية</a>
+                </li>
+
+                <li>
+                    <a href="about.html">عن سَرْج</a>
+                </li>
+
+                <li>
+                    <a href="manager-dashboard.html">لوحة مدير سَرْج</a>
+                </li>
+
+                <li>
+                    <a href="member-dashboard.html">لوحة عضو سَرْج</a>
+                </li>
+
+                <li>
+                    <a href="offerings.html">عروض سَرْج</a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Page Introduction -->
+        <section class="page-intro">
+
+            <div class="breadcrumbs">
+                <a href="index.html">الرئيسية</a>
+                &gt;
+                <span>متاجر الفروسية المقترحة</span>
+            </div>
+
+            <h1 class="page-title">
+                متاجر الفروسية المقترحة
+            </h1>
+
+            <p>
+                أفضل المتاجر التي نوصي بها لرحلة فروسية متكاملة.
+            </p>
+
+        </section>
+
+        <!-- Stores -->
+        <section class="stores-section">
+
+            <div class="stores-grid">
+
+                <!-- Store 1 -->
+                <article class="store-card">
+
+                    <div class="store-image">
+                        <img
+                            src="images/store1.png"
+                            alt="متجر الخيل العربية">
+                    </div>
+
+                    <div class="store-info">
+
+                        <h2>متجر الخيل العربية</h2>
+
+                        <div class="store-rating"
+                             aria-label="التقييم خمس نجوم">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            متجر متخصص في مستلزمات الخيل ومعدات الفرسان
+                            المناسبة للتدريب والركوب.
+                        </p>
+
+                        <a href="#"
+                           class="store-button"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            زيارة المتجر ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- Store 2 -->
+                <article class="store-card">
+
+                    <div class="store-image">
+                        <img
+                            src="images/store2.png"
+                            alt="متجر فرسان">
+                    </div>
+
+                    <div class="store-info">
+
+                        <h2>متجر فرسان</h2>
+
+                        <div class="store-rating"
+                             aria-label="التقييم أربع نجوم">
+                            ★★★★☆
+                        </div>
+
+                        <p>
+                            مستلزمات ومعدات الفروسية التي تساعد الفرسان
+                            على ممارسة ركوب الخيل براحة وأمان.
+                        </p>
+
+                        <a href="#"
+                           class="store-button"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            زيارة المتجر ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- Store 3 -->
+                <article class="store-card">
+
+                    <div class="store-image">
+                        <img
+                            src="images/store3.png"
+                            alt="متجر ركاب">
+                    </div>
+
+                    <div class="store-info">
+
+                        <h2>متجر ركاب</h2>
+
+                        <div class="store-rating"
+                             aria-label="التقييم خمس نجوم">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            مجموعة من منتجات العناية بالخيل ومستلزمات
+                            التدريب المناسبة لمحبي الفروسية.
+                        </p>
+
+                        <a href="#"
+                           class="store-button"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            زيارة المتجر ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- Store 4 -->
+                <article class="store-card">
+
+                    <div class="store-image">
+                        <img
+                            src="images/store4.png"
+                            alt="متجر الفارس الأنيق">
+                    </div>
+
+                    <div class="store-info">
+
+                        <h2>متجر الفارس الأنيق</h2>
+
+                        <div class="store-rating"
+                             aria-label="التقييم أربع نجوم">
+                            ★★★★☆
+                        </div>
+
+                        <p>
+                            ملابس وإكسسوارات الفروسية ومستلزمات الفرسان
+                            لتجربة ركوب مريحة ومميزة.
+                        </p>
+
+                        <a href="#"
+                           class="store-button"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            زيارة المتجر ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <!-- Logo -->
+            <div class="footer-logo">
+
+                <a href="index.html">
+                    <img
+                        src="images/sarj-logo1.png"
+                        alt="شعار سَرْج">
+                </a>
+
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-contact">
+
+                <h3>تواصل معنا</h3>
+
+                <p>
+                    <img src="images/email.png" alt="">
+                    <span>sarj@gmail.com</span>
+                </p>
+
+                <p>
+                    <img src="images/phone.png" alt="">
+                    <span>+966555234569</span>
+                </p>
+
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-social">
+
+                <h3>تابعنا على</h3>
+
+                <div class="social-images">
+
+                    <a href="#" aria-label="Instagram">
+                        <img
+                            src="images/instagram.png"
+                            alt="Instagram">
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <img
+                            src="images/youtube.png"
+                            alt="YouTube">
+                    </a>
+
+                    <a href="#" aria-label="X">
+                        <img
+                            src="images/x.png"
+                            alt="X">
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
