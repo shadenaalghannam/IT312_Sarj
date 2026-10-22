@@ -1,0 +1,426 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>قنوات يوتيوب مقترحة للفروسية | سَرْج</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Recommended YouTube Channels */
+
+        .youtube-page .page-intro {
+            min-height: 180px;
+            padding: 35px 5%;
+            background-color: #E8E8E8;
+            text-align: right;
+        }
+
+        .youtube-page .breadcrumbs {
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .youtube-page .breadcrumbs a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .youtube-page .page-title {
+            font-size: 38px;
+            margin: 0 0 10px;
+        }
+
+        .youtube-page .page-intro > p {
+            font-size: 17px;
+            margin: 0;
+        }
+
+        .youtube-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 25px 80px;
+        }
+
+        .youtube-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .youtube-card {
+            background-color: #FFFFFF;
+            border: 1px solid #D0D0D0;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .youtube-card:hover {
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+        }
+
+        .youtube-image {
+            width: 100%;
+            height: 160px;
+            background-color: #E8E8E8;
+            overflow: hidden;
+        }
+
+        .youtube-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .youtube-info {
+            padding: 12px 15px 16px;
+            text-align: right;
+        }
+
+        .youtube-info h2 {
+            font-size: 21px;
+            margin: 0 0 6px;
+        }
+
+        .youtube-rating {
+            color: #A47C5B;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .youtube-info p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0 0 12px;
+        }
+
+        .youtube-button {
+            display: inline-block;
+            background-color: #152705;
+            color: #FFFFFF;
+            padding: 7px 15px;
+            border-radius: 3px;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .youtube-button:hover {
+            background-color: #354A21;
+            color: #FFFFFF;
+        }
+
+        @media screen and (max-width: 650px) {
+
+            .youtube-page .page-title {
+                font-size: 28px;
+            }
+
+            .youtube-section {
+                padding: 25px 15px 50px;
+            }
+
+            .youtube-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .youtube-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body class="youtube-page">
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <nav class="site-nav">
+
+            <a href="index.html">
+                <img
+                    src="images/sarj-logo.png"
+                    alt="شعار سَرْج"
+                    class="site-logo">
+            </a>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">الرئيسية</a>
+                </li>
+
+                <li>
+                    <a href="about.html">عن سَرْج</a>
+                </li>
+
+                <li>
+                    <a href="manager-dashboard.html">لوحة مدير سَرْج</a>
+                </li>
+
+                <li>
+                    <a href="member-dashboard.html">لوحة عضو سَرْج</a>
+                </li>
+
+                <li>
+                    <a href="offerings.html">عروض سَرْج</a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Page Introduction -->
+        <section class="page-intro">
+
+            <div class="breadcrumbs">
+                <a href="index.html">الرئيسية</a>
+                &gt;
+                <span>قنوات يوتيوب مقترحة للفروسية</span>
+            </div>
+
+            <h1 class="page-title">
+                قنوات يوتيوب مقترحة للفروسية
+            </h1>
+
+            <p>
+                اكتشفي أفضل القنوات لتعلم الفروسية وتطوير مهاراتك.
+            </p>
+
+        </section>
+
+        <!-- YouTube Channels -->
+        <section class="youtube-section">
+
+            <div class="youtube-grid">
+
+                <!-- Channel 1 -->
+                <article class="youtube-card">
+
+                    <div class="youtube-image">
+                        <img
+                            src="images/youtube-channel1.png"
+                            alt="قناة The horse guru">
+                    </div>
+
+                    <div class="youtube-info">
+
+                        <h2>The horse guru</h2>
+
+                        <div class="youtube-rating"
+                             aria-label="التقييم خمس نجوم">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            قناة تعليمية تقدم نصائح حول ركوب الخيل
+                            والتدريب والعناية بالخيول.
+                        </p>
+
+                        <a
+                            href="https://www.youtube.com/results?search_query=The+Horse+Guru"
+                            class="youtube-button"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            زيارة القناة ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- Channel 2 -->
+                <article class="youtube-card">
+
+                    <div class="youtube-image">
+                        <img
+                            src="images/youtube-channel2.png"
+                            alt="قناة Stable life">
+                    </div>
+
+                    <div class="youtube-info">
+
+                        <h2>Stable life</h2>
+
+                        <div class="youtube-rating"
+                             aria-label="التقييم خمس نجوم">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            محتوى عن الحياة اليومية في الإسطبلات
+                            والعناية بالخيول والتعامل معها.
+                        </p>
+
+                        <a
+                            href="https://www.youtube.com/results?search_query=Stable+Life+horses"
+                            class="youtube-button"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            زيارة القناة ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- Channel 3 -->
+                <article class="youtube-card">
+
+                    <div class="youtube-image">
+                        <img
+                            src="images/youtube-channel3.png"
+                            alt="قناة Equestrian world">
+                    </div>
+
+                    <div class="youtube-info">
+
+                        <h2>Equestrian world</h2>
+
+                        <div class="youtube-rating"
+                             aria-label="التقييم أربع نجوم">
+                            ★★★★☆
+                        </div>
+
+                        <p>
+                            محتوى عن عالم الفروسية وبطولات الخيل
+                            ومهارات الفرسان.
+                        </p>
+
+                        <a
+                            href="https://www.youtube.com/results?search_query=Equestrian+World"
+                            class="youtube-button"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            زيارة القناة ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- Channel 4 -->
+                <article class="youtube-card">
+
+                    <div class="youtube-image">
+                        <img
+                            src="images/youtube-channel4.png"
+                            alt="قناة Ride with confidence">
+                    </div>
+
+                    <div class="youtube-info">
+
+                        <h2>Ride with confidence</h2>
+
+                        <div class="youtube-rating"
+                             aria-label="التقييم أربع نجوم">
+                            ★★★★☆
+                        </div>
+
+                        <p>
+                            نصائح لتطوير مهارات ركوب الخيل
+                            وتحسين الثقة أثناء التدريب.
+                        </p>
+
+                        <a
+                            href="https://www.youtube.com/results?search_query=Ride+with+Confidence+horse+riding"
+                            class="youtube-button"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            زيارة القناة ↗
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <!-- Logo -->
+            <div class="footer-logo">
+
+                <a href="index.html">
+                    <img
+                        src="images/sarj-logo1.png"
+                        alt="شعار سَرْج">
+                </a>
+
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-contact">
+
+                <h3>تواصل معنا</h3>
+
+                <p>
+                    <img src="images/email.png" alt="">
+                    <span>sarj@gmail.com</span>
+                </p>
+
+                <p>
+                    <img src="images/phone.png" alt="">
+                    <span>+966555234569</span>
+                </p>
+
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-social">
+
+                <h3>تابعنا على</h3>
+
+                <div class="social-images">
+
+                    <a href="#" aria-label="Instagram">
+                        <img
+                            src="images/instagram.png"
+                            alt="Instagram">
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <img
+                            src="images/youtube.png"
+                            alt="YouTube">
+                    </a>
+
+                    <a href="#" aria-label="X">
+                        <img
+                            src="images/x.png"
+                            alt="X">
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            &copy; 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
