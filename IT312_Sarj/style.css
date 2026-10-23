@@ -1740,3 +1740,565 @@ th {
     .member-page .page-intro > p { font-size: 16px; }
 }
 
+/* About Us - Vision, Mission and Values */
+
+.about-page .principles-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 25px;
+}
+
+.about-page .principle-card {
+    text-align: center;
+    padding: 20px 30px;
+    background: transparent;
+    border: none;
+    border-left: 1px solid #E8DCCB;
+}
+
+.about-page .principle-card:last-child {
+    border-left: none;
+}
+
+.about-page .principle-icon {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 8px;
+}
+
+.about-page .principle-card h2 {
+    color: #6B422E;
+    margin-bottom: 12px;
+}
+
+.about-page .principle-card p {
+    line-height: 1.9;
+}
+
+@media (max-width: 700px) {
+    .about-page .principles-list {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .principle-card {
+        border-left: none;
+        border-bottom: 1px solid #E8DCCB;
+    }
+
+    .about-page .principle-card:last-child {
+        border-bottom: none;
+    }
+}
+
+
+/* ABOUT PAGE - STORY SECTION */
+
+.about-page .about-story {
+    padding: 40px 8% 15px;
+}
+
+.about-page .about-story .section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-page .story-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-page .story-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.about-page .story-text p {
+    font-size: 18px;
+    line-height: 2.2;
+    text-align: right;
+}
+
+.about-page .story-image {
+    flex: 1.3;
+    min-width: 0;
+}
+
+.about-page .story-image img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+
+/* ABOUT PAGE - INSTRUCTORS */
+
+.about-page .about-team {
+    padding: 50px 5%;
+}
+
+.about-page .about-team .section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.about-page .team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.about-page .team-card {
+    box-sizing: border-box;
+    flex: 0 1 250px;
+    min-width: 0;
+    padding: 18px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #E8DCCB;
+    border-radius: 10px;
+}
+
+.about-page .team-card img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.about-page .team-card h3 {
+    margin: 10px 0 5px;
+}
+
+.about-page .team-card p {
+    margin-bottom: 18px;
+}
+
+.about-page .team-card .main-button {
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    background: #152705;
+    color: #FFFFFF;
+    border-radius: 6px;
+}
+/* ABOUT PAGE - RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .about-page .story-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .about-page .story-image,
+    .about-page .story-text {
+        width: 100%;
+    }
+
+    .about-page .story-image img {
+        height: 240px;
+    }
+
+    .about-page .team-card {
+        flex-basis: 260px;
+    }
+}
+.about-page .story-text p + p {
+    margin-top: 18px;
+}
+
+/* ABOUT PAGE - INTRODUCTION */
+.about-page .page-intro {
+    position: relative;
+    min-height: 240px;
+    padding: 45px 5%;
+    background-color: #E8DCCB;
+    text-align: right;
+}
+
+.about-page .page-intro .breadcrumbs {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.about-page .page-intro .page-title {
+    position: relative;
+    font-size: 40px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.about-page .page-intro .page-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 65px;
+    height: 3px;
+    background-color: #A47C5B;
+    border-radius: 3px;
+}
+
+.about-page .page-intro > p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+/* ABOUT PAGE - JOIN FORM DESIGN */
+
+.about-page .about-join {
+    padding: 50px 5%;
+}
+
+.about-page .about-join .section-title {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.about-page .join-description {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Form Card */
+.about-page .join-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 35px;
+    background-color: #FFFFFF;
+    border: 1px solid #E8DCCB;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(48, 41, 35, 0.08);
+}
+
+/* Two Columns */
+.about-page .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Form Fields */
+.about-page .form-field {
+    margin-bottom: 18px;
+}
+
+.about-page .form-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #302923;
+}
+
+.about-page .form-field input,
+.about-page .form-field textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 0;
+    background-color: #FCFAF7;
+    border: 1px solid #D9C9B4;
+    border-radius: 8px;
+    font-family: "CamelYear", Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Text Areas */
+.about-page .form-field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Input Focus */
+.about-page .form-field input:focus,
+.about-page .form-field textarea:focus {
+    outline: none;
+    border-color: #6B422E;
+    box-shadow: 0 0 0 2px rgba(164, 124, 91, 0.15);
+}
+
+/* Photo Upload */
+.about-page .photo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 22px;
+    background-color: #FCFAF7;
+    border: 1px dashed #A47C5B;
+    border-radius: 10px;
+}
+
+.about-page .upload-icon {
+    font-size: 32px;
+    color: #6B422E;
+}
+
+.about-page .photo-upload input[type="file"] {
+    width: 100%;
+    max-width: 350px;
+    border: none;
+    background: transparent;
+    padding: 5px;
+}
+
+/* Submit Button */
+.about-page .join-submit {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px 20px;
+    background-color: #152705;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.about-page .join-submit:hover {
+    background-color: #2E4018;
+}
+
+/* Mobile Screens */
+@media (max-width: 700px) {
+    .about-page .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .about-page .join-form {
+        padding: 22px;
+    }
+}
+/* INSTRUCTOR PROFILE PAGE */
+
+/* Page Introduction */
+.instructor-page .page-intro {
+    position: relative;
+    min-height: 300px;
+    padding: 45px 5%;
+    background-color: #E8DCCB;
+    text-align: right;
+}
+
+.instructor-page .page-intro .breadcrumbs {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.instructor-page .page-intro .page-title {
+    position: relative;
+    font-size: 40px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.instructor-page .page-intro .page-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 65px;
+    height: 3px;
+    background-color: #A47C5B;
+    border-radius: 3px;
+}
+
+.instructor-page .page-intro > p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* Profile Section */
+.instructor-page .instructor-profile {
+    padding: 55px 5%;
+}
+
+/* Main Profile Card */
+.instructor-page .instructor-card {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 35px;
+    align-items: start;
+
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 35px;
+
+    background-color: #FFFFFF;
+    border: 1px solid #E8DCCB;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(48, 41, 35, 0.08);
+}
+
+/* Instructor Photo */
+.instructor-page .instructor-photo img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 10px;
+}
+
+.instructor-page .instructor-photo {
+    margin-top: 100px;
+}
+
+/* Instructor Name and Role */
+.instructor-page .instructor-info {
+    min-width: 0;
+}
+
+.instructor-page .instructor-info h2 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.instructor-page .instructor-role {
+    color: #A47C5B;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* Information Headings */
+.instructor-page .instructor-info h3 {
+    font-size: 22px;
+    margin: 25px 0 15px;
+    padding-right: 12px;
+    border-right: 4px solid #A47C5B;
+}
+
+/* Information Tables */
+.instructor-page .instructor-table {
+    width: 100%;
+    margin: 0 0 20px;
+    border-collapse: collapse;
+}
+
+.instructor-page .instructor-table th,
+.instructor-page .instructor-table td {
+    padding: 14px;
+    border: 1px solid #E8DCCB;
+    text-align: right;
+    font-size: 16px;
+    vertical-align: top;
+}
+
+.instructor-page .instructor-table th {
+    width: 130px;
+    background-color: #F3EADF;
+    color: #6B422E;
+}
+
+.instructor-page .instructor-table td {
+    background-color: #FFFFFF;
+    overflow-wrap: anywhere;
+}
+
+/* Back Button */
+.instructor-page .instructor-back {
+    max-width: 1150px;
+    margin: 30px auto 0;
+    text-align: right;
+}
+
+.instructor-page .instructor-back .main-button {
+    border-radius: 8px;
+    padding: 12px 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+
+    .instructor-page .instructor-card {
+        grid-template-columns: 1fr;
+        padding: 22px;
+        gap: 25px;
+    }
+
+    .instructor-page .instructor-photo {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .instructor-page .instructor-photo img {
+        height: 330px;
+    }
+
+    .instructor-page .page-intro {
+        min-height: 230px;
+        padding: 35px 5%;
+    }
+
+    .instructor-page .page-intro .page-title {
+        font-size: 30px;
+    }
+
+    .instructor-page .page-intro > p {
+        font-size: 16px;
+    }
+}
+
+/* INSTRUCTOR QUOTE */
+.instructor-page .instructor-quote {
+    background-color: rgba(107, 66, 46, 0.08);
+    text-align: center;
+    padding: 25px 20px;
+    width: 90%;
+    max-width: none;
+    margin: 35px auto;
+    border-radius: 10px;
+}
+.instructor-page .instructor-quote .quote-mark {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 65px;
+    line-height: 0.9;
+    color: #A47C5B;
+    margin-bottom: 8px;
+}
+.instructor-page .instructor-quote blockquote {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.instructor-page .instructor-quote blockquote p {
+    font-family: "Thmanyah", serif;
+    font-size: 27px;
+    line-height: 1.6;
+    color: #6B422E;
+}
+.instructor-page .instructor-quote .quote-divider {
+    display: block;
+    width: 45px;
+    height: 1px;
+    background-color: #A47C5B;
+    margin: 15px auto 10px;
+}
+.instructor-page .instructor-quote .quote-author {
+    font-size: 17px;
+    color: #6B422E;
+    text-align: center;
+}
