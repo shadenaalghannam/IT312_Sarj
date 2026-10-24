@@ -2635,7 +2635,7 @@ th {
     align-items: center;
     gap: 40px;
     padding: 50px;
-    background-color: #F3EDE5;
+    background-color: #E8DCCB;
 }
 
 .home-hero-text {
@@ -2662,13 +2662,22 @@ th {
     margin: 0;
 }
 
-.home-hero-image-placeholder {
+/* Home Introduction Image */
+.home-hero-image {
     flex: 1;
+    min-width: 0;
+}
+
+.home-hero-image img {
+    display: block;
+    width: 100%;
     height: 320px;
-    background-color: #6B422E;
+    object-fit: cover;
+    object-position: center;
     border-radius: 8px;
 }
 
+/* Responsive Design */
 @media (max-width: 700px) {
     .home-hero-layout {
         flex-direction: column;
@@ -2676,15 +2685,12 @@ th {
         gap: 25px;
     }
 
-    .home-hero-text {
+    .home-hero-text,
+    .home-hero-image {
         width: 100%;
     }
 
-    .home-hero-image-placeholder {
-        width: 100%;
+    .home-hero-image img {
         height: 220px;
-        flex: none;
     }
 }
-
-
