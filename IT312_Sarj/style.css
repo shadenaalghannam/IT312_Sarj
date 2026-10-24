@@ -2606,3 +2606,11 @@ th {
     }
 }
 
+/* Divider between offering description and price */
+.home-offering-card .offering-divider {
+    width: 65%;
+    margin: 8px auto;
+    border: none;
+    border-top: 1px solid #B9B0A5;
+}
+
