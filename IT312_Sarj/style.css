@@ -2614,3 +2614,16 @@ th {
     border-top: 1px solid #B9B0A5;
 }
 
+
+.home-offering-card h3 {
+    text-align: right;
+}
+
+.home-offering-card p {
+    text-align: center;
+}
+
+.home-offering-card .offering-price {
+    text-align: right;
+}
+
