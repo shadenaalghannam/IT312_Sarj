@@ -2566,3 +2566,43 @@ th {
     }
 }
 
+
+/* Home Offerings Header */
+.home-offerings-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.home-offerings-title {
+    text-align: center;
+}
+
+.home-offerings-title .section-title {
+    margin: 0;
+}
+
+.home-offerings-title .section-description {
+    margin-top: 5px;
+}
+
+.home-offerings-header > .main-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .home-offerings-header {
+        padding-top: 45px;
+    }
+
+    .home-offerings-header > .main-button {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
