@@ -2355,14 +2355,14 @@ th {
 
 
 /* Home Offerings Hover */
-.offering-list {
+.home-offering-list {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.offering-card {
+.home-offering-card {
     position: relative;
     flex: 1;
     min-width: 250px;
@@ -2371,26 +2371,25 @@ th {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.offering-card:hover {
+.home-offering-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
-.offering-extra {
+.home-offering-extra {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
     transition: opacity 0.3s ease, max-height 0.3s ease;
 }
 
-.offering-card:hover .offering-extra {
+.home-offering-card:hover .home-offering-extra {
     opacity: 1;
     max-height: 100px;
 }
 
-
 /* Home Recommendations */
-.recommendation-list {
+.home-recommendation-list {
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -2398,7 +2397,7 @@ th {
     flex-wrap: wrap;
 }
 
-.recommendation-card {
+.home-recommendation-card {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -2412,12 +2411,12 @@ th {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.recommendation-card:hover {
+.home-recommendation-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
-.recommendation-card > img {
+.home-recommendation-card > img {
     width: 40%;
     max-width: 180px;
     height: 160px;
@@ -2425,20 +2424,20 @@ th {
     border-radius: 8px;
 }
 
-.recommendation-info {
+.home-recommendation-info {
     flex: 1;
 }
 
-.recommendation-info h3 {
+.home-recommendation-info h3 {
     color: #152705;
     margin-top: 0;
 }
 
-.recommendation-info p {
+.home-recommendation-info p {
     line-height: 1.7;
 }
 
-.recommendation-info .main-button {
+.home-recommendation-info .main-button {
     display: inline-block;
     margin-top: 10px;
 }
