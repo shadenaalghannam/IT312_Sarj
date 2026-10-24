@@ -1,22 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نادي سَرْج للفروسية</title>
-
+    <title>الرئيسية | سَرْج</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="home-page">
+
     <!-- Header -->
     <header class="site-header">
         <nav class="site-nav">
-            <img src="images/sarj-logo.png"
-                 alt="Sarj Logo"
-                 class="site-logo">
+            <a href="index.html">
+                <img src="images/sarj-logo.png" alt="شعار سَرْج" class="site-logo">
+            </a>
 
             <ul class="nav-links">
                 <li><a href="index.html">الرئيسية</a></li>
@@ -28,51 +27,182 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-        
-    </main>
 
+        <!-- Main Introduction -->
+        <section class="hero">
+            <img src="images/home-hero.jpg"
+                 alt="خيول في ميدان الفروسية"
+                 class="hero-image">
+
+            <div class="hero-content">
+                <h1 class="page-title">سَرْج</h1>
+                <h2>خطواتك الأولى نحو الفروسية</h2>
+                <p>
+‎                    اكتشف عالم الفروسية، واستمتع بتجارب متنوعة تجمع بين
+‎                    التعلم، والتدريب، ومتعة ركوب الخيل.
+                </p>
+            </div>
+        </section>
+
+        <!-- Club Offerings -->
+        <section class="home-offerings">
+            <h2 class="section-title">عروض سَرْج</h2>
+            <p class="section-description">اكتشف الأنشطة والتجارب التي يقدمها سَرْج</p>
+
+            <div class="offering-list">
+                <article class="offering-card">
+                    <img src="images/Show-jumping.jpg" alt="تدريب قفز الحواجز">
+                    <h3>تدريب قفز الحواجز</h3>
+                    <p>تعلّم أساسيات قفز الحواجز</p>
+                    <p class="offering-price">السعر: 200 ريال</p>
+                    <p class="offering-extra">تعرّف على أساسيات القفز والتحكم بالخيل أثناء التدريب.</p>
+                </article>
+
+                <article class="offering-card">
+                    <img src="images/advanced.jpg" alt="جلسة ركوب متقدمة">
+                    <h3>جلسة ركوب متقدمة</h3>
+                    <p>طوّر مهاراتك في ركوب الخيل</p>
+                    <p class="offering-price">السعر: 300 ريال</p>
+                    <p class="offering-extra">جلسة مخصصة لتطوير مهارات الركوب والتحكم بالخيل.</p>
+                </article>
+
+                <article class="offering-card">
+                    <img src="images/Beginner.jpg" alt="جلسة ركوب للمبتدئين">
+                    <h3>جلسة ركوب للمبتدئين</h3>
+                    <p>تعلّم أساسيات ركوب الخيل</p>
+                    <p class="offering-price">السعر: 150 ريال</p>
+                    <p class="offering-extra">ابدأ بالتعرّف على الخيل وأساسيات الركوب في بيئة تدريبية.</p>
+                </article>
+            </div>
+
+            <div class="section-action">
+                <a href="offerings.html" class="main-button">عرض جميع العروض</a>
+            </div>
+        </section>
+
+        <!-- Member Reviews -->
+        <section class="reviews-section">
+            <h2 class="section-title">آراء الأعضاء</h2>
+            <p class="section-description">تعرّف على تجارب أعضاء وزوار سَرْج</p>
+
+            <div class="review-list">
+                <article class="review-card">
+                    <img src="images/member-noura.jpg" alt="صورة نورة" class="review-image">
+                    <h3>نورة</h3>
+                    <p class="review-rating" aria-label="خمس نجوم">★★★★★</p>
+                    <p>مكان جميل وتجربة مميزة لعشاق الفروسية.</p>
+                </article>
+
+                <article class="review-card">
+                    <img src="images/member-mohammed.jpg" alt="صورة محمد" class="review-image">
+                    <h3>محمد</h3>
+                    <p class="review-rating" aria-label="خمس نجوم">★★★★★</p>
+                    <p>استمتعت كثيرًا بجلسة التدريب وكانت التجربة ممتعة.</p>
+                </article>
+
+                <article class="review-card">
+                    <img src="images/member-maha.jpg" alt="صورة مها" class="review-image">
+                    <h3>مها</h3>
+                    <p class="review-rating" aria-label="خمس نجوم">★★★★★</p>
+                    <p>تجربة رائعة والتدريب ممتاز والمدربون متعاونون جدًا.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Club Facilities -->
+        <section class="home-facilities">
+            <h2 class="section-title">مرافق سَرْج</h2>
+            <p class="section-description">بيئة متكاملة تدعم شغفك بالفروسية</p>
+
+            <div class="facilities-list">
+                <article class="facility-card">
+                    <img src="images/training-arena.jpg" alt="ميدان التدريب">
+                    <h3>ميدان التدريب</h3>
+                </article>
+
+                <article class="facility-card">
+                    <img src="images/stables.jpg" alt="الإسطبلات">
+                    <h3>الإسطبلات</h3>
+                </article>
+
+                <article class="facility-card">
+                    <img src="images/horse-care.jpg" alt="منطقة العناية بالخيل">
+                    <h3>منطقة العناية بالخيل</h3>
+                </article>
+
+                <article class="facility-card">
+                    <img src="images/rest-area.jpg" alt="منطقة الاستراحة">
+                    <h3>منطقة الاستراحة</h3>
+                </article>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="recommendations-section">
+            <div class="recommendation-list">
+                <article class="recommendation-card">
+                    <img src="images/equestrian-stores.jpg" alt="متاجر الفروسية المقترحة">
+                    <div class="recommendation-info">
+                        <h3>متاجر الفروسية المقترحة</h3>
+                        <p>اكتشف متاجر مختارة لمستلزمات الفروسية.</p>
+                        <a href="equestrian-stores.html" class="main-button">استكشف المتاجر</a>
+                    </div>
+                </article>
+
+                <article class="recommendation-card">
+                    <img src="images/horse-youtube.jpg" alt="قنوات يوتيوب مقترحة">
+                    <div class="recommendation-info">
+                        <h3>قنوات يوتيوب مقترحة</h3>
+                        <p>فيديوهات تعليمية مفيدة لعشاق الخيل والفروسية.</p>
+                        <a href="youtube-channels.html" class="main-button">استكشف القنوات</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-content">
-            <!-- Logo -->
+
             <div class="footer-logo">
-                <img src="images/sarj-logo1.png" alt="Sarj Logo">
+                <a href="index.html">
+                    <img src="images/sarj-logo1.png" alt="شعار نادي سَرْج">
+                </a>
             </div>
-            <!-- Contact Information -->
+
             <div class="footer-contact">
                 <h3>تواصل معنا</h3>
                 <p>
-                    <img src="images/email.png" alt="Email Icon">
-                    <span>sarj@gmail.com</span>
+                    <a href="mailto:sarj@gmail.com">sarj@gmail.com</a>
+                    <img src="images/email.png" alt="" class="contact-icon">
                 </p>
                 <p>
-                    <img src="images/phone.png" alt="Phone Icon">
-                    <span>+966555234569</span>
+                    <a href="tel:+966555234569">+966555234569</a>
+                    <img src="images/phone.png" alt="" class="contact-icon">
                 </p>
             </div>
-            <!-- Social Media -->
+
             <div class="footer-social">
                 <h3>تابعنا على</h3>
                 <div class="social-images">
-                    <a href="#" aria-label="Instagram">
+                    <a href="https://www.instagram.com/" aria-label="إنستغرام">
                         <img src="images/instagram.png" alt="Instagram">
                     </a>
-                    <a href="#" aria-label="YouTube">
+                    <a href="https://www.youtube.com/" aria-label="يوتيوب">
                         <img src="images/youtube.png" alt="YouTube">
                     </a>
-                    <a href="#" aria-label="X">
+                    <a href="https://x.com/" aria-label="منصة إكس">
                         <img src="images/x.png" alt="X">
                     </a>
                 </div>
             </div>
+
         </div>
-        <!-- Copyright -->
-        <p class="copyright">
-            © 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة
-        </p>
+
+        <p class="copyright">© 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة</p>
     </footer>
 
 </body>
