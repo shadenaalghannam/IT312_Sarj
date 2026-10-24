@@ -2354,38 +2354,149 @@ th {
 }
 
 
-/* Home Offerings Hover */
+
+/* ===== Home Offerings Styling ===== */
+
 .home-offering-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    align-items: stretch;
 }
 
+/* Offering Card */
 .home-offering-card {
-    position: relative;
-    flex: 1;
-    min-width: 250px;
-    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    background-color: #FFFFFF;
+    border: 1px solid #E8DCCB;
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
+/* Hover Effect */
 .home-offering-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    border-color: #A47C5B;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(48, 41, 35, 0.10);
 }
 
-.home-offering-extra {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
+/* Offering Image */
+.home-offering-card img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
 }
 
-.home-offering-card:hover .home-offering-extra {
+/* Image Zoom on Hover */
+.home-offering-card:hover img {
+    transform: scale(1.04);
+}
+
+/* Title and Button in One Row */
+.home-offering-card .offering-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 15px;
+}
+
+/* Offering Title */
+.home-offering-card .offering-heading h3 {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+
+    color: #6B422E;
+    font-size: 22px;
+    text-align: right;
+}
+
+/* Details Button */
+.home-offering-card .offering-heading .main-button {
+    display: inline-block;
+    flex-shrink: 0;
+    width: auto;
+    margin: 0;
+    padding: 8px 14px;
+
+    background-color: #152705;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.home-offering-card .offering-heading .main-button:hover {
+    background-color: #6B422E;
+    transform: translateY(-2px);
+}
+
+/* Offering Description - Always Visible */
+.home-offering-card .home-offering-extra {
+    display: block;
     opacity: 1;
-    max-height: 100px;
+    max-height: none;
+    overflow: visible;
+
+    margin: 0 15px 18px;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.8;
+
+    transition: none;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+    .home-offering-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-offering-list {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .home-offering-card img {
+        height: 220px;
+    }
+
+    .home-offering-card .offering-heading h3 {
+        font-size: 19px;
+    }
+
+    .home-offering-card .offering-heading .main-button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
 }
 
 /* Home Recommendations */
