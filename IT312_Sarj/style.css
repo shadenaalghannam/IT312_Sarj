@@ -68,6 +68,7 @@ h1, h2, h3, h4 {
 }
 
 .site-logo {
+    display: block;
     width: 110px;
     height: auto;
     object-fit: contain;
@@ -169,7 +170,8 @@ section {
 
 /* FACILITIES AND RECOMMENDATIONS */
 .facility-card {
-    width: 260px;
+    flex: 1 1 200px;
+    max-width: 280px;
     background-color: #FFFFFF;
     border: 1px solid #E8DCCB;
     padding: 15px;
@@ -413,6 +415,7 @@ th {
     .offering-card,
     .facility-card {
         width: 100%;
+        max-width: none;
     }
 
     /* Footer */
@@ -463,7 +466,9 @@ th {
 .offerings-page .page-intro,
 .member-page .page-intro,
 .about-page .page-intro,
-.instructor-page .page-intro {
+.instructor-page .page-intro,
+.stores-page .page-intro,
+.youtube-page .page-intro {
     position: relative;
     min-height: 300px;
     padding: 45px 5%;
@@ -478,7 +483,9 @@ th {
 .offerings-page .page-intro .breadcrumbs,
 .member-page .page-intro .breadcrumbs,
 .about-page .page-intro .breadcrumbs,
-.instructor-page .page-intro .breadcrumbs {
+.instructor-page .page-intro .breadcrumbs,
+.stores-page .page-intro .breadcrumbs,
+.youtube-page .page-intro .breadcrumbs {
     font-size: 14px;
     margin-bottom: 25px;
 }
@@ -487,7 +494,9 @@ th {
 .offering-details-page .details-intro .page-title,
 .member-page .page-intro .page-title,
 .about-page .page-intro .page-title,
-.instructor-page .page-intro .page-title {
+.instructor-page .page-intro .page-title,
+.stores-page .page-intro .page-title,
+.youtube-page .page-intro .page-title {
     position: relative;
     font-size: 40px;
     margin-bottom: 15px;
@@ -498,7 +507,9 @@ th {
 .offering-details-page .details-intro .page-title::after,
 .member-page .page-intro .page-title::after,
 .about-page .page-intro .page-title::after,
-.instructor-page .page-intro .page-title::after {
+.instructor-page .page-intro .page-title::after,
+.stores-page .page-intro .page-title::after,
+.youtube-page .page-intro .page-title::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -513,7 +524,9 @@ th {
 .offering-details-page .details-intro > p,
 .member-page .page-intro > p,
 .about-page .page-intro > p,
-.instructor-page .page-intro > p {
+.instructor-page .page-intro > p,
+.stores-page .page-intro > p,
+.youtube-page .page-intro > p {
     font-size: 19px;
     line-height: 1.8;
 }
@@ -1448,6 +1461,22 @@ th {
     font-size: 14px;
     font-weight: bold;
 }
+/* "View details" button in the manager activities table */
+.member-page .details-button {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid #A47C5B;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #6B422E;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: background-color 0.2s, color 0.2s;
+}
+.member-page .details-button:hover {
+    background-color: #6B422E;
+    color: #FFFFFF;
+}
 .member-page .status-complete { background-color: #e3efdd; color: #356332; }
 .member-page .status-declined { background-color: #f9e3df; color: #9a443c; }
 .member-page .status-pending { background-color: #fff0d6; color: #936620; }
@@ -1686,19 +1715,22 @@ th {
     margin-bottom: 35px;
 }
 
+/* Horizontal scrolling list (required) */
 .about-page .team-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     gap: 24px;
-    max-width: 1200px;
+    width: fit-content;
+    max-width: 100%;
     margin: 0 auto;
-    overflow: visible;
+    padding-bottom: 15px;
+    overflow-x: auto;
 }
 
 .about-page .team-card {
     box-sizing: border-box;
-    flex: 0 1 250px;
+    flex: 0 0 250px;
     min-width: 0;
     padding: 18px;
     text-align: center;
@@ -1781,7 +1813,7 @@ th {
 
 /* Form Card */
 .about-page .join-form {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 35px;
     background-color: #FFFFFF;
@@ -1790,11 +1822,16 @@ th {
     box-shadow: 0 8px 25px rgba(48, 41, 35, 0.08);
 }
 
-/* Two Columns */
+/* Three Columns (photo, then two columns of fields) */
 .about-page .form-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+    align-items: start;
+}
+
+.about-page .form-column {
+    min-width: 0;
 }
 
 /* Form Fields */
@@ -1809,8 +1846,7 @@ th {
     color: #302923;
 }
 
-.about-page .form-field input,
-.about-page .form-field textarea {
+.about-page .form-field input {
     width: 100%;
     padding: 12px;
     margin-bottom: 0;
@@ -1821,15 +1857,8 @@ th {
     font-size: 16px;
 }
 
-/* Text Areas */
-.about-page .form-field textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
 /* Input Focus */
-.about-page .form-field input:focus,
-.about-page .form-field textarea:focus {
+.about-page .form-field input:focus {
     outline: none;
     border-color: #6B422E;
     box-shadow: 0 0 0 2px rgba(164, 124, 91, 0.15);
@@ -1842,6 +1871,7 @@ th {
     align-items: center;
     justify-content: center;
     gap: 12px;
+    min-height: 200px;
     padding: 22px;
     background-color: #FCFAF7;
     border: 1px dashed #A47C5B;
@@ -1851,6 +1881,11 @@ th {
 .about-page .upload-icon {
     font-size: 32px;
     color: #6B422E;
+}
+
+.about-page .upload-text {
+    color: #786C60;
+    font-size: 15px;
 }
 
 .about-page .photo-upload input[type="file"] {
@@ -1865,6 +1900,9 @@ th {
 .about-page .join-submit {
     display: block;
     width: 100%;
+    max-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 25px;
     padding: 14px 20px;
     background-color: #152705;
@@ -1890,98 +1928,76 @@ th {
         padding: 22px;
     }
 }
-/* INSTRUCTOR PROFILE PAGE */
+/* INSTRUCTOR PROFILE PAGES (one table, as in the wireframe) */
 
-/* Profile Section */
 .instructor-page .instructor-profile {
     padding: 55px 5%;
 }
 
-/* Main Profile Card */
-.instructor-page .instructor-card {
-    display: grid;
-    grid-template-columns: 320px minmax(0, 1fr);
-    gap: 35px;
-    align-items: start;
-
-    max-width: 1150px;
-    margin: 0 auto;
-    padding: 35px;
-
-    background-color: #FFFFFF;
-    border: 1px solid #E8DCCB;
-    border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(48, 41, 35, 0.08);
-}
-
-/* Instructor Photo */
-.instructor-page .instructor-photo img {
-    display: block;
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    object-position: center 25%;
-    border-radius: 10px;
-}
-
-.instructor-page .instructor-photo {
-    margin-top: 100px;
-}
-
-/* Instructor Name and Role */
-.instructor-page .instructor-info {
-    min-width: 0;
-}
-
-.instructor-page .instructor-info h2 {
-    font-size: 30px;
-    margin-bottom: 5px;
-}
-
-.instructor-page .instructor-role {
-    color: #A47C5B;
-    font-size: 18px;
-    margin-bottom: 25px;
-}
-
-/* Information Headings */
-.instructor-page .instructor-info h3 {
-    font-size: 22px;
-    margin: 25px 0 15px;
-    padding-right: 12px;
-    border-right: 4px solid #A47C5B;
-}
-
-/* Information Tables */
 .instructor-page .instructor-table {
     width: 100%;
-    margin: 0 0 20px;
+    max-width: 720px;
+    margin: 0 auto;
     border-collapse: collapse;
+    background-color: #FFFFFF;
+    box-shadow: 0 8px 25px rgba(48, 41, 35, 0.08);
 }
 
 .instructor-page .instructor-table th,
 .instructor-page .instructor-table td {
-    padding: 14px;
+    padding: 14px 18px;
     border: 1px solid #E8DCCB;
-    text-align: right;
+    text-align: center;
+    vertical-align: middle;
     font-size: 16px;
-    vertical-align: top;
+    line-height: 1.8;
 }
 
-.instructor-page .instructor-table th {
-    width: 130px;
+/* Name row: spans both columns */
+.instructor-page .instructor-name-cell {
+    padding: 20px;
+    background-color: #E8DCCB;
+}
+
+.instructor-page .instructor-name {
+    display: block;
+    color: #6B422E;
+    font-family: "Thmanyah", Arial, sans-serif;
+    font-size: 26px;
+}
+
+.instructor-page .instructor-role {
+    display: block;
+    color: #A47C5B;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* Label column */
+.instructor-page .instructor-table tbody th {
+    width: 40%;
     background-color: #F3EADF;
     color: #6B422E;
 }
 
 .instructor-page .instructor-table td {
-    background-color: #FFFFFF;
     overflow-wrap: anywhere;
+}
+
+/* Photo cell */
+.instructor-page .instructor-photo-cell img {
+    display: block;
+    width: 170px;
+    height: 190px;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 8px;
 }
 
 /* Back Button */
 .instructor-page .instructor-back {
-    max-width: 1150px;
+    max-width: 720px;
     margin: 30px auto 0;
     text-align: right;
 }
@@ -1994,19 +2010,19 @@ th {
 /* Responsive Design */
 @media (max-width: 800px) {
 
-    .instructor-page .instructor-card {
-        grid-template-columns: 1fr;
-        padding: 22px;
-        gap: 25px;
+    .instructor-page .instructor-profile {
+        padding: 35px 4%;
     }
 
-    .instructor-page .instructor-photo {
-        max-width: 350px;
-        margin: 0 auto;
+    .instructor-page .instructor-table th,
+    .instructor-page .instructor-table td {
+        padding: 10px;
+        font-size: 15px;
     }
 
-    .instructor-page .instructor-photo img {
-        height: 330px;
+    .instructor-page .instructor-photo-cell img {
+        width: 130px;
+        height: 150px;
     }
 
     .instructor-page .page-intro {
@@ -2206,6 +2222,19 @@ th {
     margin-top: 10px;
 }
 
+
+@media (max-width: 600px) {
+    .home-recommendation-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-recommendation-card > img {
+        width: 100%;
+        max-width: 100%;
+        height: 180px;
+    }
+}
 
 /* Home Offerings Header */
 .home-offerings-header {
@@ -2506,38 +2535,6 @@ th {
    RECOMMENDED STORES & YOUTUBE CHANNELS PAGES
    (both pages share the same card design)
    ========================================================= */
-.stores-page .page-intro,
-.youtube-page .page-intro {
-    min-height: 180px;
-    padding: 35px 5%;
-    background-color: #E8E8E8;
-    text-align: right;
-}
-
-.stores-page .breadcrumbs,
-.youtube-page .breadcrumbs {
-    margin-bottom: 30px;
-    font-size: 14px;
-}
-
-.stores-page .breadcrumbs a,
-.youtube-page .breadcrumbs a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.stores-page .page-title,
-.youtube-page .page-title {
-    font-size: 38px;
-    margin: 0 0 10px;
-}
-
-.stores-page .page-intro > p,
-.youtube-page .page-intro > p {
-    font-size: 17px;
-    margin: 0;
-}
-
 .stores-section,
 .youtube-section {
     max-width: 1000px;
@@ -2580,6 +2577,18 @@ th {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Store and channel logos: show the whole logo inside the box */
+.store-image img,
+.youtube-image img {
+    padding: 14px;
+    object-fit: contain;
+}
+
+/* Wide channel logos get more side space so they do not touch the edges */
+.youtube-image img {
+    padding: 18px 30px;
 }
 
 .store-info,
@@ -2628,9 +2637,20 @@ th {
 
 @media screen and (max-width: 650px) {
 
-    .stores-page .page-title,
-    .youtube-page .page-title {
-        font-size: 28px;
+    .stores-page .page-intro,
+    .youtube-page .page-intro {
+        min-height: 230px;
+        padding: 35px 5%;
+    }
+
+    .stores-page .page-intro .page-title,
+    .youtube-page .page-intro .page-title {
+        font-size: 30px;
+    }
+
+    .stores-page .page-intro > p,
+    .youtube-page .page-intro > p {
+        font-size: 16px;
     }
 
     .stores-section,
