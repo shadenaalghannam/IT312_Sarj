@@ -2928,3 +2928,12 @@ th {
         width: 100%;
     }
 }
+
+/* Rating number next to the stars (as in the wireframe) */
+.store-rating .rating-number,
+.youtube-rating .rating-number {
+    margin-right: 4px;
+    color: #302923;
+    font-size: 14px;
+}
+
