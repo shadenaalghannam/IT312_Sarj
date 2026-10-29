@@ -1,3 +1,4 @@
+
 /* FONTS */
 @font-face {
     font-family: "Thmanyah";
@@ -2606,7 +2607,6 @@ th {
    ADD OFFERING PAGE
    ========================================================= */
 .image-upload {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2621,17 +2621,22 @@ th {
     margin-bottom: 20px;
 }
 
+/* The file field stays visible so the chosen file name is shown
+   by the browser itself (no JavaScript in this phase).
+   The label is display: block here (member form rule), so the
+   field is placed on its own line under the text. */
 .image-upload input[type="file"] {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+    display: block;
+    margin: 10px auto 0;
+    position: static;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 14px;
     cursor: pointer;
-}
-
-.image-upload-text {
-    pointer-events: none;
 }
 
 .add-offering-page .form-actions {
@@ -2654,6 +2659,17 @@ th {
    ========================================================= */
 .manage-leaders-page .page-intro {
     min-height: 260px;
+}
+
+/* The leaders list is a <form> (required), but it should look like part
+   of the panel, so the general form card style is removed here. */
+.leaders-list-form {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
 }
 
 /* ===== Main Content ===== */
@@ -2804,13 +2820,14 @@ th {
 /* ===== Image Upload ===== */
 
 .leader-image-upload {
-    position: relative;
     min-height: 110px;
     padding: 20px;
     border: 2px dashed #B9B9B9;
     border-radius: 5px;
     background-color: #FFFFFF;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -2821,24 +2838,19 @@ th {
 
 .leader-image-upload span {
     color: #777777;
-    pointer-events: none;
 }
 
 .leader-image-upload input[type="file"] {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+    position: static;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 14px;
     cursor: pointer;
-}
-
-.leader-image-preview {
-    display: none;
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 5px;
 }
 
 /* ===== Add Button ===== */
