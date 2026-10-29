@@ -1,4 +1,3 @@
-
 /* FONTS */
 @font-face {
     font-family: "Thmanyah";
@@ -124,40 +123,20 @@ h1, h2, h3, h4 {
 }
 
 /* GENERAL CONTENT */
-.content {
-    padding: 30px 5%;
-}
-
 section {
     padding: 30px 5%;
 }
 
-/* HOME PAGE HERO */
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    padding: 40px 5%;
-}
-
-.hero-content {
-    flex: 1;
-}
-
-.hero-image {
-    width: 50%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* OFFERING CARDS */
-.offering-list {
+/* CARD LISTS (offerings and facilities) */
+.offering-list,
+.facilities-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
+
+/* OFFERING CARDS */
 
 .offering-card {
     width: 280px;
@@ -187,34 +166,7 @@ section {
     font-weight: bold;
 }
 
-/* MEMBER REVIEWS */
-.review-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.review-card {
-    width: 280px;
-    background-color: #E8DCCB;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.review-rating {
-    color: #6B422E;
-    font-weight: bold;
-}
-
 /* FACILITIES AND RECOMMENDATIONS */
-.facilities-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
 .facility-card {
     width: 260px;
     background-color: #FFFFFF;
@@ -456,18 +408,8 @@ th {
         gap: 12px;
     }
 
-    /* Hero Section */
-    .hero {
-        flex-direction: column;
-    }
-
-    .hero-image {
-        width: 100%;
-    }
-
     /* Cards */
     .offering-card,
-    .review-card,
     .facility-card {
         width: 100%;
     }
@@ -503,7 +445,7 @@ th {
     .section-title {
         font-size: 22px;
     }
-} /*end of style codes */
+}
 
 /* =========================================================
    SARJ - OFFERINGS & OFFERING DETAILS PAGES
@@ -512,15 +454,15 @@ th {
 
 
 /* =========================================================
-   1. OFFERINGS PAGE
+   0. SHARED PAGE INTRODUCTION
+   Used by: offerings, offering details, member, about
+   and instructor pages.
    ========================================================= */
 
-
-/* ---------------------------------------------------------
-   PAGE INTRODUCTION
-   --------------------------------------------------------- */
-
-.offerings-page .page-intro {
+.offerings-page .page-intro,
+.member-page .page-intro,
+.about-page .page-intro,
+.instructor-page .page-intro {
     position: relative;
     min-height: 300px;
     padding: 45px 5%;
@@ -528,19 +470,34 @@ th {
     text-align: right;
 }
 
-.offerings-page .page-intro .breadcrumbs {
+.about-page .page-intro {
+    min-height: 240px;
+}
+
+.offerings-page .page-intro .breadcrumbs,
+.member-page .page-intro .breadcrumbs,
+.about-page .page-intro .breadcrumbs,
+.instructor-page .page-intro .breadcrumbs {
     font-size: 14px;
     margin-bottom: 25px;
 }
 
-.offerings-page .page-intro .page-title {
+.offerings-page .page-intro .page-title,
+.offering-details-page .details-intro .page-title,
+.member-page .page-intro .page-title,
+.about-page .page-intro .page-title,
+.instructor-page .page-intro .page-title {
     position: relative;
     font-size: 40px;
     margin-bottom: 15px;
     padding-bottom: 15px;
 }
 
-.offerings-page .page-intro .page-title::after {
+.offerings-page .page-intro .page-title::after,
+.offering-details-page .details-intro .page-title::after,
+.member-page .page-intro .page-title::after,
+.about-page .page-intro .page-title::after,
+.instructor-page .page-intro .page-title::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -551,10 +508,19 @@ th {
     border-radius: 3px;
 }
 
-.offerings-page .page-intro > p {
+.offerings-page .page-intro > p,
+.offering-details-page .details-intro > p,
+.member-page .page-intro > p,
+.about-page .page-intro > p,
+.instructor-page .page-intro > p {
     font-size: 19px;
     line-height: 1.8;
 }
+
+
+/* =========================================================
+   1. OFFERINGS PAGE
+   ========================================================= */
 
 
 /* ---------------------------------------------------------
@@ -663,7 +629,9 @@ th {
         box-shadow 0.3s ease;
 }
 
-.offerings-page .offering-card:hover {
+/* Card hover - shared with home page offering cards */
+.offerings-page .offering-card:hover,
+.home-offering-card:hover {
     border-color: #A47C5B;
     transform: translateY(-4px);
     box-shadow: 0 12px 25px rgba(48, 41, 35, 0.10);
@@ -694,8 +662,10 @@ th {
     transition: transform 0.4s ease;
 }
 
-.offerings-page .offering-card:hover
-.offering-image-placeholder img {
+/* Image zoom on hover - shared by offerings, details and home pages */
+.offerings-page .offering-card:hover .offering-image-placeholder img,
+.offering-details-page .details-image:hover img,
+.home-offering-card:hover img {
     transform: scale(1.04);
 }
 
@@ -786,22 +756,22 @@ th {
 
 
 /* ---------------------------------------------------------
-   SARJ QUOTE SECTION
+   SARJ QUOTE SECTION (also used on the instructor page)
    --------------------------------------------------------- */
 
-.offerings-page .sarj-quote {
+.offerings-page .sarj-quote,
+.instructor-page .instructor-quote {
     background-color: rgba(107, 66, 46, 0.08);
     text-align: center;
     padding: 25px 20px;
-
     width: 90%;
     max-width: none;
     margin: 35px auto;
-
     border-radius: 10px;
 }
 
-.offerings-page .sarj-quote .quote-mark {
+.offerings-page .sarj-quote .quote-mark,
+.instructor-page .instructor-quote .quote-mark {
     display: block;
     font-family: Georgia, serif;
     font-size: 65px;
@@ -810,20 +780,23 @@ th {
     margin-bottom: 8px;
 }
 
-.offerings-page .sarj-quote blockquote {
+.offerings-page .sarj-quote blockquote,
+.instructor-page .instructor-quote blockquote {
     margin: 0;
     padding: 0;
     border: none;
 }
 
-.offerings-page .sarj-quote blockquote p {
+.offerings-page .sarj-quote blockquote p,
+.instructor-page .instructor-quote blockquote p {
     font-family: "Thmanyah", serif;
     font-size: 27px;
     line-height: 1.6;
     color: #6B422E;
 }
 
-.offerings-page .sarj-quote .quote-divider {
+.offerings-page .sarj-quote .quote-divider,
+.instructor-page .instructor-quote .quote-divider {
     display: block;
     width: 45px;
     height: 1px;
@@ -831,7 +804,8 @@ th {
     margin: 15px auto 10px;
 }
 
-.offerings-page .sarj-quote .quote-author {
+.offerings-page .sarj-quote .quote-author,
+.instructor-page .instructor-quote .quote-author {
     font-size: 17px;
     color: #6B422E;
 }
@@ -856,31 +830,6 @@ th {
 .offering-details-page .details-intro .breadcrumbs {
     font-size: 14px;
     margin-bottom: 30px;
-}
-
-.offering-details-page .details-intro .page-title {
-    position: relative;
-    font-size: 40px;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-}
-
-.offering-details-page .details-intro .page-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    width: 65px;
-    height: 3px;
-
-    background-color: #A47C5B;
-    border-radius: 3px;
-}
-
-.offering-details-page .details-intro > p {
-    font-size: 19px;
-    line-height: 1.8;
 }
 
 
@@ -998,10 +947,6 @@ th {
     object-position: center;
 
     transition: transform 0.5s ease;
-}
-
-.offering-details-page .details-image:hover img {
-    transform: scale(1.04);
 }
 
 
@@ -1236,11 +1181,13 @@ th {
         padding: 35px 5%;
     }
 
-    .offerings-page .page-intro .page-title {
+    .offerings-page .page-intro .page-title,
+    .offering-details-page .details-intro .page-title {
         font-size: 30px;
     }
 
-    .offerings-page .page-intro > p {
+    .offerings-page .page-intro > p,
+    .offering-details-page .details-intro > p {
         font-size: 16px;
     }
 
@@ -1277,14 +1224,6 @@ th {
     .offering-details-page .details-intro {
         min-height: auto;
         padding: 35px 5%;
-    }
-
-    .offering-details-page .details-intro .page-title {
-        font-size: 30px;
-    }
-
-    .offering-details-page .details-intro > p {
-        font-size: 16px;
     }
 
     .offering-details-page .details-section {
@@ -1407,33 +1346,30 @@ th {
 
 
 /* =====================================================
-   MEMBER PAGES - Added styles (existing team CSS above)
-   Basic CSS, box model, flexbox, tables and forms.
+   MEMBER PAGES
+   (member dashboard, manager dashboard, join offering,
+   evaluation, add offering, manage leaders)
+   The page introduction is in the shared section above.
    ===================================================== */
-.member-page .page-intro {
-    min-height: 260px;
-    padding: 45px 5%;
-    background-color: #e8dccb;
-    text-align: right;
-}
-.member-page .page-title {
-    font-size: 38px;
-    margin: 12px 0;
-}
+.member-page .page-intro p { color: #5d4a3a; }
 .member-page .breadcrumbs { color: #302923; }
-.member-page .breadcrumbs a { color: #6b422e; }
+.member-page .breadcrumbs a:hover { text-decoration: underline; }
+
 .member-page .member-content {
-    max-width: 1050px;
-    margin: 40px auto 65px;
+    max-width: 1100px;
+    margin: 48px auto 65px;
     padding: 0 20px;
 }
 .member-page .member-panel {
     background-color: white;
-    border: 1px solid #e7dac9;
+    border: 1px solid #e1cfb8;
+    border-top: 4px solid #9c7955;
     border-radius: 14px;
     padding: 32px;
-    box-shadow: 0 6px 20px #ddd2c4;
+    box-shadow: 0 8px 24px #e5dbce;
+    transition: box-shadow 0.25s;
 }
+.member-page .member-panel:hover { box-shadow: 0 12px 30px #ded0bd; }
 
 /* Member dashboard cards */
 .member-page .dashboard-links {
@@ -1446,13 +1382,25 @@ th {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 125px;
     padding: 25px;
     border: 1px solid #e2d3bf;
+    border-top: 4px solid #9c7955;
     border-radius: 14px;
     background-color: white;
+    color: #563821;
     box-shadow: 0 5px 16px #e3d8ca;
+    transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s;
 }
-.member-page .dashboard-links a:hover { background-color: #f7efe3; }
+.member-page .dashboard-links a:hover {
+    border-color: #9c7955;
+    background-color: #f8f0e4;
+    box-shadow: 0 14px 28px #d9c8b2;
+    transform: translateY(-6px);
+}
+.member-page .dashboard-links a:hover .icon-box { background-color: #d9bf9c; }
+.member-page .dashboard-links a:hover .arrow { color: #986b3d; }
+.member-page .dashboard-links strong { font-size: 19px; }
 .member-page .link-content {
     display: flex;
     align-items: center;
@@ -1465,11 +1413,16 @@ th {
     width: 55px;
     height: 55px;
     border-radius: 10px;
-    background-color: #eee3d2;
+    background-color: #e9d8be;
 }
 .member-page .icon-box img { width: 34px; height: 34px; }
 .member-page .arrow { font-size: 32px; }
-.member-page .member-section-title { margin-bottom: 20px; font-size: 27px; }
+.member-page .member-section-title {
+    font-size: 27px;
+    margin-bottom: 22px;
+    padding-right: 14px;
+    border-right: 4px solid #a47c5b;
+}
 
 /* Requests table */
 .member-page .table-scroll { overflow-x: auto; }
@@ -1482,21 +1435,31 @@ th {
     padding: 16px;
     border-bottom: 1px solid #eee5d9;
 }
-.member-page th { background-color: #eee3d2; color: #6b422e; }
+.member-page th { background-color: #e9dbc8; color: #6b422e; font-size: 16px; }
+.member-page td { background-color: #fffdf9; }
+.member-page tbody tr td { transition: background-color 0.2s; }
 .member-page tbody tr:hover { background-color: #faf6ef; }
+.member-page tbody tr:hover td { background-color: #f1e6d7; }
 .member-page .status {
+    display: inline-block;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 14px;
+    font-weight: bold;
 }
 .member-page .status-complete { background-color: #e3efdd; color: #356332; }
 .member-page .status-declined { background-color: #f9e3df; color: #9a443c; }
 .member-page .status-pending { background-color: #fff0d6; color: #936620; }
 
-/* Join and evaluation forms */
+/* Join, evaluation and add-offering forms */
 .member-page .member-form { max-width: 780px; margin: auto; }
-.member-page .form-heading { text-align: center; margin-bottom: 26px; }
-.member-page .form-heading h2 { font-size: 28px; }
+.member-page .form-heading {
+    text-align: center;
+    margin-bottom: 26px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ddce;
+}
+.member-page .form-heading h2 { font-size: 28px; color: #62412c; }
 .member-page .form-heading p { color: #786c60; }
 .member-page .member-form > label {
     display: block;
@@ -1511,143 +1474,8 @@ th {
     padding: 12px;
     border: 1px solid #d9c9b4;
     border-radius: 8px;
-    background-color: #fcfaf7;
+    background-color: #fffefa;
     font: inherit;
-}
-.member-page .member-form select:focus,
-.member-page .member-form input:focus,
-.member-page .member-form textarea:focus {
-    border-color: #916b48;
-    outline: 1px solid #916b48;
-}
-.member-page .member-form textarea { height: 185px; }
-.member-page .check-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: normal;
-}
-.member-page .form-actions { text-align: center; margin-top: 26px; }
-.member-page .form-actions .main-button { min-width: 180px; }
-
-/* Rating choices: regular radio inputs, no advanced selectors */
-.member-page .rating-row {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 15px 0 25px;
-}
-.member-page .rating-row label {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    border: 1px solid #e4d5bf;
-    border-radius: 9px;
-    background-color: #fcf8f2;
-    cursor: pointer;
-}
-.member-page .rating-row label:hover { background-color: #f3e6d4; }
-.member-page .rating-row input { accent-color: #80572f; }
-.member-page .rating-star { font-size: 24px; color: #b38a43; }
-
-@media (max-width: 650px) {
-    .member-page .dashboard-links { flex-direction: column; }
-    .member-page .member-panel { padding: 22px; }
-}
-
-/* MEMBER PAGES - Final visual improvements (team styles kept above) */
-.member-page .page-intro {
-    border-bottom: 3px solid #c6a783;
-    padding-top: 55px;
-    padding-bottom: 55px;
-}
-.member-page .page-intro .page-title {
-    font-size: 42px;
-    margin: 16px 0 12px;
-}
-.member-page .page-intro p { color: #5d4a3a; font-size: 18px; }
-.member-page .breadcrumbs a:hover { text-decoration: underline; }
-.member-page .member-content { max-width: 1100px; margin-top: 48px; }
-.member-page .member-panel {
-    border: 1px solid #e1cfb8;
-    border-top: 4px solid #9c7955;
-    box-shadow: 0 8px 24px #e5dbce;
-}
-.member-page .dashboard-links a {
-    min-height: 125px;
-    border-top: 4px solid #9c7955;
-    color: #563821;
-}
-.member-page .dashboard-links a:hover {
-    background-color: #f5ebdc;
-    border-color: #9c7955;
-}
-.member-page .dashboard-links strong { font-size: 19px; }
-.member-page .icon-box { background-color: #e9d8be; }
-.member-page .member-section-title {
-    border-right: 4px solid #a47c5b;
-    padding-right: 14px;
-    margin-bottom: 22px;
-}
-.member-page th { background-color: #e9dbc8; font-size: 16px; }
-.member-page td { background-color: #fffdf9; }
-.member-page tbody tr:hover td { background-color: #f7f0e6; }
-.member-page .status { display: inline-block; font-weight: bold; }
-.member-page .member-form .form-heading {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e9ddce;
-}
-.member-page .member-form .form-heading h2 { color: #62412c; }
-.member-page .member-form select,
-.member-page .member-form input[type="text"],
-.member-page .member-form input[type="date"],
-.member-page .member-form textarea { background-color: #fffefa; }
-.member-page .member-form .main-button {
-    padding: 13px 30px;
-    border-radius: 9px;
-}
-.member-page .rating-row label { min-width: 75px; justify-content: center; }
-.member-page .rating-row label:hover { border-color: #a47c5b; }
-@media (max-width: 650px) {
-    .member-page .page-intro .page-title { font-size: 31px; }
-    .member-page .dashboard-links a { min-height: 95px; }
-    .member-page th, .member-page td { padding: 12px; }
-}
-
-/* ===== Sarj member pages: gentle interactive touches ===== */
-/* All additions are limited to the three member pages. */
-.member-page .dashboard-links a {
-    transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s;
-}
-.member-page .dashboard-links a:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 28px #d9c8b2;
-    background-color: #f8f0e4;
-}
-.member-page .dashboard-links a:hover .icon-box {
-    background-color: #d9bf9c;
-}
-.member-page .dashboard-links a:hover .arrow {
-    color: #986b3d;
-}
-.member-page .member-panel {
-    transition: box-shadow 0.25s;
-}
-.member-page .member-panel:hover {
-    box-shadow: 0 12px 30px #ded0bd;
-}
-.member-page tbody tr td {
-    transition: background-color 0.2s;
-}
-.member-page tbody tr:hover td {
-    background-color: #f1e6d7;
-}
-.member-page .member-form select,
-.member-page .member-form input[type="text"],
-.member-page .member-form input[type="date"],
-.member-page .member-form textarea {
     transition: border-color 0.2s, background-color 0.2s;
 }
 .member-page .member-form select:hover,
@@ -1657,61 +1485,15 @@ th {
     border-color: #ad8b65;
     background-color: #fffaf2;
 }
-.member-page .member-form .main-button {
-    cursor: pointer;
-    transition: background-color 0.25s, transform 0.25s;
+.member-page .member-form select:focus,
+.member-page .member-form input:focus,
+.member-page .member-form textarea:focus {
+    border-color: #916b48;
+    outline: 1px solid #916b48;
 }
-.member-page .member-form .main-button:hover {
-    transform: translateY(-3px);
-    background-color: #795337;
-}
-.member-page .rating-row label {
-    transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
-}
-.member-page .rating-row label:hover {
-    transform: translateY(-4px);
-    background-color: #f2dfc4;
-    border-color: #a47c5b;
-}
-.member-page .rating-row input:checked + .rating-star {
-    color: #9d6b28;
-    font-weight: bold;
-}
+.member-page .member-form textarea { height: 185px; }
 
-
-/* Member pages only: match the heading used on the offerings page. */
-.member-page .page-intro {
-    position: relative;
-    min-height: 300px;
-    padding: 45px 5%;
-    border-bottom: none;
-}
-.member-page .page-intro .breadcrumbs {
-    font-size: 14px;
-    margin-bottom: 25px;
-}
-.member-page .page-intro .page-title {
-    position: relative;
-    font-size: 40px;
-    margin: 0 0 15px;
-    padding-bottom: 15px;
-}
-.member-page .page-intro .page-title::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 65px;
-    height: 3px;
-    background-color: #A47C5B;
-    border-radius: 3px;
-}
-.member-page .page-intro > p {
-    font-size: 19px;
-    line-height: 1.8;
-}
-
-/* Join form only: turn the notification checkbox into a tidy option card. */
+/* Join form: notification checkbox option card */
 .member-page .member-form .check-row {
     display: flex;
     align-items: center;
@@ -1734,11 +1516,63 @@ th {
     accent-color: #795337;
     cursor: pointer;
 }
+
+.member-page .form-actions { text-align: center; margin-top: 26px; }
+.member-page .form-actions .main-button { min-width: 180px; }
+.member-page .member-form .main-button {
+    padding: 13px 30px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.25s;
+}
+.member-page .member-form .main-button:hover {
+    transform: translateY(-3px);
+    background-color: #795337;
+}
+
+/* Rating choices */
+.member-page .rating-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0 25px;
+}
+.member-page .rating-row label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 75px;
+    padding: 8px 12px;
+    border: 1px solid #e4d5bf;
+    border-radius: 9px;
+    background-color: #fcf8f2;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
+}
+.member-page .rating-row label:hover {
+    transform: translateY(-4px);
+    background-color: #f2dfc4;
+    border-color: #a47c5b;
+}
+.member-page .rating-row input { accent-color: #80572f; }
+.member-page .rating-star { font-size: 24px; color: #b38a43; }
+.member-page .rating-row input:checked + .rating-star {
+    color: #9d6b28;
+    font-weight: bold;
+}
+
 @media (max-width: 650px) {
     .member-page .page-intro { min-height: 230px; padding: 35px 5%; }
     .member-page .page-intro .page-title { font-size: 30px; }
     .member-page .page-intro > p { font-size: 16px; }
+    .member-page .dashboard-links { flex-direction: column; }
+    .member-page .dashboard-links a { min-height: 95px; }
+    .member-page .member-panel { padding: 22px; }
+    .member-page th, .member-page td { padding: 12px; }
 }
+
 
 /* About Us - Vision, Mission and Values */
 
@@ -1927,42 +1761,6 @@ th {
     margin-top: 18px;
 }
 
-/* ABOUT PAGE - INTRODUCTION */
-.about-page .page-intro {
-    position: relative;
-    min-height: 240px;
-    padding: 45px 5%;
-    background-color: #E8DCCB;
-    text-align: right;
-}
-
-.about-page .page-intro .breadcrumbs {
-    font-size: 14px;
-    margin-bottom: 25px;
-}
-
-.about-page .page-intro .page-title {
-    position: relative;
-    font-size: 40px;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-}
-
-.about-page .page-intro .page-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 65px;
-    height: 3px;
-    background-color: #A47C5B;
-    border-radius: 3px;
-}
-
-.about-page .page-intro > p {
-    font-size: 19px;
-    line-height: 1.8;
-}
 /* ABOUT PAGE - JOIN FORM DESIGN */
 
 .about-page .about-join {
@@ -2092,43 +1890,6 @@ th {
     }
 }
 /* INSTRUCTOR PROFILE PAGE */
-
-/* Page Introduction */
-.instructor-page .page-intro {
-    position: relative;
-    min-height: 300px;
-    padding: 45px 5%;
-    background-color: #E8DCCB;
-    text-align: right;
-}
-
-.instructor-page .page-intro .breadcrumbs {
-    font-size: 14px;
-    margin-bottom: 25px;
-}
-
-.instructor-page .page-intro .page-title {
-    position: relative;
-    font-size: 40px;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-}
-
-.instructor-page .page-intro .page-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 65px;
-    height: 3px;
-    background-color: #A47C5B;
-    border-radius: 3px;
-}
-
-.instructor-page .page-intro > p {
-    font-size: 19px;
-    line-height: 1.8;
-}
 
 /* Profile Section */
 .instructor-page .instructor-profile {
@@ -2261,63 +2022,7 @@ th {
     }
 }
 
-/* INSTRUCTOR QUOTE */
-.instructor-page .instructor-quote {
-    background-color: rgba(107, 66, 46, 0.08);
-    text-align: center;
-    padding: 25px 20px;
-    width: 90%;
-    max-width: none;
-    margin: 35px auto;
-    border-radius: 10px;
-}
-.instructor-page .instructor-quote .quote-mark {
-    display: block;
-    font-family: Georgia, serif;
-    font-size: 65px;
-    line-height: 0.9;
-    color: #A47C5B;
-    margin-bottom: 8px;
-}
-.instructor-page .instructor-quote blockquote {
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-.instructor-page .instructor-quote blockquote p {
-    font-family: "Thmanyah", serif;
-    font-size: 27px;
-    line-height: 1.6;
-    color: #6B422E;
-}
-.instructor-page .instructor-quote .quote-divider {
-    display: block;
-    width: 45px;
-    height: 1px;
-    background-color: #A47C5B;
-    margin: 15px auto 10px;
-}
-.instructor-page .instructor-quote .quote-author {
-    font-size: 17px;
-    color: #6B422E;
-    text-align: center;
-}
-
 /* Home Page Additional Styles */
-.section-description {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.section-action {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.reviews-section {
-    background-color: #E8DCCB;
-}
-
 .recommendations-section {
     background-color: #E8DCCB;
 }
@@ -2346,13 +2051,6 @@ th {
     height: auto;
     object-fit: contain;
 }
-
-.social-links img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-}
-
 
 
 /* ===== Home Offerings Styling ===== */
@@ -2384,13 +2082,6 @@ th {
         border-color 0.3s ease;
 }
 
-/* Hover Effect */
-.home-offering-card:hover {
-    border-color: #A47C5B;
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(48, 41, 35, 0.10);
-}
-
 /* Offering Image */
 .home-offering-card img {
     display: block;
@@ -2399,76 +2090,6 @@ th {
     object-fit: cover;
 
     transition: transform 0.4s ease;
-}
-
-/* Image Zoom on Hover */
-.home-offering-card:hover img {
-    transform: scale(1.04);
-}
-
-/* Title and Button in One Row */
-.home-offering-card .offering-heading {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin: 15px;
-}
-
-/* Offering Title */
-.home-offering-card .offering-heading h3 {
-    flex: 1;
-    min-width: 0;
-    margin: 0;
-
-    color: #6B422E;
-    font-size: 22px;
-    text-align: right;
-}
-
-/* Details Button */
-.home-offering-card .offering-heading .main-button {
-    display: inline-block;
-    flex-shrink: 0;
-    width: auto;
-    margin: 0;
-    padding: 8px 14px;
-
-    background-color: #152705;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 6px;
-
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.home-offering-card .offering-heading .main-button:hover {
-    background-color: #6B422E;
-    transform: translateY(-2px);
-}
-
-/* Offering Description - Always Visible */
-.home-offering-card .home-offering-extra {
-    display: block;
-    opacity: 1;
-    max-height: none;
-    overflow: visible;
-
-    margin: 0 15px 18px;
-    color: #555555;
-    font-size: 16px;
-    line-height: 1.8;
-
-    transition: none;
 }
 
 /* Responsive Layout */
@@ -2487,15 +2108,6 @@ th {
 
     .home-offering-card img {
         height: 220px;
-    }
-
-    .home-offering-card .offering-heading h3 {
-        font-size: 19px;
-    }
-
-    .home-offering-card .offering-heading .main-button {
-        padding: 8px 12px;
-        font-size: 13px;
     }
 }
 
@@ -2553,19 +2165,6 @@ th {
     margin-top: 10px;
 }
 
-@media (max-width: 600px) {
-    .recommendation-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .recommendation-card > img {
-        width: 100%;
-        max-width: 100%;
-        height: 180px;
-    }
-}
-
 
 /* Home Offerings Header */
 .home-offerings-header {
@@ -2582,10 +2181,6 @@ th {
 
 .home-offerings-title .section-title {
     margin: 0;
-}
-
-.home-offerings-title .section-description {
-    margin-top: 5px;
 }
 
 .home-offerings-header > .main-button {
@@ -2856,3 +2451,468 @@ th {
     }
 }
 
+
+
+/* =========================================================
+   RECOMMENDED STORES & YOUTUBE CHANNELS PAGES
+   (both pages share the same card design)
+   ========================================================= */
+.stores-page .page-intro,
+.youtube-page .page-intro {
+    min-height: 180px;
+    padding: 35px 5%;
+    background-color: #E8E8E8;
+    text-align: right;
+}
+
+.stores-page .breadcrumbs,
+.youtube-page .breadcrumbs {
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.stores-page .breadcrumbs a,
+.youtube-page .breadcrumbs a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.stores-page .page-title,
+.youtube-page .page-title {
+    font-size: 38px;
+    margin: 0 0 10px;
+}
+
+.stores-page .page-intro > p,
+.youtube-page .page-intro > p {
+    font-size: 17px;
+    margin: 0;
+}
+
+.stores-section,
+.youtube-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 25px 80px;
+}
+
+.stores-grid,
+.youtube-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.store-card,
+.youtube-card {
+    background-color: #FFFFFF;
+    border: 1px solid #D0D0D0;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.store-card:hover,
+.youtube-card:hover {
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+}
+
+.store-image,
+.youtube-image {
+    width: 100%;
+    height: 160px;
+    background-color: #E8E8E8;
+    overflow: hidden;
+}
+
+.store-image img,
+.youtube-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.store-info,
+.youtube-info {
+    padding: 12px 15px 16px;
+    text-align: right;
+}
+
+.store-info h2,
+.youtube-info h2 {
+    font-size: 21px;
+    margin: 0 0 6px;
+}
+
+.store-rating,
+.youtube-rating {
+    color: #A47C5B;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.store-info p,
+.youtube-info p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0 0 12px;
+}
+
+.store-button,
+.youtube-button {
+    display: inline-block;
+    background-color: #152705;
+    color: #FFFFFF;
+    padding: 7px 15px;
+    border-radius: 3px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.store-button:hover,
+.youtube-button:hover {
+    background-color: #354A21;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 650px) {
+
+    .stores-page .page-title,
+    .youtube-page .page-title {
+        font-size: 28px;
+    }
+
+    .stores-section,
+    .youtube-section {
+        padding: 25px 15px 50px;
+    }
+
+    .stores-grid,
+    .youtube-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .store-image,
+    .youtube-image {
+        height: 200px;
+    }
+}
+
+
+/* =========================================================
+   ADD OFFERING PAGE
+   ========================================================= */
+.image-upload {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    padding: 16px;
+    border: 2px dashed #b9b9b9;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    background: #fff;
+    color: #6f6f6f;
+    margin-bottom: 20px;
+}
+
+.image-upload input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image-upload-text {
+    pointer-events: none;
+}
+
+.add-offering-page .form-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.add-offering-page .form-actions button {
+    display: block;
+    margin: 0 auto;
+    min-width: 180px;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MANAGE LEADERS & INSTRUCTORS PAGE
+   ========================================================= */
+.manage-leaders-page .page-intro {
+    min-height: 260px;
+}
+
+/* ===== Main Content ===== */
+
+.leaders-content {
+    max-width: 1150px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+}
+
+.leaders-panel {
+    background-color: #FFFFFF;
+    border: 1px solid #E1CFB8;
+    border-top: 4px solid #9C7955;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 8px 24px #E5DBCE;
+    margin-bottom: 35px;
+}
+
+.leaders-section-title {
+    font-size: 27px;
+    margin-bottom: 22px;
+    border-right: 4px solid #A47C5B;
+    padding-right: 14px;
+}
+
+/* ===== Leaders Table ===== */
+
+.manage-leaders-page .table-scroll {
+    width: 100%;
+}
+
+.leaders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #FFFFFF;
+}
+
+.leaders-table th {
+    background-color: #E9DBC8;
+    color: #6B422E;
+    padding: 15px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.leaders-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #EEE5D9;
+    background-color: #FFFDFA;
+}
+
+.leaders-table tbody tr:hover td {
+    background-color: #F7F0E6;
+}
+
+.leader-image {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #E8DCCB;
+}
+
+.leader-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #795337;
+    cursor: pointer;
+}
+
+/* ===== Buttons ===== */
+
+.leaders-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.delete-button {
+    background-color: #B7B7B7;
+    color: #302923;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-family: "CamelYear", Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+    background-color: #D7B8A3;
+}
+
+/* ===== Add Leader Form ===== */
+
+.leader-form {
+    max-width: 100%;
+    margin: 0;
+    padding: 25px;
+    background-color: #E9E9E9;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.leader-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.leader-form-column {
+    min-width: 0;
+}
+
+.leader-form label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: bold;
+    color: #302923;
+}
+
+.leader-form input[type="text"],
+.leader-form input[type="email"],
+.leader-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0 0 8px;
+    border: 1px solid #A47C5B;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    font-family: "CamelYear", Arial, sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.leader-form input:focus {
+    outline: 1px solid #6B422E;
+    border-color: #6B422E;
+}
+
+/* ===== Image Upload ===== */
+
+.leader-image-upload {
+    position: relative;
+    min-height: 110px;
+    padding: 20px;
+    border: 2px dashed #B9B9B9;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.leader-image-upload span {
+    color: #777777;
+    pointer-events: none;
+}
+
+.leader-image-upload input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.leader-image-preview {
+    display: none;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* ===== Add Button ===== */
+
+.leader-submit {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    margin: 25px auto 0;
+    padding: 12px 20px;
+    background-color: #152705;
+    color: #FFFFFF;
+    border: 1px solid #152705;
+    border-radius: 5px;
+    font-family: "CamelYear", Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.leader-submit:hover {
+    background-color: #2E4018;
+}
+
+.required-note {
+    font-size: 14px;
+    color: #786C60;
+    margin-bottom: 15px;
+}
+
+/* ===== Responsive Design ===== */
+
+@media screen and (max-width: 768px) {
+    .manage-leaders-page .page-intro {
+        min-height: auto;
+        padding: 35px 5%;
+    }
+
+    .manage-leaders-page .page-intro > p {
+        font-size: 16px;
+    }
+
+    .leaders-content {
+        margin-top: 25px;
+        padding: 0 12px;
+    }
+
+    .leaders-panel {
+        padding: 18px;
+    }
+
+    .leaders-section-title {
+        font-size: 22px;
+    }
+
+    .leader-form {
+        padding: 18px;
+    }
+
+    .leader-form-grid {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .leaders-table th,
+    .leaders-table td {
+        padding: 10px;
+    }
+
+    .leaders-actions {
+        justify-content: center;
+    }
+
+    .delete-button {
+        width: 100%;
+    }
+}
