@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ملف المدربة | نادي سَرْج للفروسية</title>
+    <title>ملف المدربة سارة أحمد | نادي سَرْج للفروسية</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -38,110 +38,81 @@
 
             <nav class="breadcrumbs" aria-label="Breadcrumb">
                 <a href="index.html">الرئيسية</a>
-                <span> / </span>
+                &gt;
                 <a href="about.html">عن سَرْج</a>
-                <span> / ملف المدربة</span>
+                &gt;
+                <span>ملف المدرب</span>
             </nav>
 
-            <h1 class="page-title">
-                الملف الشخصي للمدربة
-            </h1>
+            <h1 class="page-title">ملف المدرب</h1>
 
-            <p>
-                تعرّف على مدربي نادي سَرْج وخبراتهم في عالم الفروسية
-            </p>
+            <p>تعرّف على من يقود تجربتك</p>
 
         </section>
 
-        <!-- Instructor Profile -->
+        <!-- Instructor Profile Table -->
         <section class="instructor-profile">
 
-            <div class="instructor-card">
+            <table class="instructor-table">
 
-                <!-- Instructor Photo -->
-                <div class="instructor-photo">
+                <thead>
+                    <tr>
+                        <!-- The name cell spans all columns -->
+                        <th colspan="2" scope="colgroup" class="instructor-name-cell">
+                            <span class="instructor-name">سارة أحمد</span>
+                            <span class="instructor-role">مدربة فروسية</span>
+                        </th>
+                    </tr>
+                </thead>
 
-                    <img src="images/instructor-sara.jpg" alt="صورة المدربة سارة أحمد">
+                <tbody>
+                    <tr>
+                        <th scope="row">الصورة</th>
+                        <td class="instructor-photo-cell">
+                            <img src="images/instructor-sara.jpg" alt="صورة سارة أحمد">
+                        </td>
+                    </tr>
 
-                </div>
+                    <tr>
+                        <th scope="row">تاريخ الميلاد</th>
+                        <td>15/03/1995</td>
+                    </tr>
 
-                <!-- Instructor Information -->
-                <div class="instructor-info">
+                    <tr>
+                        <th scope="row">البريد الإلكتروني</th>
+                        <td>sara.ahmed@gmail.com</td>
+                    </tr>
 
-                    <h2>سارة أحمد</h2>
+                    <tr>
+                        <th scope="row">مجال الخبرة</th>
+                        <td>تدريب ركوب الخيل للمبتدئين والمتوسطين</td>
+                    </tr>
 
-                    <p class="instructor-role">
-                        مدربة فروسية
-                    </p>
+                    <tr>
+                        <th scope="row">المهارات</th>
+                        <td>
+                            تعليم أساسيات ركوب الخيل<br>
+                            التحكم بالخيل وتحسين التوازن<br>
+                            تطبيق إجراءات السلامة أثناء التدريب
+                        </td>
+                    </tr>
 
-                    <!-- Personal Information -->
-                    <h3>المعلومات الشخصية</h3>
+                    <tr>
+                        <th scope="row">التعليم</th>
+                        <td>
+                            بكالوريوس التربية البدنية<br>
+                            دورات تدريبية متخصصة في الفروسية
+                        </td>
+                    </tr>
+                </tbody>
 
-                    <table class="instructor-table">
-                        <tbody>
-
-                            <tr>
-                                <th scope="row">الاسم</th>
-                                <td>سارة أحمد</td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">تاريخ الميلاد</th>
-                                <td>15 مارس 1995</td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">البريد الإلكتروني</th>
-                                <td>sara.ahmed@example.com</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-
-                    <!-- Professional Information -->
-                    <h3>المعلومات المهنية</h3>
-
-                    <table class="instructor-table">
-                        <tbody>
-
-                            <tr>
-                                <th scope="row">مجال الخبرة</th>
-                                <td>
-                                    تدريب ركوب الخيل للمبتدئين والمتوسطين
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">المهارات</th>
-                                <td>
-                                    تعليم أساسيات ركوب الخيل،
-                                    التحكم بالخيل، تحسين التوازن،
-                                    وتطبيق إجراءات السلامة أثناء التدريب.
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">التعليم</th>
-                                <td>
-                                    بكالوريوس التربية البدنية،
-                                    ودورات تدريبية متخصصة في الفروسية.
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-
-                </div>
-
-            </div>
+            </table>
 
             <!-- Back Link -->
             <div class="instructor-back">
-
                 <a href="about.html" class="main-button">
                     العودة إلى عن سَرْج
                 </a>
-
             </div>
 
         </section>
