@@ -2056,9 +2056,10 @@ th {
 
 /* ===== Home Offerings Styling ===== */
 
+/* Flexbox layout (required): 3 cards per row on large screens */
 .home-offering-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
     width: 100%;
     margin: 0 auto;
@@ -2066,8 +2067,13 @@ th {
     align-items: stretch;
 }
 
+.home-offering-list .home-offering-card {
+    flex: 0 0 calc((100% - 50px) / 3);
+}
+
 /* Offering Card */
 .home-offering-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -2093,21 +2099,55 @@ th {
     transition: transform 0.4s ease;
 }
 
+/* Extra information: hidden, then shown over the image on hover */
+.home-offering-card .home-offering-extra {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(21, 39, 5, 0.75);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.home-offering-card .home-offering-extra p {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.home-offering-card:hover .home-offering-extra {
+    opacity: 1;
+}
+
 /* Responsive Layout */
 @media (max-width: 900px) {
     .home-offering-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;
+    }
+
+    .home-offering-list .home-offering-card {
+        flex-basis: calc((100% - 20px) / 2);
     }
 }
 
 @media (max-width: 600px) {
     .home-offering-list {
-        grid-template-columns: 1fr;
         gap: 18px;
     }
 
-    .home-offering-card img {
+    .home-offering-list .home-offering-card {
+        flex-basis: 100%;
+    }
+
+    .home-offering-card img,
+    .home-offering-card .home-offering-extra {
         height: 220px;
     }
 }
@@ -2383,6 +2423,14 @@ th {
     font-size: 16px;
     font-weight: 600;
     margin: 0 0 5px;
+}
+
+/* Offering name inside each review */
+.sarj-review-offering {
+    margin: 4px 0 0;
+    color: #6B422E;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .sarj-review-stars {
