@@ -9,308 +9,9 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <style>
-        /* ===== Page Introduction ===== */
-
-        .member-page .page-intro {
-            background-color: #E8DCCB;
-            padding: 45px 5%;
-            min-height: 260px;
-        }
-
-        .member-page .page-title {
-            font-size: 40px;
-            margin: 0 0 15px;
-            padding-bottom: 15px;
-            position: relative;
-        }
-
-        .member-page .page-title::after {
-            content: "";
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            width: 65px;
-            height: 3px;
-            background-color: #A47C5B;
-            border-radius: 3px;
-        }
-
-        .member-page .page-intro > p {
-            font-size: 19px;
-            line-height: 1.8;
-        }
-
-        /* ===== Main Content ===== */
-
-        .leaders-content {
-            max-width: 1150px;
-            margin: 40px auto 60px;
-            padding: 0 20px;
-        }
-
-        .leaders-panel {
-            background-color: #FFFFFF;
-            border: 1px solid #E1CFB8;
-            border-top: 4px solid #9C7955;
-            border-radius: 14px;
-            padding: 30px;
-            box-shadow: 0 8px 24px #E5DBCE;
-            margin-bottom: 35px;
-        }
-
-        .leaders-section-title {
-            font-size: 27px;
-            margin-bottom: 22px;
-            border-right: 4px solid #A47C5B;
-            padding-right: 14px;
-        }
-
-        /* ===== Leaders Table ===== */
-
-        .table-scroll {
-            width: 100%;
-            overflow-x: auto;
-        }
-
-        .leaders-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background-color: #FFFFFF;
-        }
-
-        .leaders-table th {
-            background-color: #E9DBC8;
-            color: #6B422E;
-            padding: 15px;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        .leaders-table td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #EEE5D9;
-            background-color: #FFFDFA;
-        }
-
-        .leaders-table tbody tr:hover td {
-            background-color: #F7F0E6;
-        }
-
-        .leader-image {
-            width: 55px;
-            height: 55px;
-            object-fit: cover;
-            border-radius: 5px;
-            border: 1px solid #E8DCCB;
-        }
-
-        .leader-checkbox {
-            width: 20px;
-            height: 20px;
-            accent-color: #795337;
-            cursor: pointer;
-        }
-
-        /* ===== Buttons ===== */
-
-        .leaders-actions {
-            display: flex;
-            justify-content: flex-start;
-            margin-top: 20px;
-        }
-
-        .delete-button {
-            background-color: #B7B7B7;
-            color: #302923;
-            border: none;
-            border-radius: 5px;
-            padding: 12px 25px;
-            font-family: "CamelYear", Arial, sans-serif;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .delete-button:hover {
-            background-color: #D7B8A3;
-        }
-
-        /* ===== Add Leader Form ===== */
-
-        .leader-form {
-            max-width: 100%;
-            margin: 0;
-            padding: 25px;
-            background-color: #E9E9E9;
-            border: none;
-            border-radius: 0;
-            box-shadow: none;
-        }
-
-        .leader-form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            align-items: start;
-        }
-
-        .leader-form-column {
-            min-width: 0;
-        }
-
-        .leader-form label {
-            display: block;
-            margin: 12px 0 6px;
-            font-weight: bold;
-            color: #302923;
-        }
-
-        .leader-form input[type="text"],
-        .leader-form input[type="email"],
-        .leader-form input[type="date"] {
-            width: 100%;
-            padding: 10px;
-            margin: 0 0 8px;
-            border: 1px solid #A47C5B;
-            border-radius: 4px;
-            background-color: #FFFFFF;
-            font-family: "CamelYear", Arial, sans-serif;
-            font-size: 15px;
-            box-sizing: border-box;
-        }
-
-        .leader-form input:focus {
-            outline: 1px solid #6B422E;
-            border-color: #6B422E;
-        }
-
-        /* ===== Image Upload ===== */
-
-        .leader-image-upload {
-            position: relative;
-            min-height: 110px;
-            padding: 20px;
-            border: 2px dashed #B9B9B9;
-            border-radius: 5px;
-            background-color: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            cursor: pointer;
-            margin-top: 5px;
-            box-sizing: border-box;
-        }
-
-        .leader-image-upload span {
-            color: #777777;
-            pointer-events: none;
-        }
-
-        .leader-image-upload input[type="file"] {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .leader-image-preview {
-            display: none;
-            width: 90px;
-            height: 90px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        /* ===== Add Button ===== */
-
-        .leader-submit {
-            display: block;
-            width: 220px;
-            max-width: 100%;
-            margin: 25px auto 0;
-            padding: 12px 20px;
-            background-color: #152705;
-            color: #FFFFFF;
-            border: 1px solid #152705;
-            border-radius: 5px;
-            font-family: "CamelYear", Arial, sans-serif;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .leader-submit:hover {
-            background-color: #2E4018;
-        }
-
-        .required-note {
-            font-size: 14px;
-            color: #786C60;
-            margin-bottom: 15px;
-        }
-
-        /* ===== Responsive Design ===== */
-
-        @media screen and (max-width: 768px) {
-
-            .member-page .page-intro {
-                min-height: auto;
-                padding: 35px 5%;
-            }
-
-            .member-page .page-title {
-                font-size: 30px;
-            }
-
-            .member-page .page-intro > p {
-                font-size: 16px;
-            }
-
-            .leaders-content {
-                margin-top: 25px;
-                padding: 0 12px;
-            }
-
-            .leaders-panel {
-                padding: 18px;
-            }
-
-            .leaders-section-title {
-                font-size: 22px;
-            }
-
-            .leader-form {
-                padding: 18px;
-            }
-
-            .leader-form-grid {
-                grid-template-columns: 1fr;
-                gap: 5px;
-            }
-
-            .leaders-table th,
-            .leaders-table td {
-                padding: 10px;
-            }
-
-            .leaders-actions {
-                justify-content: center;
-            }
-
-            .delete-button {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 
-<body class="member-page">
+<body class="member-page manage-leaders-page">
 
     <!-- ===== Header ===== -->
 
@@ -352,7 +53,6 @@
 
     </header>
 
-
     <!-- ===== Page Introduction ===== -->
 
     <section class="page-intro">
@@ -381,11 +81,9 @@
 
     </section>
 
-
     <!-- ===== Main Content ===== -->
 
     <main class="leaders-content">
-
 
         <!-- ===== Leaders List ===== -->
 
@@ -394,6 +92,12 @@
             <h2 class="leaders-section-title">
                 قائمة قادة الأنشطة والمدربين
             </h2>
+
+            <form
+                class="leaders-list-form"
+                action="#"
+                method="post"
+            >
 
             <div class="table-scroll">
 
@@ -415,7 +119,7 @@
 
                     </thead>
 
-                    <tbody id="leaders-table-body">
+                    <tbody>
 
                         <tr>
 
@@ -423,6 +127,8 @@
                                 <input
                                     type="checkbox"
                                     class="leader-checkbox"
+                                    name="selected-leaders"
+                                    value="sara-ahmed"
                                     aria-label="تحديد سارة أحمد"
                                 >
                             </td>
@@ -447,6 +153,8 @@
                                 <input
                                     type="checkbox"
                                     class="leader-checkbox"
+                                    name="selected-leaders"
+                                    value="reem-abdulaziz"
                                     aria-label="تحديد ريم عبدالعزيز"
                                 >
                             </td>
@@ -471,6 +179,8 @@
                                 <input
                                     type="checkbox"
                                     class="leader-checkbox"
+                                    name="selected-leaders"
+                                    value="saad-abdullah"
                                     aria-label="تحديد سعد عبدالله"
                                 >
                             </td>
@@ -495,6 +205,8 @@
                                 <input
                                     type="checkbox"
                                     class="leader-checkbox"
+                                    name="selected-leaders"
+                                    value="huda-mohammed"
                                     aria-label="تحديد هدى محمد"
                                 >
                             </td>
@@ -519,22 +231,20 @@
 
             </div>
 
-
             <div class="leaders-actions">
 
                 <button
-                    type="button"
+                    type="submit"
                     class="delete-button"
-                    id="delete-selected"
                 >
                     حذف المحدد
                 </button>
 
             </div>
 
+            </form>
+
         </section>
-
-
 
         <!-- ===== Add Leader Form ===== -->
 
@@ -549,14 +259,14 @@
                 جميع الحقول مطلوبة.
             </p>
 
-
             <form
                 class="leader-form"
-                id="leader-form"
+                action="#"
+                method="post"
+                enctype="multipart/form-data"
             >
 
                 <div class="leader-form-grid">
-
 
                     <!-- First Column -->
 
@@ -573,7 +283,6 @@
                             required
                         >
 
-
                         <label for="leader-experience">
                             مجال الخبرة*
                         </label>
@@ -585,7 +294,6 @@
                             placeholder="تدريب، قفز حواجز..."
                             required
                         >
-
 
                         <label for="leader-skills">
                             المهارات*
@@ -600,8 +308,6 @@
                         >
 
                     </div>
-
-
 
                     <!-- Second Column -->
 
@@ -619,7 +325,6 @@
                             required
                         >
 
-
                         <label for="leader-email">
                             البريد الإلكتروني*
                         </label>
@@ -631,7 +336,6 @@
                             placeholder="name@gmail.com"
                             required
                         >
-
 
                         <label for="leader-education">
                             التعليم*
@@ -647,8 +351,6 @@
 
                     </div>
 
-
-
                     <!-- Third Column: Image -->
 
                     <div class="leader-form-column">
@@ -662,16 +364,9 @@
                             for="leader-image"
                         >
 
-                            <span id="upload-text">
-                                اضغط لرفع الصورة
+                            <span>
+                                اختر صورة قائد النشاط أو المدرب
                             </span>
-
-                            <img
-                                src=""
-                                alt="معاينة الصورة"
-                                id="image-preview"
-                                class="leader-image-preview"
-                            >
 
                             <input
                                 type="file"
@@ -686,8 +381,6 @@
                     </div>
 
                 </div>
-
-
 
                 <!-- Add Button -->
 
@@ -704,14 +397,11 @@
 
     </main>
 
-
-
     <!-- ===== Footer ===== -->
 
     <footer class="site-footer">
 
         <div class="footer-content">
-
 
             <!-- Footer Logo -->
 
@@ -723,8 +413,6 @@
                 >
 
             </div>
-
-
 
             <!-- Contact Information -->
 
@@ -755,8 +443,6 @@
                 </p>
 
             </div>
-
-
 
             <!-- Social Media -->
 
@@ -799,7 +485,6 @@
 
         </div>
 
-
         <p class="copyright">
 
             &copy; 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة
@@ -807,209 +492,6 @@
         </p>
 
     </footer>
-
-
-
-    <!-- ===== JavaScript ===== -->
-
-    <script>
-
-        // Image upload and preview
-
-        const imageInput = document.getElementById("leader-image");
-
-        const uploadText = document.getElementById("upload-text");
-
-        const imagePreview = document.getElementById("image-preview");
-
-
-        imageInput.addEventListener("change", function () {
-
-            if (this.files && this.files.length > 0) {
-
-                const file = this.files[0];
-
-                if (!file.type.startsWith("image/")) {
-
-                    alert("الرجاء اختيار ملف صورة.");
-
-                    this.value = "";
-
-                    imagePreview.style.display = "none";
-
-                    uploadText.style.display = "block";
-
-                    return;
-
-                }
-
-                uploadText.textContent = file.name;
-
-                imagePreview.src = URL.createObjectURL(file);
-
-                imagePreview.style.display = "block";
-
-            } else {
-
-                uploadText.textContent = "اضغط لرفع الصورة";
-
-                imagePreview.style.display = "none";
-
-            }
-
-        });
-
-
-
-        // Delete selected leaders
-
-        const deleteButton = document.getElementById("delete-selected");
-
-        const tableBody = document.getElementById("leaders-table-body");
-
-
-        deleteButton.addEventListener("click", function () {
-
-            const selectedLeaders = tableBody.querySelectorAll(
-                ".leader-checkbox:checked"
-            );
-
-            if (selectedLeaders.length === 0) {
-
-                alert("حددي قائدًا أو مدربًا واحدًا على الأقل للحذف.");
-
-                return;
-
-            }
-
-            const confirmDelete = confirm(
-                "هل أنتِ متأكدة من حذف العناصر المحددة؟"
-            );
-
-            if (!confirmDelete) {
-
-                return;
-
-            }
-
-            selectedLeaders.forEach(function (checkbox) {
-
-                checkbox.closest("tr").remove();
-
-            });
-
-        });
-
-
-
-        // Add a new leader
-
-        const leaderForm = document.getElementById("leader-form");
-
-
-        leaderForm.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-            const name = document.getElementById("leader-name").value.trim();
-
-            const email = document.getElementById("leader-email").value.trim();
-
-            const imageFile = imageInput.files[0];
-
-
-            if (!imageFile) {
-
-                alert("الرجاء اختيار صورة.");
-
-                return;
-
-            }
-
-
-            const row = document.createElement("tr");
-
-
-            // Checkbox cell
-
-            const checkboxCell = document.createElement("td");
-
-            const checkbox = document.createElement("input");
-
-            checkbox.type = "checkbox";
-
-            checkbox.className = "leader-checkbox";
-
-            checkbox.setAttribute("aria-label", "تحديد " + name);
-
-            checkboxCell.appendChild(checkbox);
-
-
-
-            // Image cell
-
-            const imageCell = document.createElement("td");
-
-            const image = document.createElement("img");
-
-            image.src = URL.createObjectURL(imageFile);
-
-            image.alt = "صورة " + name;
-
-            image.className = "leader-image";
-
-            imageCell.appendChild(image);
-
-
-
-            // Name cell
-
-            const nameCell = document.createElement("td");
-
-            nameCell.textContent = name;
-
-
-
-            // Email cell
-
-            const emailCell = document.createElement("td");
-
-            emailCell.textContent = email;
-
-
-
-            // Add cells to row
-
-            row.appendChild(checkboxCell);
-
-            row.appendChild(imageCell);
-
-            row.appendChild(nameCell);
-
-            row.appendChild(emailCell);
-
-
-
-            // Add row to table
-
-            tableBody.appendChild(row);
-
-
-
-            // Reset the form
-
-            leaderForm.reset();
-
-            imagePreview.style.display = "none";
-
-            uploadText.textContent = "اضغط لرفع الصورة";
-
-
-            alert("تمت إضافة القائد أو المدرب إلى القائمة بنجاح.");
-
-        });
-
-    </script>
 
 </body>
 
