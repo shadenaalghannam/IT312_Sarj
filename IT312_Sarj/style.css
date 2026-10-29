@@ -2966,3 +2966,7 @@ th {
     color: #302923;
     font-size: 14px;
 }
+.nav-links a.active {
+    border-bottom: 2px solid #302923;
+    padding-bottom: 5px;
+}
