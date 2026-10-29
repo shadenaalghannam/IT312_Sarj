@@ -133,7 +133,7 @@
 
                             <td>
                                 <img
-                                    src="images/instructor3.png"
+                                    src="images/instructor-sara.jpg"
                                     alt="صورة سارة أحمد"
                                     class="leader-image"
                                 >
@@ -159,7 +159,7 @@
 
                             <td>
                                 <img
-                                    src="images/huda.png"
+                                    src="images/instructor-reem.png"
                                     alt="صورة ريم عبدالعزيز"
                                     class="leader-image"
                                 >
@@ -185,7 +185,7 @@
 
                             <td>
                                 <img
-                                    src="images/advanced.png"
+                                    src="images/instructor-saad.jpg"
                                     alt="صورة سعد عبدالله"
                                     class="leader-image"
                                 >
@@ -211,7 +211,7 @@
 
                             <td>
                                 <img
-                                    src="images/instructor4.png"
+                                    src="images/instructor-huda.jpg"
                                     alt="صورة هدى محمد"
                                     class="leader-image"
                                 >
@@ -266,48 +266,36 @@
 
                 <div class="leader-form-grid">
 
-                    <!-- First Column -->
+                    <!-- First Column: Image (right side, as in the wireframe) -->
 
                     <div class="leader-form-column">
 
-                        <label for="leader-date">
-                            تاريخ الميلاد*
+                        <label for="leader-image">
+                            الصورة*
                         </label>
 
-                        <input
-                            type="date"
-                            id="leader-date"
-                            name="leader-date"
-                            required
+                        <label
+                            class="leader-image-upload"
+                            for="leader-image"
                         >
 
-                        <label for="leader-experience">
-                            مجال الخبرة*
+                            <span>
+                                اختر صورة قائد النشاط أو المدرب
+                            </span>
+
+                            <input
+                                type="file"
+                                id="leader-image"
+                                name="leader-image"
+                                accept="image/*"
+                                required
+                            >
+
                         </label>
-
-                        <input
-                            type="text"
-                            id="leader-experience"
-                            name="leader-experience"
-                            placeholder="تدريب، قفز حواجز..."
-                            required
-                        >
-
-                        <label for="leader-skills">
-                            المهارات*
-                        </label>
-
-                        <input
-                            type="text"
-                            id="leader-skills"
-                            name="leader-skills"
-                            placeholder="مثال: تدريب المبتدئين"
-                            required
-                        >
 
                     </div>
 
-                    <!-- Second Column -->
+                    <!-- Second Column: Name, Email, Education -->
 
                     <div class="leader-form-column">
 
@@ -349,32 +337,44 @@
 
                     </div>
 
-                    <!-- Third Column: Image -->
+                    <!-- Third Column: Date of Birth, Expertise, Skills -->
 
                     <div class="leader-form-column">
 
-                        <label for="leader-image">
-                            الصورة*
+                        <label for="leader-date">
+                            تاريخ الميلاد*
                         </label>
 
-                        <label
-                            class="leader-image-upload"
-                            for="leader-image"
+                        <input
+                            type="date"
+                            id="leader-date"
+                            name="leader-date"
+                            required
                         >
 
-                            <span>
-                                اختر صورة قائد النشاط أو المدرب
-                            </span>
-
-                            <input
-                                type="file"
-                                id="leader-image"
-                                name="leader-image"
-                                accept="image/*"
-                                required
-                            >
-
+                        <label for="leader-experience">
+                            مجال الخبرة*
                         </label>
+
+                        <input
+                            type="text"
+                            id="leader-experience"
+                            name="leader-experience"
+                            placeholder="تدريب، قفز حواجز..."
+                            required
+                        >
+
+                        <label for="leader-skills">
+                            المهارات*
+                        </label>
+
+                        <input
+                            type="text"
+                            id="leader-skills"
+                            name="leader-skills"
+                            placeholder="مثال: تدريب المبتدئين"
+                            required
+                        >
 
                     </div>
 
