@@ -35,7 +35,8 @@
         <section class="page-intro">
             <div class="breadcrumbs">
                 <a href="index.html">الرئيسية</a>
-                <span> / عن سَرْج</span>
+                &gt;
+                <span>عن سَرْج</span>
             </div>
 
             <h1 class="page-title">عن سَرْج</h1>
@@ -80,7 +81,7 @@
         </section>
 
         <!-- Vision, Mission and Values -->
-        <section class="about-principles">
+        <section>
             <div class="principles-list">
 
                 <article class="principle-card">
@@ -192,48 +193,55 @@
 
                 <div class="form-grid">
 
-                    <div class="form-field">
-                        <label for="applicant-name">الاسم الكامل</label>
-                        <input type="text" id="applicant-name" name="name" placeholder="أدخل اسمك الكامل" required>
+                    <!-- Column 1: Photo -->
+                    <div class="form-column">
+                        <div class="form-field">
+                            <label for="applicant-photo">الصورة*</label>
+
+                            <div class="photo-upload">
+                                <span class="upload-icon" aria-hidden="true">📷</span>
+                                <span class="upload-text">اختر صورتك الشخصية</span>
+                                <input type="file" id="applicant-photo" name="photo" accept="image/*" required>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-field">
-                        <label for="applicant-email">البريد الإلكتروني</label>
-                        <input type="email" id="applicant-email" name="email" placeholder="example@email.com" required>
+                    <!-- Column 2: Name, Email, Education -->
+                    <div class="form-column">
+                        <div class="form-field">
+                            <label for="applicant-name">الاسم*</label>
+                            <input type="text" id="applicant-name" name="name" placeholder="أدخل الاسم الكامل" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="applicant-email">البريد الإلكتروني*</label>
+                            <input type="email" id="applicant-email" name="email" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="applicant-education">التعليم*</label>
+                            <input type="text" id="applicant-education" name="education" placeholder="مثال: بكالوريوس في العلوم الفروسية" required>
+                        </div>
                     </div>
 
-                    <div class="form-field">
-                        <label for="applicant-dob">تاريخ الميلاد</label>
-                        <input type="date" id="applicant-dob" name="dob" required>
+                    <!-- Column 3: Date of Birth, Expertise, Skills -->
+                    <div class="form-column">
+                        <div class="form-field">
+                            <label for="applicant-dob">تاريخ الميلاد*</label>
+                            <input type="date" id="applicant-dob" name="dob" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="applicant-expertise">مجال الخبرة*</label>
+                            <input type="text" id="applicant-expertise" name="expertise" placeholder="تدريب، قفز، حواجز..." required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="applicant-skills">المهارات*</label>
+                            <input type="text" id="applicant-skills" name="skills" placeholder="مثال: تدريب المبتدئين، رعاية الخيل" required>
+                        </div>
                     </div>
 
-                    <div class="form-field">
-                        <label for="applicant-expertise">مجال الخبرة</label>
-                        <input type="text" id="applicant-expertise" name="expertise" placeholder="مثال: تدريب الفروسية"
-                            required>
-                    </div>
-
-                </div>
-
-                <div class="form-field">
-                    <label for="applicant-skills">المهارات</label>
-                    <textarea id="applicant-skills" name="skills" placeholder="اكتب مهاراتك وخبراتك..."
-                        required></textarea>
-                </div>
-
-                <div class="form-field">
-                    <label for="applicant-education">التعليم</label>
-                    <textarea id="applicant-education" name="education" placeholder="اكتب مؤهلاتك التعليمية..."
-                        required></textarea>
-                </div>
-
-                <div class="form-field">
-                    <label for="applicant-photo">الصورة الشخصية</label>
-
-                    <div class="photo-upload">
-                        <span class="upload-icon" aria-hidden="true">📷</span>
-                        <input type="file" id="applicant-photo" name="photo" accept="image/*" required>
-                    </div>
                 </div>
 
                 <button type="submit" class="main-button join-submit">
