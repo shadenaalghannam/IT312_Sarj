@@ -7,55 +7,9 @@
     <title>إضافة نشاط جديد | سَرْج</title>
     <link rel="stylesheet" href="style.css">
 
-    <style>
-        /* تنسيقات خاصة بخانة رفع الصورة وزر الإضافة فقط */
-        .image-upload {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100px;
-            padding: 16px;
-            border: 2px dashed #b9b9b9;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            background: #fff;
-            color: #6f6f6f;
-            margin-bottom: 20px;
-        }
-
-        .image-upload input[type="file"] {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .image-upload-text {
-            pointer-events: none;
-        }
-
-        .form-actions {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-top: 24px;
-        }
-
-        .form-actions button {
-            display: block;
-            margin: 0 auto;
-            min-width: 180px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 
-<body class="member-page">
+<body class="member-page add-offering-page">
 
     <!-- Header -->
     <header class="site-header">
@@ -119,8 +73,8 @@
 
                     <label for="offering-image">الصورة</label>
                     <label class="image-upload" for="offering-image">
-                        <span class="image-upload-text" id="image-upload-text">
-                            اضغط لرفع الصورة
+                        <span class="image-upload-text">
+                            اختر صورة النشاط
                         </span>
                         <input
                             type="file"
@@ -202,19 +156,6 @@
             &copy; 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة
         </p>
     </footer>
-
-    <script>
-        const imageInput = document.getElementById("offering-image");
-        const imageText = document.getElementById("image-upload-text");
-
-        imageInput.addEventListener("change", function () {
-            if (this.files && this.files.length > 0) {
-                imageText.textContent = this.files[0].name;
-            } else {
-                imageText.textContent = "اضغط لرفع الصورة";
-            }
-        });
-    </script>
 
 </body>
 </html>
