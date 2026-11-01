@@ -2970,3 +2970,854 @@ th {
     border-bottom: 2px solid #6B422E;
     padding-bottom: 5px;
 }
+```css
+/* =========================================================
+   MANAGE LEADERS PAGE - WIREFRAME DESIGN
+   ========================================================= */
+
+.manage-leaders-page .page-intro {
+    min-height: 190px;
+    padding: 32px 5%;
+}
+
+/* Main Content */
+
+.manage-leaders-page .leaders-content {
+    width: 100%;
+    max-width: 850px;
+    margin: 28px auto 45px;
+    padding: 0 18px;
+}
+
+/* Panels */
+
+.manage-leaders-page .leaders-panel {
+    padding: 22px 24px;
+    margin-bottom: 24px;
+    border: 1px solid #E1CFB8;
+    border-top: 3px solid #9C7955;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.manage-leaders-page .leaders-section-title {
+    margin-bottom: 14px;
+    font-size: 23px;
+    border-right: 0;
+    padding-right: 0;
+}
+
+/* Leaders List Form */
+
+.manage-leaders-page .leaders-list-form {
+    width: 100%;
+}
+
+/* Leaders Table */
+
+.manage-leaders-page .leaders-table {
+    width: 100%;
+    margin: 12px 0 8px;
+    table-layout: fixed;
+}
+
+.manage-leaders-page .leaders-table th,
+.manage-leaders-page .leaders-table td {
+    padding: 9px 10px;
+    font-size: 14px;
+    border: 0;
+    border-bottom: 1px solid #EEE5D9;
+    vertical-align: middle;
+}
+
+.manage-leaders-page .leaders-table th {
+    background: #E9DBC8;
+}
+
+.manage-leaders-page .leaders-table th:nth-child(1),
+.manage-leaders-page .leaders-table td:nth-child(1) {
+    width: 12%;
+}
+
+.manage-leaders-page .leaders-table th:nth-child(2),
+.manage-leaders-page .leaders-table td:nth-child(2) {
+    width: 16%;
+}
+
+.manage-leaders-page .leaders-table th:nth-child(3),
+.manage-leaders-page .leaders-table td:nth-child(3) {
+    width: 22%;
+}
+
+.manage-leaders-page .leaders-table th:nth-child(4),
+.manage-leaders-page .leaders-table td:nth-child(4) {
+    width: 50%;
+    overflow-wrap: anywhere;
+}
+
+/* Leader Images */
+
+.manage-leaders-page .leader-image {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+/* Delete Button - LEFT SIDE */
+
+.manage-leaders-page .leaders-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.manage-leaders-page .delete-button {
+    min-width: 125px;
+    padding: 8px 18px;
+    border-radius: 2px;
+    font-size: 14px;
+    background-color: #B7B7B7;
+    color: #302923;
+    border: none;
+    cursor: pointer;
+}
+
+.manage-leaders-page .delete-button:hover {
+    background-color: #D7B8A3;
+}
+
+/* Add Leader Form */
+
+.manage-leaders-page .required-note {
+    margin: -5px 0 12px;
+    font-size: 13px;
+}
+
+.manage-leaders-page .leader-form {
+    max-width: 100%;
+    margin: 0;
+    padding: 18px;
+    background-color: #E9E9E9;
+    border: none;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+/* Three Columns */
+
+.manage-leaders-page .leader-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    align-items: start;
+}
+
+.manage-leaders-page .leader-form-column {
+    min-width: 0;
+}
+
+/* Labels */
+
+.manage-leaders-page .leader-form label {
+    display: block;
+    margin: 7px 0 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Input Fields */
+
+.manage-leaders-page .leader-form input[type="text"],
+.manage-leaders-page .leader-form input[type="email"],
+.manage-leaders-page .leader-form input[type="date"] {
+    width: 100%;
+    min-height: 35px;
+    padding: 7px 9px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    border: 1px solid #A47C5B;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    font-family: "CamelYear", Arial, sans-serif;
+}
+
+.manage-leaders-page .leader-form input:focus {
+    outline: 1px solid #6B422E;
+    border-color: #6B422E;
+}
+
+/* Image Upload */
+
+.manage-leaders-page .leader-image-upload {
+    min-height: 125px;
+    width: 100%;
+    position: relative;
+    margin-top: 5px;
+    padding: 12px;
+    border: 1px dashed #B9B9B9;
+    border-radius: 2px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.manage-leaders-page .leader-image-upload span {
+    font-size: 13px;
+    color: #777777;
+}
+
+.manage-leaders-page .leader-image-upload input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Add Button */
+
+.manage-leaders-page .leader-submit {
+    display: block;
+    width: 145px;
+    margin: 12px auto 0;
+    padding: 8px 18px;
+    background-color: #152705;
+    color: #FFFFFF;
+    border: 1px solid #152705;
+    border-radius: 2px;
+    font-family: "CamelYear", Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.manage-leaders-page .leader-submit:hover {
+    background-color: #2E4018;
+}
+
+/* =========================================================
+   TABLET RESPONSIVE DESIGN
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    .manage-leaders-page .leaders-content {
+        margin-top: 20px;
+        padding: 0 12px;
+    }
+
+    .manage-leaders-page .leaders-panel {
+        padding: 15px;
+    }
+
+    .manage-leaders-page .leader-form-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .manage-leaders-page .leader-form-column:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .manage-leaders-page .leader-image-upload {
+        min-height: 100px;
+    }
+
+    .manage-leaders-page .leaders-table th,
+    .manage-leaders-page .leaders-table td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .manage-leaders-page .leader-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .manage-leaders-page .leader-form-column:first-child {
+        grid-column: auto;
+    }
+
+    .manage-leaders-page .leaders-panel {
+        padding: 12px;
+    }
+
+}
+
+/* FINAL FIX - ADD OFFERING */
+
+/* Hide form heading */
+.add-offering-page .form-heading {
+    display: none !important;
+}
+
+/* Form layout */
+.add-offering-page .member-form {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px 14px;
+    background-color: #E9E9E9;
+}
+
+/* Name */
+.add-offering-page label[for="offering-name"] {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.add-offering-page #offering-name {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
+/* Image label - Right */
+.add-offering-page label[for="offering-image"] {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: center;
+}
+
+/* Image upload - Left */
+.add-offering-page .image-upload {
+    grid-column: 2;
+    grid-row: 3;
+    width: 100%;
+    min-height: 110px;
+    margin: 0;
+    background: white;
+    border: 1px dashed #B9B9B9;
+    border-radius: 2px;
+}
+
+/* Price */
+.add-offering-page label[for="offering-price"] {
+    grid-column: 1 / -1;
+    grid-row: 4;
+}
+
+.add-offering-page #offering-price {
+    grid-column: 1 / -1;
+    grid-row: 5;
+}
+
+/* Description */
+.add-offering-page label[for="offering-description"] {
+    grid-column: 1 / -1;
+    grid-row: 6;
+}
+
+.add-offering-page #offering-description {
+    grid-column: 1 / -1;
+    grid-row: 7;
+    min-height: 75px;
+}
+
+/* Button */
+.add-offering-page .form-actions {
+    grid-column: 1 / -1;
+    grid-row: 8;
+}
+
+/* Outer panel */
+.add-offering-page .member-panel {
+    background-color: white;
+    box-shadow: none;
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    .add-offering-page .member-form {
+        grid-template-columns: 1fr !important;
+    }
+
+    .add-offering-page label[for="offering-image"],
+    .add-offering-page .image-upload {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+/* FIX IMAGE POSITION - ADD OFFERING */
+
+.add-offering-page .member-form > label[for="offering-image"] {
+    display: block !important;
+    visibility: visible !important;
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+    align-self: center;
+    text-align: right;
+    color: #302923;
+    margin: 0;
+    padding: 10px;
+}
+
+.add-offering-page .member-form > .image-upload {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    width: 100% !important;
+    min-height: 110px;
+    margin: 0 !important;
+    background: white;
+    border: 1px dashed #B9B9B9;
+    border-radius: 2px;
+    position: relative;
+}
+
+.add-offering-page .image-upload input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+/* IMAGE FIELD - FINAL POSITION */
+
+.add-offering-page .member-form > label[for="offering-image"] {
+    display: block !important;
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    text-align: right !important;
+    align-self: start;
+    margin: 8px 0 !important;
+    color: #302923;
+}
+
+/* Upload Box */
+.add-offering-page .member-form > .image-upload {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    min-height: 110px !important;
+    margin: 0 !important;
+    padding: 12px;
+    background: #FFFFFF !important;
+    border: 1px dashed #B9B9B9 !important;
+    border-radius: 2px !important;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Upload Icon */
+.add-offering-page .image-upload span::before {
+    content: "⇧";
+    display: block;
+    font-size: 28px;
+    color: #B9B9B9;
+    margin-bottom: 5px;
+}
+
+/* Upload Text */
+.add-offering-page .image-upload span {
+    font-size: 13px;
+    color: #777777;
+}
+
+/* Hide Native Input but Keep it Clickable */
+.add-offering-page .image-upload input[type="file"] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    cursor: pointer;
+    margin: 0 !important;
+}
+/* Move image upload box to LEFT */
+
+.add-offering-page .member-form > label[for="offering-image"] {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    text-align: right !important;
+}
+
+.add-offering-page .member-form > .image-upload {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    justify-self: start !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* Keep upload icon and text centered */
+.add-offering-page .image-upload {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+}/* FINAL IMAGE POSITION FIX */
+
+/* كلمة الصورة - الجهة اليمنى */
+.add-offering-page .member-form > label[for="offering-image"]:not(.image-upload) {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    display: block !important;
+    visibility: visible !important;
+    text-align: right !important;
+    align-self: start;
+    margin: 8px 0 !important;
+}
+
+/* مربع رفع الصورة - الجهة اليسرى */
+.add-offering-page .member-form > label.image-upload {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+    justify-self: start !important;
+    width: 100% !important;
+    min-height: 110px !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: white !important;
+    border: 1px dashed #B9B9B9 !important;
+    position: relative !important;
+}
+
+/* علامة رفع الملف */
+.add-offering-page .image-upload span::before {
+    content: "⇧";
+    display: block;
+    font-size: 28px;
+    color: #B9B9B9;
+    margin-bottom: 5px;
+}
+
+/* اختيار الملف */
+.add-offering-page .image-upload input[type="file"] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    cursor: pointer;
+}/* =========================================
+   ADD OFFERING PAGE
+   ========================================= */
+
+/* Main panel */
+.add-offering-page .member-content {
+    max-width: 850px;
+    margin: 28px auto 45px;
+    padding: 0 18px;
+}
+
+.add-offering-page .member-panel {
+    background: #FFFFFF;
+    border: 1px solid #E1CFB8;
+    border-top: 3px solid #9C7955;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: none;
+}
+
+/* Form layout */
+.add-offering-page .member-form {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 18px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Form heading */
+.add-offering-page .form-heading {
+    display: block !important;
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E9DDCE;
+}
+
+/* Activity name */
+.add-offering-page label[for="offering-name"] {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
+.add-offering-page #offering-name {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+/* Image label - RIGHT */
+.add-offering-page .member-form > label[for="offering-image"] {
+    grid-column: 1;
+    grid-row: 4;
+    align-self: center;
+    margin: 0;
+    text-align: right;
+}
+
+/* Image upload box - LEFT */
+.add-offering-page .member-form > label.image-upload {
+    grid-column: 2;
+    grid-row: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    min-height: 110px;
+    margin: 0 0 12px;
+    padding: 12px;
+    border: 1px dashed #A47C5B;
+    border-radius: 8px;
+    background: #FCFAF7;
+    color: #777777;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Upload icon */
+.add-offering-page .image-upload span::before {
+    content: "⇧";
+    display: block;
+    font-size: 28px;
+    color: #A47C5B;
+    margin-bottom: 5px;
+}
+
+/* Upload input */
+.add-offering-page .image-upload input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Price */
+.add-offering-page label[for="offering-price"] {
+    grid-column: 1 / -1;
+    grid-row: 5;
+}
+
+.add-offering-page #offering-price {
+    grid-column: 1 / -1;
+    grid-row: 6;
+}
+
+/* Description */
+.add-offering-page label[for="offering-description"] {
+    grid-column: 1 / -1;
+    grid-row: 7;
+}
+
+.add-offering-page #offering-description {
+    grid-column: 1 / -1;
+    grid-row: 8;
+    min-height: 150px;
+}
+
+/* Input styling */
+.add-offering-page .member-form input[type="text"],
+.add-offering-page .member-form input[type="number"],
+.add-offering-page .member-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #D9C9B4;
+    border-radius: 8px;
+    background: #FFFEFA;
+    font: inherit;
+}
+
+
+.add-offering-page .form-actions {
+    grid-column: 1 / -1;
+    grid-row: 9;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.add-offering-page .form-actions .main-button {
+    min-width: 180px;
+}
+
+
+@media screen and (max-width: 650px) {
+
+    .add-offering-page .member-panel {
+        padding: 20px;
+    }
+
+    .add-offering-page .member-form {
+        grid-template-columns: 1fr;
+    }
+
+    .add-offering-page .member-form > label[for="offering-image"],
+    .add-offering-page .member-form > label.image-upload,
+    .add-offering-page label[for="offering-price"],
+    .add-offering-page #offering-price,
+    .add-offering-page label[for="offering-description"],
+    .add-offering-page #offering-description,
+    .add-offering-page .form-actions {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
+.add-offering-page .member-form {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: initial !important;
+    background: initial;
+    border: initial;
+    box-shadow: initial;
+    padding: initial;
+}
+
+
+.add-offering-page .member-form > * {
+    grid-column: auto !important;
+    grid-row: auto !important;
+}
+
+
+.add-offering-page .form-heading {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 26px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E9DDCE;
+}
+
+.add-offering-page .member-form > label {
+    display: block !important;
+    margin: 18px 0 7px !important;
+    text-align: right;
+    font-weight: bold;
+}
+
+
+.add-offering-page .member-form input[type="text"],
+.add-offering-page .member-form input[type="number"],
+.add-offering-page .member-form textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #D9C9B4;
+    border-radius: 8px;
+    background: #FFFEFA;
+}
+
+
+.add-offering-page .image-upload {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    min-height: 110px;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 2px dashed #B9B9B9;
+    border-radius: 8px;
+    background: white;
+}
+
+.add-offering-page .image-upload input[type="file"] {
+    position: static !important;
+    opacity: 1 !important;
+    width: auto;
+    height: auto;
+    margin: 10px auto 0;
+}
+
+
+.add-offering-page #offering-description {
+    height: 185px;
+}
+
+
+.add-offering-page .form-actions {
+    display: block;
+    text-align: center;
+    margin-top: 26px;
+
+
+.add-offering-page .image-field {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    direction: rtl !important;
+    align-items: center !important;
+    gap: 18px !important;
+    margin: 18px 0 !important;
+}
+
+
+.add-offering-page .image-field-title {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    text-align: right !important;
+    margin: 0 !important;
+}
+
+
+.add-offering-page .image-field > .image-upload {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    height: 110px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    background: white !important;
+    border: 1px dashed #B9B9B9 !important;
+    border-radius: 5px !important;
+    position: relative !important;
+}
+
+
+.add-offering-page .image-upload input[type="file"] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+}
+
+
+.add-offering-page .image-upload span::before {
+    content: "⇧";
+    display: block;
+    font-size: 28px;
+    color: #A47C5B;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
