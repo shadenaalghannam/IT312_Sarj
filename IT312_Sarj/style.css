@@ -3820,4 +3820,9 @@ th {
     text-align: center;
     margin-bottom: 5px;
 }
-
+.member-page .check-row .notification-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    margin-inline-start: auto;
+}
