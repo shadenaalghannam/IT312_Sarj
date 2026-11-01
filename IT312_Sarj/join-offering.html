@@ -59,7 +59,11 @@
 <select id="instructor" name="instructor" required><option value="" disabled selected>اختر المدرب</option><option>سارة أحمد</option><option>ريم عبدالعزيز</option><option>سعد عبدالله</option><option>هدى محمد</option></select>
 <label for="fullname">الاسم الكامل</label><input type="text" id="fullname" name="fullname" placeholder="أدخل الاسم الكامل" required>
 <label for="preferred-date">التاريخ المفضل</label><input type="date" id="preferred-date" name="preferred-date" required>
-<label class="check-row" for="notifications"><input type="checkbox" id="notifications" name="notifications">هل ترغب في استلام إشعار عند قبول الطلب؟</label>
+<label class="check-row" for="notifications">
+    <input type="checkbox" id="notifications" name="notifications">
+    <span>هل ترغب في استلام إشعار عند قبول الطلب؟</span>
+    <img src="images/email.png" alt="" class="notification-icon">
+</label>
 <div class="form-actions"><button type="submit" class="main-button">إرسال الطلب</button></div>
 </form>
 </div>
