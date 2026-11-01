@@ -4,29 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إضافة نشاط جديد | سَرْج</title>
-    <link rel="stylesheet" href="style.css">
 
+    <title>إضافة نشاط جديد | سَرْج</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="member-page add-offering-page">
 
     <!-- Header -->
-   <header class="site-header">
+    <header class="site-header">
         <nav class="site-nav">
-          <a href="index.html">
-            <img src="images/sarj-logo.png"
-                 alt="Sarj Logo"
-                 class="site-logo">
-         </a>
+
+            <a href="index.html">
+                <img src="images/sarj-logo.png"
+                     alt="Sarj Logo"
+                     class="site-logo">
+            </a>
 
             <ul class="nav-links">
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="about.html">عن سَرْج</a></li>
-                <li><a href="manager-dashboard.html"class="active">لوحة مدير سَرْج</a></li>
-                <li><a href="member-dashboard.html">لوحة عضو سَرْج</a></li>
+                <li>
+                    <a href="manager-dashboard.html" class="active">
+                        لوحة مدير سَرْج
+                    </a>
+                </li>
+                <li>
+                    <a href="member-dashboard.html">
+                        لوحة عضو سَرْج
+                    </a>
+                </li>
                 <li><a href="offerings.html">عروض سَرْج</a></li>
             </ul>
+
         </nav>
     </header>
 
@@ -34,48 +45,69 @@
 
         <!-- Page Introduction -->
         <section class="page-intro">
+
             <nav class="breadcrumbs">
                 <a href="index.html">الرئيسية</a>
                 &gt;
-                <a href="manager-dashboard.html">لوحة مدير سَرْج</a>
+
+                <a href="manager-dashboard.html">
+                    لوحة مدير سَرْج
+                </a>
                 &gt;
+
                 <span>إضافة نشاط جديد</span>
             </nav>
 
             <h1 class="page-title">إضافة نشاط جديد</h1>
-            <p>أضف نشاطًا أو ورشة أو تجربة جديدة إلى نادي سَرْج للفروسية.</p>
+
+            <p>
+                أضف نشاطًا أو ورشة أو تجربة جديدة إلى نادي سَرْج للفروسية.
+            </p>
+
         </section>
+
 
         <!-- Add Offering Form -->
         <div class="member-content">
-            <section class="member-panel">
 
-                <form
-                    class="member-form"
-                    action="#"
-                    method="post"
-                    enctype="multipart/form-data"
+            <form
+                class="member-panel member-form add-offering-form"
+                action="#"
+                method="post"
+                enctype="multipart/form-data"
+            >
+
+                <!-- Activity Name -->
+                <label for="offering-name">
+                    اسم النشاط
+                </label>
+
+                <input
+                    type="text"
+                    id="offering-name"
+                    name="offering-name"
+                    placeholder="أدخل اسم النشاط"
+                    required
                 >
 
-                    <div class="form-heading">
-                        <h2>بيانات النشاط</h2>
-                        <p>أدخل تفاصيل النشاط الجديد في الحقول التالية.</p>
-                    </div>
 
-                    <label for="offering-name">اسم النشاط</label>
-                    <input
-                        type="text"
-                        id="offering-name"
-                        name="offering-name"
-                        placeholder="أدخل اسم النشاط"
-                        required
+                <!-- Activity Image -->
+                <div class="image-field">
+
+                    <label
+                        class="image-field-title"
+                        for="offering-image"
+                    >
+                        الصورة
+                    </label>
+
+                    <label
+                        class="image-upload"
+                        for="offering-image"
                     >
 
-                    <label for="offering-image">الصورة</label>
-                    <label class="image-upload" for="offering-image">
-                        <span>
-                            اختر صورة النشاط
-                        </span>
+                        <span>اختر صورة النشاط</span>
+
                         <input
                             type="file"
                             id="offering-image"
@@ -83,78 +115,119 @@
                             accept="image/*"
                             required
                         >
+
                     </label>
 
-                    <label for="offering-price">السعر أو رسوم التسجيل (بالريال)</label>
-                    <input
-                        type="number"
-                        id="offering-price"
-                        name="offering-price"
-                        placeholder="أدخل السعر بالريال"
-                        min="0"
-                        step="0.01"
-                        required
+                </div>
+
+
+                <!-- Activity Price -->
+                <label for="offering-price">
+                    السعر أو رسوم التسجيل (بالريال)
+                </label>
+
+                <input
+                    type="number"
+                    id="offering-price"
+                    name="offering-price"
+                    placeholder="أدخل السعر بالريال"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+
+                <!-- Activity Description -->
+                <label for="offering-description">
+                    الوصف
+                </label>
+
+                <textarea
+                    id="offering-description"
+                    name="offering-description"
+                    placeholder="أدخل وصف العرض هنا..."
+                    required
+                ></textarea>
+
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="main-button"
                     >
+                        إضافة النشاط
+                    </button>
 
-                    <label for="offering-description">الوصف</label>
-                    <textarea
-                        id="offering-description"
-                        name="offering-description"
-                        placeholder="أدخل وصف العرض هنا..."
-                        required
-                    ></textarea>
+                </div>
 
-                    <div class="form-actions">
-                        <button type="submit" class="main-button">
-                            إضافة النشاط
-                        </button>
-                    </div>
+            </form>
 
-                </form>
-            </section>
         </div>
+
     </main>
+
 
     <!-- Footer -->
     <footer class="site-footer">
+
         <div class="footer-content">
 
             <div class="footer-logo">
-                <img src="images/sarj-logo1.png" alt="شعار سَرْج">
+                <img
+                    src="images/sarj-logo1.png"
+                    alt="شعار سَرْج"
+                >
             </div>
 
+
             <div class="footer-contact">
+
                 <h3>تواصل معنا</h3>
+
                 <p>
                     <img src="images/email.png" alt="">
                     <span>sarj@gmail.com</span>
                 </p>
+
                 <p>
                     <img src="images/phone.png" alt="">
                     <span>+966555234569</span>
                 </p>
+
             </div>
 
+
             <div class="footer-social">
+
                 <h3>تابعنا على</h3>
+
                 <div class="social-images">
+
                     <a href="#" aria-label="Instagram">
                         <img src="images/instagram.png" alt="Instagram">
                     </a>
+
                     <a href="#" aria-label="YouTube">
                         <img src="images/youtube.png" alt="YouTube">
                     </a>
+
                     <a href="#" aria-label="X">
                         <img src="images/x.png" alt="X">
                     </a>
+
                 </div>
+
             </div>
 
         </div>
 
+
         <p class="copyright">
             &copy; 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة
         </p>
+
     </footer>
 
 </body>
