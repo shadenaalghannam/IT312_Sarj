@@ -1,50 +1,55 @@
+// Get the form elements
+var evaluationForm = document.getElementsByClassName("member-form")[0];
+var offeringSelect = document.getElementById("completed-offering");
+var feedbackInput = document.getElementById("feedback");
+var ratingButtons = document.querySelectorAll("input[name='rating']");
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    const evaluationForm = document.querySelector(".member-form");
-    const offeringSelect = document.getElementById("completed-offering");
-    const feedbackInput = document.getElementById("feedback");
-
-    evaluationForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        // Check if an offering is selected
-        if (offeringSelect.value === "") {
-            alert("الرجاء اختيار النشاط المكتمل");
-            offeringSelect.focus();
-            return;
+// Get the selected rating (0 if no rating is selected)
+function getSelectedRating() {
+    for (var i = 0; i < ratingButtons.length; i++) {
+        if (ratingButtons[i].checked) {
+            return parseInt(ratingButtons[i].value);
         }
+    }
+    return 0;
+}
 
-        // Check if a rating is selected
-        const selectedRating = document.querySelector(
-            'input[name="rating"]:checked'
-        );
+// Check the form when the user clicks Submit
+function checkEvaluation() {
 
-        if (!selectedRating) {
-            alert("الرجاء إضافة تقييم للنشاط");
-            return;
-        }
+    // Check if an offering is selected
+    if (offeringSelect.value == "") {
+        alert("الرجاء اختيار النشاط المكتمل");
+        offeringSelect.focus();
+        return false;
+    }
 
-        // Check if feedback is provided
-        if (feedbackInput.value.trim() === "") {
-            alert("الرجاء كتابة ملاحظاتك");
-            feedbackInput.focus();
-            return;
-        }
+    // Check if a rating is selected
+    var rating = getSelectedRating();
 
-        // Check the rating
-        const rating = Number(selectedRating.value);
+    if (rating == 0) {
+        alert("الرجاء إضافة تقييم للنشاط");
+        return false;
+    }
 
-        if (rating >= 4) {
-            alert("شكراً لك على تقييمك! يسعدنا أن تجربتك كانت رائعة.");
-        } else {
-            alert("نعتذر أن تجربتك لم تكن بالمستوى المطلوب، وسنعمل على تحسينها.");
-        }
+    // Check if feedback is provided
+    var feedback = feedbackInput.value.replace(/^\s+|\s+$/g, "");
 
-        // Return to Member Dashboard
-        window.location.href = "member-dashboard.html";
+    if (feedback == "") {
+        alert("الرجاء كتابة ملاحظاتك");
+        feedbackInput.focus();
+        return false;
+    }
 
-    });
+    // Check the rating
+    if (rating >= 4) {
+        alert("شكراً لك على تقييمك! يسعدنا أن تجربتك كانت رائعة.");
+    } else {
+        alert("نعتذر أن تجربتك لم تكن بالمستوى المطلوب، وسنعمل على تحسينها.");
+    }
 
-});
+    // Return to Member Dashboard (form action)
+    return true;
+}
+
+evaluationForm.onsubmit = checkEvaluation;
