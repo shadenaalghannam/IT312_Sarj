@@ -24,7 +24,7 @@
 
             <ul class="nav-links">
                 <li>
-                    <a href="index.html"class="active">الرئيسية</a>
+                    <a href="index.html" class="active">الرئيسية</a>
                 </li>
 
                 <li>
@@ -73,7 +73,27 @@
         <!-- Stores -->
         <section class="stores-section">
 
-            <div class="stores-grid">
+            <!-- Sorting by Rating (JavaScript) -->
+            <div class="recommend-toolbar">
+
+                <div class="sorting-control">
+                    <label for="sort-rating">ترتيب حسب التقييم:</label>
+
+                    <select id="sort-rating" name="sort-rating">
+                        <option value="default" selected>الترتيب الافتراضي</option>
+                        <option value="high">الأعلى تقييمًا</option>
+                        <option value="low">الأقل تقييمًا</option>
+                        <option value="top">5 نجوم فقط</option>
+                    </select>
+                </div>
+
+                <p id="recommend-count" class="recommend-count">
+                    عدد النتائج: <strong>4</strong>
+                </p>
+
+            </div>
+
+            <div class="stores-grid" id="recommend-grid">
 
                 <!-- Store 1 -->
                 <article class="store-card">
@@ -88,7 +108,7 @@
 
                         <h2>عالم الأحصنة</h2>
 
-                        <div class="store-rating"
+                        <div class="store-rating" role="img"
                              aria-label="التقييم ثلاث نجوم">
                             ★★★☆☆
                             <span class="rating-number">3</span>
@@ -122,7 +142,7 @@
 
                         <h2>نجد العز لمستلزمات الفروسية</h2>
 
-                        <div class="store-rating"
+                        <div class="store-rating" role="img"
                              aria-label="التقييم أربع نجوم">
                             ★★★★☆
                             <span class="rating-number">4</span>
@@ -156,7 +176,7 @@
 
                         <h2>مركز الخيل لمستلزمات الفروسية</h2>
 
-                        <div class="store-rating"
+                        <div class="store-rating" role="img"
                              aria-label="التقييم خمس نجوم">
                             ★★★★★
                             <span class="rating-number">5</span>
@@ -190,7 +210,7 @@
 
                         <h2>أصيل الخيل</h2>
 
-                        <div class="store-rating"
+                        <div class="store-rating" role="img"
                              aria-label="التقييم خمس نجوم">
                             ★★★★★
                             <span class="rating-number">5</span>
@@ -236,7 +256,7 @@
             <!-- Contact -->
             <div class="footer-contact">
 
-                <h3>تواصل معنا</h3>
+                <h2>تواصل معنا</h2>
 
                 <p>
                     <img src="images/email.png" alt="">
@@ -253,7 +273,7 @@
             <!-- Social Media -->
             <div class="footer-social">
 
-                <h3>تابعنا على</h3>
+                <h2>تابعنا على</h2>
 
                 <div class="social-images">
 
@@ -286,6 +306,8 @@
         </p>
 
     </footer>
+
+    <script src="recommendations.js"></script>
 
 </body>
 </html>
