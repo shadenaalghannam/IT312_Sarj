@@ -1,148 +1,103 @@
-"use strict";
+// Get the form elements
+var joinForm = document.getElementById("join-form");
+var offeringList = document.getElementById("offering");
+var instructorList = document.getElementById("instructor");
+var nameInput = document.getElementById("fullname");
+var dateInput = document.getElementById("preferred-date");
+var requestsSection = document.getElementById("requests-section");
+var requestsBody = document.getElementById("requests-body");
 
-const form = document.getElementById("join-form");
-const offering = document.getElementById("offering");
-const instructor = document.getElementById("instructor");
-const fullname = document.getElementById("fullname");
-const preferredDate = document.getElementById("preferred-date");
-
-const requestsSection = document.getElementById("requests-section");
-const requestsBody = document.getElementById("requests-body");
-
-
-function formatDate(date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-
-    return `${year}-${month}-${day}`;
+// Check the full name: two words or more, letters only (no numbers or ? ! @)
+function isFullName(name) {
+    var pattern = /^[a-zA-Zء-ي]+( [a-zA-Zء-ي]+)+$/;
+    return name.search(pattern) != -1;
 }
 
-
-function updateMinimumDate() {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-
-    preferredDate.min = formatDate(tomorrow);
+// Add a zero before numbers less than 10 (5 -> 05)
+function twoDigits(number) {
+    if (number < 10) {
+        return "0" + number;
+    }
+    return "" + number;
 }
 
-
-function isFullNameValid(name) {
-    const words = name.trim().split(/\s+/u);
-
-    return words.length >= 2 &&
-        words.every(word => /^[\p{L}\p{M}]+$/u.test(word));
+// Check that the date is in the future (compare it with today as "yyyy-mm-dd")
+function isFutureDate(dateValue) {
+    var now = new Date();
+    var today = now.getFullYear() + "-" + twoDigits(now.getMonth() + 1) + "-" + twoDigits(now.getDate());
+    return dateValue > today;
 }
 
+// Change the date format ("2026-12-20" -> "20/12/2026")
+function formatDate(dateValue) {
+    var parts = dateValue.split("-");
+    return parts[2] + "/" + parts[1] + "/" + parts[0];
+}
 
-function isFutureDate(value) {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+// Display the request in the table
+function addRequestRow(offeringName, memberName, dateValue) {
+    requestsBody.innerHTML += "<tr><td>" + offeringName + "</td><td>" + memberName +
+                              "</td><td>" + formatDate(dateValue) + "</td></tr>";
+    requestsSection.style.display = "block";
+}
+
+// Check the form when the user clicks Submit
+function checkRequest() {
+    var errors = "";
+    // Remove extra spaces from the name
+    var memberName = nameInput.value.replace(/^\s+|\s+$/g, "").replace(/\s+/g, " ");
+
+    // Check the offering
+    if (offeringList.value == "") {
+        errors += "- يرجى اختيار النشاط.\n";
+    }
+
+    // Check the instructor
+    if (instructorList.value == "") {
+        errors += "- يرجى اختيار المدرب.\n";
+    }
+
+    // Check the name
+    if (memberName == "") {
+        errors += "- يرجى كتابة الاسم الكامل.\n";
+    } else if (!isFullName(memberName)) {
+        errors += "- يجب كتابة الاسم الكامل (الاسم الأول واسم العائلة) بحروف فقط، بدون أرقام أو رموز مثل ? ! @\n";
+    }
+
+    // Check the date
+    if (dateInput.value == "") {
+        errors += "- يرجى اختيار التاريخ المفضل.\n";
+    } else if (!isFutureDate(dateInput.value)) {
+        errors += "- يجب أن يكون التاريخ المفضل في المستقبل.\n";
+    }
+
+    // Show what is missing and stop
+    if (errors != "") {
+        alert("لم يتم إرسال الطلب، يرجى تصحيح التالي:\n\n" + errors);
         return false;
     }
 
-    const [year, month, day] = value.split("-").map(Number);
-    const date = new Date(year, month - 1, day);
-
-    const validDate =
-        date.getFullYear() === year &&
-        date.getMonth() === month - 1 &&
-        date.getDate() === day;
-
-    return validDate && value > formatDate(new Date());
-}
-
-
-function displayRequest(offeringName, memberName, date) {
-    const row = document.createElement("tr");
-
-    const information = [offeringName, memberName, date];
-
-    information.forEach(function (value) {
-        const cell = document.createElement("td");
-        cell.textContent = value;
-        row.appendChild(cell);
-    });
-
-    requestsBody.appendChild(row);
-    requestsSection.hidden = false;
-}
-
-updateMinimumDate();
-
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    updateMinimumDate();
-
-    const errors = [];
-    let firstInvalidField = null;
-
-    const memberName = fullname.value.trim().replace(/\s+/gu, " ");
-
-    function addError(field, message) {
-        errors.push(message);
-
-        if (firstInvalidField === null) {
-            firstInvalidField = field;
-        }
-    }
-
-    if (offering.value === "") {
-        addError(offering, "يرجى اختيار النشاط.");
-    }
-
-    if (instructor.value === "") {
-        addError(instructor, "يرجى اختيار المدرب.");
-    }
-
-    if (!isFullNameValid(memberName)) {
-        addError(
-            fullname,
-            "يرجى كتابة الاسم الأول واسم العائلة على الأقل، بحروف فقط وبدون أرقام أو رموز."
-        );
-    }
-
-    if (!isFutureDate(preferredDate.value)) {
-        addError(
-            preferredDate,
-            "يرجى اختيار تاريخ في المستقبل؛ لا يُقبل تاريخ اليوم أو تاريخ سابق."
-        );
-    }
-
-    
-    if (errors.length > 0) {
-        alert("يرجى تصحيح التالي:\n\n" + errors.join("\n"));
-        firstInvalidField.focus();
-        return;
-    }
-
-    
-    const offeringName = offering.value;
-    const requestDate = preferredDate.value;
-
-    const stayOnPage = confirm(
-        "تم إرسال طلب الانضمام بنجاح.\n\n" +
-        "للبقاء في الصفحة وعرض طلباتك أو إضافة طلب آخر: اضغط موافق (OK).\n" +
-        "للرجوع إلى لوحة العضو: اضغط إلغاء (Cancel)."
-    );
+    // Ask the member to stay or go back
+    var stayOnPage = confirm("تم إرسال طلب الانضمام بنجاح ✔\n\n" +
+                             "هل تريد البقاء في هذه الصفحة؟\n" +
+                             "- اضغط OK للبقاء وعرض طلباتك أو إضافة طلب آخر.\n" +
+                             "- اضغط Cancel للعودة إلى لوحة العضو.");
 
     if (stayOnPage) {
-        displayRequest(offeringName, memberName, requestDate);
+        addRequestRow(offeringList.value, memberName, dateInput.value);
 
-        form.reset();
-        updateMinimumDate();
+        // Clear the form for a new request
+        offeringList.value = "";
+        instructorList.value = "";
+        nameInput.value = "";
+        dateInput.value = "";
+        document.getElementById("notifications").checked = false;
 
-        requestsSection.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
-        });
-    } else {
-        window.location.href = "member-dashboard.html";
+        return false;
     }
-});
 
+    // Return to Member Dashboard (form action)
+    return true;
+}
 
-window.addEventListener("pagehide", function () {
-    requestsBody.replaceChildren();
-    requestsSection.hidden = true;
-    form.reset();
-});
+joinForm.onsubmit = checkRequest;
