@@ -1,80 +1,87 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Get the offerings list and the sort menu
+var offeringList = document.getElementsByClassName("offering-list")[0];
+var sortSelect = document.getElementById("sort-offerings");
 
-    const offeringList = document.querySelector(".offering-list");
-    const sortSelect = document.getElementById("sort-offerings");
+// Save all offering cards in an array
+var offerings = [];
+var cards = offeringList.getElementsByClassName("offering-card");
 
-    const offerings = Array.from(
-        offeringList.querySelectorAll(".offering-card")
-    );
+for (var i = 0; i < cards.length; i++) {
+    offerings.push(cards[i]);
+}
 
-    // Get the offering name
-    function getName(card) {
-        return card.querySelector("h3").textContent.trim();
+// Get the offering name
+function getName(card) {
+    var name = card.getElementsByTagName("h2")[0].innerHTML;
+    return name.replace(/^\s+|\s+$/g, "");
+}
+
+// Get the offering price as a number ("السعر: 300 ريال" -> 300)
+function getPrice(card) {
+    var priceText = card.getElementsByClassName("offering-price")[0].innerHTML;
+    return parseInt(priceText.match(/\d+/)[0]);
+}
+
+// Display offerings in the given order
+function displayOfferings(list) {
+    for (var i = 0; i < list.length; i++) {
+        offeringList.appendChild(list[i]);
+    }
+}
+
+// Shuffle offerings randomly
+function shuffleOfferings() {
+    var shuffled = offerings.slice();
+
+    for (var i = shuffled.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        // Swap the two cards
+        var temp = shuffled[i];
+        shuffled[i] = shuffled[j];
+        shuffled[j] = temp;
     }
 
-    // Get the offering price
-    function getPrice(card) {
-        const priceText = card.querySelector(".offering-price").textContent;
-        return parseFloat(priceText.match(/\d+/)[0]);
-    }
+    displayOfferings(shuffled);
+}
 
-    // Display offerings in the selected order
-    function displayOfferings(cards) {
-        cards.forEach(function (card) {
-            offeringList.appendChild(card);
-        });
-    }
+// Sort the cards (bubble sort) by price or name
+function sortCards(list, getValue, ascending) {
+    for (var i = 0; i < list.length - 1; i++) {
+        for (var j = 0; j < list.length - 1 - i; j++) {
+            var first = getValue(list[j]);
+            var second = getValue(list[j + 1]);
 
-    // Shuffle offerings randomly
-    function shuffleOfferings() {
-        const shuffled = [...offerings];
-
-        for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            if ((ascending && first > second) || (!ascending && first < second)) {
+                var temp = list[j];
+                list[j] = list[j + 1];
+                list[j + 1] = temp;
+            }
         }
+    }
+}
 
-        displayOfferings(shuffled);
+// Sort offerings based on user selection
+function sortOfferings() {
+    var choice = sortSelect.value;
+    var sorted = offerings.slice();
+
+    if (choice == "price-low") {
+        sortCards(sorted, getPrice, true);
+    } else if (choice == "price-high") {
+        sortCards(sorted, getPrice, false);
+    } else if (choice == "name-az") {
+        sortCards(sorted, getName, true);
+    } else if (choice == "name-za") {
+        sortCards(sorted, getName, false);
+    } else {
+        shuffleOfferings();
+        return;
     }
 
-    // Sort offerings based on user selection
-    sortSelect.addEventListener("change", function () {
+    displayOfferings(sorted);
+}
 
-        const selectedOption = sortSelect.value;
-        const sorted = [...offerings];
+sortSelect.onchange = sortOfferings;
 
-        switch (selectedOption) {
-
-            case "price-low":
-                sorted.sort((a, b) => getPrice(a) - getPrice(b));
-                break;
-
-            case "price-high":
-                sorted.sort((a, b) => getPrice(b) - getPrice(a));
-                break;
-
-            case "name-az":
-                sorted.sort((a, b) =>
-                    getName(a).localeCompare(getName(b), "ar")
-                );
-                break;
-
-            case "name-za":
-                sorted.sort((a, b) =>
-                    getName(b).localeCompare(getName(a), "ar")
-                );
-                break;
-
-            default:
-                shuffleOfferings();
-                return;
-        }
-
-        displayOfferings(sorted);
-    });
-
-    // Random order when the page loads
-    shuffleOfferings();
-
-});
+// Random order when the page loads
+shuffleOfferings();
