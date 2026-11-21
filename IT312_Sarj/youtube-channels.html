@@ -27,7 +27,7 @@
 
             <ul class="nav-links">
                 <li>
-                    <a href="index.html"class="active">الرئيسية</a>
+                    <a href="index.html" class="active">الرئيسية</a>
                 </li>
 
                 <li>
@@ -76,7 +76,27 @@
         <!-- YouTube Channels -->
         <section class="youtube-section">
 
-            <div class="youtube-grid">
+            <!-- Sorting by Rating (JavaScript) -->
+            <div class="recommend-toolbar">
+
+                <div class="sorting-control">
+                    <label for="sort-rating">ترتيب حسب التقييم:</label>
+
+                    <select id="sort-rating" name="sort-rating">
+                        <option value="default" selected>الترتيب الافتراضي</option>
+                        <option value="high">الأعلى تقييمًا</option>
+                        <option value="low">الأقل تقييمًا</option>
+                        <option value="top">5 نجوم فقط</option>
+                    </select>
+                </div>
+
+                <p id="recommend-count" class="recommend-count">
+                    عدد النتائج: <strong>4</strong>
+                </p>
+
+            </div>
+
+            <div class="youtube-grid" id="recommend-grid">
 
                 <!-- Channel 1 -->
                 <article class="youtube-card">
@@ -91,7 +111,7 @@
 
                         <h2>نواصي الخيل</h2>
 
-                        <div class="youtube-rating"
+                        <div class="youtube-rating" role="img"
                              aria-label="التقييم خمس نجوم">
                             ★★★★★
                             <span class="rating-number">5</span>
@@ -126,7 +146,7 @@
 
                         <h2>FEI - الاتحاد الدولي للفروسية</h2>
 
-                        <div class="youtube-rating"
+                        <div class="youtube-rating" role="img"
                              aria-label="التقييم خمس نجوم">
                             ★★★★★
                             <span class="rating-number">5</span>
@@ -161,7 +181,7 @@
 
                         <h2>Julie Goodnight</h2>
 
-                        <div class="youtube-rating"
+                        <div class="youtube-rating" role="img"
                              aria-label="التقييم ثلاث نجوم">
                             ★★★☆☆
                             <span class="rating-number">3</span>
@@ -196,7 +216,7 @@
 
                         <h2>نادي سباقات الخيل</h2>
 
-                        <div class="youtube-rating"
+                        <div class="youtube-rating" role="img"
                              aria-label="التقييم أربع نجوم">
                             ★★★★☆
                             <span class="rating-number">4</span>
@@ -243,7 +263,7 @@
             <!-- Contact -->
             <div class="footer-contact">
 
-                <h3>تواصل معنا</h3>
+                <h2>تواصل معنا</h2>
 
                 <p>
                     <img src="images/email.png" alt="">
@@ -260,7 +280,7 @@
             <!-- Social Media -->
             <div class="footer-social">
 
-                <h3>تابعنا على</h3>
+                <h2>تابعنا على</h2>
 
                 <div class="social-images">
 
@@ -293,6 +313,8 @@
         </p>
 
     </footer>
+
+    <script src="recommendations.js"></script>
 
 </body>
 </html>
