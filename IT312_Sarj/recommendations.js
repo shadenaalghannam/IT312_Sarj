@@ -58,7 +58,7 @@ function showCards() {
         }
     }
 
-    resultText.innerHTML = "Ø¹Ø¯Ø¯ Ø§ÙÙØªØ§Ø¦Ø¬: <strong>" + shown + "</strong>";
+    resultText.innerHTML = "عدد النتائج: <strong>" + shown + "</strong>";
 }
 
 sortSelect.onchange = showCards;
