@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -71,10 +72,12 @@
         <div class="member-content">
 
             <form
+                id="add-offering-form"
                 class="member-panel member-form add-offering-form"
                 action="#"
                 method="post"
                 enctype="multipart/form-data"
+                novalidate
             >
 
                 <!-- Activity Name -->
@@ -184,7 +187,7 @@
 
             <div class="footer-contact">
 
-                <h2>تواصل معنا</h2>
+                <h3>تواصل معنا</h3>
 
                 <p>
                     <img src="images/email.png" alt="">
@@ -201,7 +204,7 @@
 
             <div class="footer-social">
 
-                <h2>تابعنا على</h2>
+                <h3>تابعنا على</h3>
 
                 <div class="social-images">
 
@@ -224,12 +227,6 @@
         </div>
 
 
-        <!-- Real-Time Clock -->
-        <p class="footer-clock">
-            <span class="footer-clock-label">الوقت الآن:</span>
-            <span id="footer-clock">--:--:--</span>
-        </p>
-
         <p class="copyright">
             &copy; 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة
         </p>
@@ -239,6 +236,10 @@
     <!-- Back to Top Button -->
     <button type="button" id="back-to-top" class="back-to-top" aria-label="العودة إلى أعلى الصفحة">↑</button>
 
+    <!-- JavaScript Files -->
     <script src="home.js"></script>
+    <script src="add-offering.js"></script>
+
 </body>
 </html>
+```
