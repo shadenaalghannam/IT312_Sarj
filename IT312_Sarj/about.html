@@ -189,7 +189,7 @@
                 شاركنا معلوماتك للانضمام إلى فريق سَرْج.
             </p>
 
-            <form action="#" method="get" class="join-form">
+            <form action="#" method="get" class="join-form" id="join-team-form">
 
                 <div class="form-grid">
 
@@ -228,7 +228,7 @@
                     <div class="form-column">
                         <div class="form-field">
                             <label for="applicant-dob">تاريخ الميلاد*</label>
-                            <input type="date" id="applicant-dob" name="dob" required>
+                            <input type="date" id="applicant-dob" name="dob" max="2008-12-31" required>
                         </div>
 
                         <div class="form-field">
@@ -304,6 +304,7 @@
     <!-- Back to Top Button -->
     <button type="button" id="back-to-top" class="back-to-top" aria-label="العودة إلى أعلى الصفحة">↑</button>
 
+    <script src="about.js"></script>
     <script src="home.js"></script>
 </body>
 

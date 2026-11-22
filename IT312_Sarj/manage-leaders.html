@@ -93,6 +93,7 @@
 
             <form
                 class="leaders-list-form"
+                id="leaders-list-form"
                 action="#"
                 method="post"
             >
@@ -117,112 +118,8 @@
 
                     </thead>
 
-                    <tbody>
-
-                        <tr>
-
-                            <td>
-                                <input
-                                    type="checkbox"
-                                    class="leader-checkbox"
-                                    name="selected-leaders"
-                                    value="sara-ahmed"
-                                    aria-label="تحديد سارة أحمد"
-                                >
-                            </td>
-
-                            <td>
-                                <img
-                                    src="images/instructor-sara.jpg"
-                                    alt="صورة سارة أحمد"
-                                    class="leader-image"
-                                >
-                            </td>
-
-                            <td>سارة أحمد</td>
-
-                            <td>sara.ahmed@gmail.com</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>
-                                <input
-                                    type="checkbox"
-                                    class="leader-checkbox"
-                                    name="selected-leaders"
-                                    value="reem-abdulaziz"
-                                    aria-label="تحديد ريم عبدالعزيز"
-                                >
-                            </td>
-
-                            <td>
-                                <img
-                                    src="images/instructor-reem.png"
-                                    alt="صورة ريم عبدالعزيز"
-                                    class="leader-image"
-                                >
-                            </td>
-
-                            <td>ريم عبدالعزيز</td>
-
-                            <td>reem.abdulaziz@gmail.com</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>
-                                <input
-                                    type="checkbox"
-                                    class="leader-checkbox"
-                                    name="selected-leaders"
-                                    value="saad-abdullah"
-                                    aria-label="تحديد سعد عبدالله"
-                                >
-                            </td>
-
-                            <td>
-                                <img
-                                    src="images/instructor-saad.jpg"
-                                    alt="صورة سعد عبدالله"
-                                    class="leader-image"
-                                >
-                            </td>
-
-                            <td>سعد عبدالله</td>
-
-                            <td>saad.abdullah@gmail.com</td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>
-                                <input
-                                    type="checkbox"
-                                    class="leader-checkbox"
-                                    name="selected-leaders"
-                                    value="huda-mohammed"
-                                    aria-label="تحديد هدى محمد"
-                                >
-                            </td>
-
-                            <td>
-                                <img
-                                    src="images/instructor-huda.jpg"
-                                    alt="صورة هدى محمد"
-                                    class="leader-image"
-                                >
-                            </td>
-
-                            <td>هدى محمد</td>
-
-                            <td>huda.mohammed@gmail.com</td>
-
-                        </tr>
-
+                    <tbody id="leaders-body">
+                        <!-- Rows are added by manage-leaders.js -->
                     </tbody>
 
                 </table>
@@ -259,6 +156,8 @@
 
             <form
                 class="leader-form"
+                id="leader-form"
+                novalidate
                 action="#"
                 method="post"
                 enctype="multipart/form-data"
@@ -349,6 +248,7 @@
                             type="date"
                             id="leader-date"
                             name="leader-date"
+                            max="2008-12-31"
                             required
                         >
 
@@ -500,6 +400,7 @@
     <!-- Back to Top Button -->
     <button type="button" id="back-to-top" class="back-to-top" aria-label="العودة إلى أعلى الصفحة">↑</button>
 
+    <script src="manage-leaders.js"></script>
     <script src="home.js"></script>
 </body>
 
