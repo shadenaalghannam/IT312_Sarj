@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>طلب الانضمام إلى نشاط | سَرْج</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="member-page">
+<header class="site-header">
+        <nav class="site-nav">
+          <a href="index.html">
+            <img src="images/sarj-logo.png"
+                 alt="Sarj Logo"
+                 class="site-logo">
+         </a>
+    <ul class="nav-links">
+     <li>
+      <a href="index.html">
+       الرئيسية
+      </a>
+     </li>
+     <li>
+      <a href="about.html">
+       عن سَرْج
+      </a>
+     </li>
+     <li>
+      <a href="manager-dashboard.html">
+       لوحة مدير سَرْج
+      </a>
+     </li>
+     <li>
+      <a href="member-dashboard.html" class="active">
+       لوحة عضو سَرْج
+      </a>
+     </li>
+     <li>
+      <a href="offerings.html">
+       عروض سَرْج
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+
+<main>
+<section class="page-intro"><nav class="breadcrumbs"><a href="index.html">الرئيسية</a> &gt; <a href="member-dashboard.html">لوحة عضو سَرْج</a> &gt; طلب الانضمام إلى نشاط</nav><h1 class="page-title">طلب الانضمام إلى نشاط</h1><p>اختر النشاط المناسب وأكمل بيانات طلب الانضمام</p></section>
+<div class="member-content">
+<form id="join-form" class="member-panel member-form" action="member-dashboard.html" method="get" novalidate>
+<div class="form-heading"><h2>بيانات طلب الانضمام</h2><p>اختر النشاط والمدرب وحدد الموعد المناسب.</p></div>
+<label for="offering">اختر النشاط</label>
+<select id="offering" name="offering" required>
+<option value="" disabled selected>اختر النشاط</option>
+<option>جلسة ركوب للمبتدئين</option><option>جلسة ركوب متقدمة</option><option>تدريب قفز الحواجز</option><option>ورشة العناية بالخيل</option><option>تجربة ركوب في الطبيعة</option><option>حجز عرض الفروسية</option>
+</select>
+<label for="instructor">اختر المدرب</label>
+<select id="instructor" name="instructor" required><option value="" disabled selected>اختر المدرب</option><option>سارة أحمد</option><option>ريم عبدالعزيز</option><option>سعد عبدالله</option><option>هدى محمد</option></select>
+<label for="fullname">الاسم الكامل</label><input type="text" id="fullname" name="fullname" placeholder="أدخل الاسم الكامل" required>
+<label for="preferred-date">التاريخ المفضل</label><input type="date" id="preferred-date" name="preferred-date" required>
+<label class="check-row" for="notifications">
+    <input type="checkbox" id="notifications" name="notifications">
+   <span class="notify-text">هل ترغب في استلام إشعار عند قبول الطلب؟</span>
+    <img src="images/email.png" alt="" class="notify-icon">
+</label>
+<div class="form-actions"><button type="submit" class="main-button">إرسال الطلب</button></div>
+</form>
+
+<!-- Requests added on this page (filled by JavaScript) -->
+<section id="requests-section" class="member-panel join-requests">
+<h2 class="member-section-title">طلباتك المضافة في هذه الصفحة</h2>
+<p class="join-requests-note">تظهر هذه الطلبات مؤقتًا وتختفي عند مغادرة الصفحة.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>اسم النشاط</th><th>اسم العضو</th><th>التاريخ المفضل</th></tr></thead>
+<tbody id="requests-body"></tbody>
+</table></div>
+</section>
+</div>
+</main>
+<footer class="site-footer">
+   <div class="footer-content">
+    <!-- Logo -->
+    <div class="footer-logo">
+     <img alt="Sarj Logo" src="images/sarj-logo1.png"/>
+    </div>
+    <!-- Contact Information -->
+    <div class="footer-contact">
+     <h3>
+      تواصل معنا
+     </h3>
+     <p>
+      <img alt="Email Icon" src="images/email.png"/>
+      <span>
+       sarj@gmail.com
+      </span>
+     </p>
+     <p>
+      <img alt="Phone Icon" src="images/phone.png"/>
+      <span>
+       +966555234569
+      </span>
+     </p>
+    </div>
+    <!-- Social Media -->
+    <div class="footer-social">
+     <h3>
+      تابعنا على
+     </h3>
+     <div class="social-images">
+      <a aria-label="Instagram" href="#">
+       <img alt="Instagram" src="images/instagram.png"/>
+      </a>
+      <a aria-label="YouTube" href="#">
+       <img alt="YouTube" src="images/youtube.png"/>
+      </a>
+      <a aria-label="X" href="#">
+       <img alt="X" src="images/x.png"/>
+      </a>
+     </div>
+    </div>
+   </div>
+   <!-- Copyright -->
+        <!-- Real-Time Clock -->
+        <p class="footer-clock">
+            <span class="footer-clock-label">الوقت الآن:</span>
+            <span id="footer-clock">--:--:--</span>
+        </p>
+
+   <p class="copyright">
+    &copy; 2026 نادي سَرْج للفروسية - جميع الحقوق محفوظة
+   </p>
+  </footer>
+<script src="join-offering.js"></script>
+    <!-- Back to Top Button -->
+    <button type="button" id="back-to-top" class="back-to-top" aria-label="العودة إلى أعلى الصفحة">↑</button>
+
+    <script src="home.js"></script>
+</body>
+</html>
