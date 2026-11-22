@@ -3922,10 +3922,6 @@ html {
     margin-left: 6px;
 }
 
-#footer-clock {
-    unicode-bidi: plaintext;
-}
-
 @media screen and (max-width: 768px) {
     .theme-toggle {
         margin-right: 0;
