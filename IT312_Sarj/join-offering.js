@@ -86,6 +86,10 @@ function checkRequest() {
     if (stayOnPage) {
         addRequestRow(offeringList.value, memberName, dateInput.value);
 
+        // Scroll down smoothly to the requests table
+        requestsSection.scrollIntoView();
+
+
         // Clear the form for a new request
         offeringList.value = "";
         instructorList.value = "";
