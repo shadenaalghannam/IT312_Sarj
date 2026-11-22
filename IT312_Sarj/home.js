@@ -67,11 +67,11 @@ function applyTheme(dark) {
     // Logo and button text
     if (dark) {
         siteLogo.style.filter = "brightness(0) invert(1)";
-        themeButton.innerHTML = "â Ø§ÙÙØ¶Ø¹ Ø§ÙÙÙØ§Ø±Ù";
+        themeButton.innerHTML = "☀ الوضع النهاري";
         currentTheme = "dark";
     } else {
         siteLogo.style.filter = "";
-        themeButton.innerHTML = "â¾ Ø§ÙÙØ¶Ø¹ Ø§ÙÙÙÙÙ";
+        themeButton.innerHTML = "☾ الوضع الليلي";
         currentTheme = "light";
     }
 }
@@ -112,9 +112,9 @@ topButton.onclick = goToTop;
 
 
 // ---------- Real-Time Clock ----------
-var dayNames = ["Ø§ÙØ£Ø­Ø¯", "Ø§ÙØ¥Ø«ÙÙÙ", "Ø§ÙØ«ÙØ§Ø«Ø§Ø¡", "Ø§ÙØ£Ø±Ø¨Ø¹Ø§Ø¡", "Ø§ÙØ®ÙÙØ³", "Ø§ÙØ¬ÙØ¹Ø©", "Ø§ÙØ³Ø¨Øª"];
-var monthNames = ["ÙÙØ§ÙØ±", "ÙØ¨Ø±Ø§ÙØ±", "ÙØ§Ø±Ø³", "Ø£Ø¨Ø±ÙÙ", "ÙØ§ÙÙ", "ÙÙÙÙÙ",
-                  "ÙÙÙÙÙ", "Ø£ØºØ³Ø·Ø³", "Ø³Ø¨ØªÙØ¨Ø±", "Ø£ÙØªÙØ¨Ø±", "ÙÙÙÙØ¨Ø±", "Ø¯ÙØ³ÙØ¨Ø±"];
+var dayNames = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+var monthNames = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+                  "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"];
 
 // Add a zero before numbers less than 10 (5 -> 05)
 function twoDigits(number) {
@@ -128,10 +128,10 @@ function twoDigits(number) {
 function updateClock() {
     var now = new Date();
     var hours = now.getHours();
-    var period = "Øµ";
+    var period = "ص";
 
     if (hours >= 12) {
-        period = "Ù";
+        period = "م";
     }
 
     // 12-hour format
@@ -143,7 +143,7 @@ function updateClock() {
     var time = twoDigits(hours) + ":" + twoDigits(now.getMinutes()) + ":" +
                twoDigits(now.getSeconds()) + " " + period;
 
-    var date = dayNames[now.getDay()] + "Ø " + now.getDate() + " " +
+    var date = dayNames[now.getDay()] + "، " + now.getDate() + " " +
                monthNames[now.getMonth()] + " " + now.getFullYear();
 
     document.getElementById("footer-clock").innerHTML = date + " | " + time;
