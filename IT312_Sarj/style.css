@@ -4085,3 +4085,18 @@ html {
 .add-offering-page .upload-preview img {
     max-height: 90px;
 }
+
+
+/* Date fields: same width as the other fields on iPhone (Safari) */
+input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 46px;
+}
+
+input[type="date"]::-webkit-date-and-time-value {
+    text-align: right;
+}
